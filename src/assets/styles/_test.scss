@@ -1,36 +1,190 @@
-$fontStack: "Roboto","Helvetica",arial,sans-serif;
+$fontStack: 'Noto Sans KR', "Roboto","Helvetica",arial,sans-serif;
+$pageWidth: 980px;
+$topNavHeight: 75px;
 
 body {
     font-family: $fontStack;
     margin: 0;
     padding: 0;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 32px;
+    color: #555;
+}
+h2 {
+    font-weight: normal;
 }
 
-.top-nav {
-    display: block;
-    height: 65px;
-    background: transparent;
-}
-.top-nav.floating {
+header {
+    position: relative;
+    width: 100%;
+    height: $topNavHeight;
     background: #fff;
+    border-bottom: 1px solid #fff;
+    & .logo {
+        position: relative;
+        float: left;
+        top: 50%;
+        margin-top: -15px;
+        & h2 {
+            margin: 10px 25px;
+            font-size: 17px;
+        }
+    }
+    & .menu {
+        position: relative;
+        top: 50%;
+        margin-top: -15px;
+        float: right;
+        & ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            & li {
+                &.selected {
+                    text-decoration: underline;
+                }
+                float:left;
+                text-align: center;
+                margin: 10px 25px;
+                & a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                &:last-child {
+                    margin-right: 40px;
+                }
+            }
+        }
+    }
+    &.floating {
+        position: fixed;
+        top: 0;
+        border-bottom: 1px solid #c1c1c1;
+        margin-top: -20px;
+    }
 }
 
-.top-nav .logo {
-    float: left;
-    line-height: 65px;
-}
-.top-nav .menu {
-    float: right;
-    & span {
-        line-height: 65px;
-        padding-right: 50px;
+.content {
+    margin: 0 auto;
+    padding: 25px;
+    max-width: $pageWidth;
+    & .title {
+        text-align: center;
+    }
+    & section {
+        margin-bottom: 135px;
+        & h2 {
+            margin-bottom: 55px;
+        }
     }
 }
 
 .media {
     display: block;
-    height: 550px;
     background: #3A5896;
+    color: #fff;
+    text-align: center;
+    padding: 200px 0;
+    margin: 10px 0 45px 0;
+}
+
+.intro {
+    & p {
+        margin: 0 auto;
+        max-width: 650px;
+        text-align: justify;
+    }
+}
+
+.scrap {
+    & .scrap-box {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+        & .article {
+            display: inline-block;
+            width: 220px;
+            padding: 180px 0;
+            margin-right: 10px;
+            border: 1px solid #999;
+        }
+    }
+    & .more {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.store {
+    & .product-box {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+        & .product {
+            display: inline-block;
+            width: 200px;
+            padding: 130px 0;
+            border: 1px solid #c1c1c1;
+        }
+    }
+}
+
+.how-to-eat {
+    & .recipes {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+        & .recipe {
+            display: inline-block;
+            text-align: justify;
+            width: 250px;
+            vertical-align: top;
+            margin-right: 25px;
+        }
+    }
+}
+
+.cart {
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    border-top: 1px solid #999;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    & .cart-box {
+        margin: 30px auto;
+        max-width: $pageWidth;
+        & .bill {
+            float: left;
+            margin-left: 150px;
+            font-size: 21px;
+            & span {
+                margin: 0 10px;
+            }
+        }
+        & .order {
+            float: right;
+            background: #3A5896;
+            color : #fff;
+            padding: 5px 25px;
+            border-radius: 8px;
+            margin-right: 150px;
+        }
+    }
+    &.visible {
+        bottom: 0;
+    }
+}
+
+footer {
+    background: #e1e1e1;
+    text-align: center;
+    padding: 60px 0;
 }
