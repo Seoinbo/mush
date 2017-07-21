@@ -1,11 +1,10 @@
-<div class="screen">
-    <div class="video">
+<div class="screen" [class.video-switching]="videoSwitched">
+    <div class="video" [style.visibility]="videoSwitchLock ? 'hidden' : 'visible'">
         <div class="source"><img src="{{selected.src}}"/></div>
-        <div class="video-cover" [style.display]="videoCoverHidden"></div>
-    </div>
-    <div class="video-msg">
-        <h2>{{videoTitle}}</h2>
-        <p>{{videoDescription}}</p>
+        <div class="msg">
+            <h2>{{videoTitle}}</h2>
+            <p>{{videoDescription}}</p>
+        </div>
     </div>
 </div>
 <div class="media-nav">

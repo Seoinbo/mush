@@ -12,7 +12,12 @@ export class MediaComponent {
     videos: Video[];
     videoTitle = "Introducing Daydream";
     videoDescription = "Simple, high quality virtual reality";
-    videoCoverHidden: boolean = false;
+    videoSwitched: boolean = false;
+    videoSwitchLock: boolean = false;
+    videoMsgHidden: boolean = true;
+    timer1: any;
+    timer2: any;
+    timer3: any;
     selected: Video = {
         id: 0,
         title: "",
@@ -36,6 +41,26 @@ export class MediaComponent {
                 this.videoDescription = v.desc;
             }
         }
+
+        let that = this;
+        this.videoSwitched = false;
+        this.videoSwitchLock = true;
+        this.timer1 = setTimeout( function() {
+            that.videoSwitchLock = false;
+        }, 250);
+        if (this.timer2 && this.timer2.state == "scheduled") {
+            clearTimeout(this.timer2);
+        }
+        this.timer2 = setTimeout( function() {
+            if (that.timer3 && that.timer3.state == "scheduled") {
+                clearTimeout(that.timer3);
+            }
+            that.videoSwitched = true;
+            that.timer3 = setTimeout( function() {
+                that.videoSwitched = false;
+            }, 7000);
+        }, 200);
+        
         return false;
     }
 
