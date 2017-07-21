@@ -23,9 +23,9 @@
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/moment/min/moment-with-locales.min.js",
         "../node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js",
-        "../node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js",
-        "assets/scripts/main.js"
+        "../node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,1 +1,14 @@
-<h2>Media</h2>
+<div class="screen">
+    <div class="video">
+        <div class="source"><img src="{{selected.src}}"/></div>
+        <div class="video-cover" [style.display]="videoCoverHidden"></div>
+    </div>
+    <div class="video-msg">
+        <h2>{{videoTitle}}</h2>
+        <p>{{videoDescription}}</p>
+    </div>
+</div>
+<div class="media-nav">
+    <a *ngFor="let video of videos | reverse" [class.active]="selected.id == video.id" href="#" (click)="loadVideo(video.id)" class="media-load-btn" title="{{video.title}}">{{dateFormat(video.time)}}</a>
+    <a class="media-load-btn" id="media-more">more</a>
+</div>

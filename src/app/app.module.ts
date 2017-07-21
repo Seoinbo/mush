@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 
+import { Windoc } from "./services/Windoc";
+
 import { AppComponent } from './app.component';
 
 import { NgModule } from '@angular/core';
+
 import { HeaderModule } from './header/header.module';
 import { IntroModule } from './intro/intro.module';
 import { MediaModule } from './media/media.module';
@@ -27,7 +30,9 @@ import { FooterModule } from './footer/footer.module';
     HowToEatModule,
     FooterModule
   ],
-  providers: [],
+  providers: [
+      Windoc
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

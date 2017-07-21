@@ -1,37 +1,60 @@
-  import { Component, HostListener, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Component, HostListener, Inject } from '@angular/core';
+import { Windoc } from "./services/Windoc";
 
+import * as $ from 'jquery';
 declare const ScrollMagic: any
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  topNavfloating: boolean = false;
+    title = 'app';
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
-  }
+    // class flag
+    topNavfloating: boolean = false;
+    topButtonVisible: boolean = false;
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    // Switching top-navigation status.
-    let pos = this.document.body.scrollTop;
-    if (pos > 20) {
-      this.topNavfloating = true;
-    } else if (this.topNavfloating && pos < 20) {
-      this.topNavfloating = false;
+    document: Document;
+
+    constructor( @Inject(Windoc) private windoc: Windoc) {
+        this.document = this.windoc.document();
     }
-  }
+
+    // Browser scroll move to top.
+    goToTop(event) {
+        event.preventDefault();
+        $(this.document).scrollTop(0);
+    }
+
+    @HostListener("window:scroll", [])
+    onWindowScroll() {
+        // Detect scroll position.
+        let pos = $(this.document).scrollTop();
+
+        // Switching top-navigation status.
+        if (pos > 25) {
+            this.topNavfloating = true;
+        } else if (this.topNavfloating && pos <= 25) {
+            this.topNavfloating = false;
+        }
+
+        // Switching top button visibility.
+        if (pos <= 0) {
+            this.topButtonVisible = false;
+        } else {
+            this.topButtonVisible = true;
+        }
+
+    }
 
     ngAfterViewInit() {
-      var controller = new ScrollMagic.Controller();
-      // build scene
-      new ScrollMagic.Scene({triggerElement: ".store", duration: "500"})
-          .setClassToggle(".cart", "visible")
-          .addIndicators({name: "cart"})
-          .addTo(controller);
-  }
+        var controller = new ScrollMagic.Controller();
+        // build scene
+        new ScrollMagic.Scene({ triggerElement: ".store", duration: "550" })
+            .setClassToggle(".cart", "visible")
+            .addIndicators({ name: "cart" })
+            .addTo(controller);
+    }
 }

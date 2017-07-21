@@ -1,0 +1,320 @@
+@import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
+
+$fontStack: 'Noto Sans KR', "Roboto","Helvetica",arial,sans-serif;
+$pageWidth: 980px;
+$topNavHeight: 75px;
+
+body {
+    font-family: $fontStack;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 32px;
+    color: #555;
+}
+h2 {
+    font-weight: normal;
+}
+a {text-decoration:none;}
+a:active {text-decoration:none;}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a, a:link, a:visited, a:hover, a:active, a:focus {color:inherit;}
+
+header {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: $topNavHeight;
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    & .logo {
+        position: relative;
+        float: left;
+        top: 50%;
+        margin-top: -15px;
+        & h2 {
+            margin: 10px 25px;
+            font-size: 17px;
+        }
+    }
+    & .menu {
+        position: relative;
+        top: 50%;
+        margin-top: -15px;
+        float: right;
+        & ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            & li {
+                &.selected {
+                    text-decoration: underline;
+                }
+                float:left;
+                text-align: center;
+                margin: 10px 25px;
+                & a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                &:last-child {
+                    margin-right: 40px;
+                }
+            }
+        }
+    }
+    &.floating {
+        border-color: #c1c1c1 !important;
+        margin-top: -20px;
+    }
+}
+
+.content {
+    width: 100%;
+    margin-top: $topNavHeight + 20;
+    & .title {
+        text-align: center;
+    }
+    & section {
+        padding: 50px 0 75px 0;
+        & .boundary {
+            margin: 0 auto;
+            max-width: 980px;
+        }
+        & h2 {
+            margin-bottom: 55px;
+        }
+    }
+}
+
+.media {
+    display: block;
+    padding: 0 !important;
+    margin: 10px 0 45px 0;
+    & .screen {
+        position: relative;
+        max-height: 600px;
+        color: #fff;
+        overflow: hidden;
+        text-align: center;
+        & h2 {
+            display: inline-block;
+            margin-top: 200px;
+        }
+        & .video {
+            // background-size: cover;
+            // background: url("https://www.dothome.co.kr/static/images/main/main-slide15.jpg") no-repeat center bottom/cover;
+            height: 100%;
+            & .source img {
+                width: 100%;
+            }
+            & .video-cover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height :100%;
+                background: #000;
+                opacity: 0;
+            }
+        }
+        & .video-msg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            & h2 {
+                font-size: 32px;
+                margin-top: 15%;
+                margin-bottom: 16px;
+            }
+            & p {
+                margin: 5px 0;
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+    }
+    & .media-nav {
+        width: 100%;
+        min-height: 45px;
+        font-size: 13px;
+        text-align: center;
+        padding-top: 20px;
+        & .media-load-btn {
+            display: inline-block;
+            padding: 0 6px;
+            line-height: 28px;
+            margin-right: 7px;
+            &:last-child {
+                margin-right: 0;
+            }
+            &.active {
+                text-decoration: underline;
+            }
+        }
+        &::after {
+            display: block;
+            margin-top: 25px;
+            content: url("http://requirejs.org/i/arrow-x.png");
+        }
+    }
+}
+
+.intro {
+    & p {
+        margin: 0 auto;
+        max-width: 650px;
+        text-align: justify;
+    }
+}
+
+.scrap {
+    & .scrap-box {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+        & .article {
+            display: inline-block;
+            width: 220px;
+            padding: 180px 0;
+            margin-right: 10px;
+            border: 1px solid #999;
+        }
+    }
+    & .more {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.store {
+    background: #f6f6f6;
+    & .product-box {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+        & .product {
+            display: inline-block;
+            width: 200px;
+            padding: 130px 0;
+            background: #fff;
+            border: 1px solid #c1c1c1;
+        }
+    }
+}
+
+.how-to-eat {
+    & .recipes {
+        width: 100%;
+        margin-bottom: 25px;
+        text-align: center;
+        & .recipe {
+            display: inline-block;
+            text-align: justify;
+            width: 250px;
+            vertical-align: top;
+            margin-right: 25px;
+        }
+    }
+}
+
+.cart {
+    position: fixed;
+    bottom: -100px;
+    width: 100%;
+    height: 100px;
+    background: #fff;
+    border-top: 1px solid #999;
+    @include transition(all 0.25s ease);
+    & .cart-box {
+        margin: 30px auto;
+        max-width: $pageWidth;
+        & .bill {
+            float: left;
+            margin-left: 150px;
+            font-size: 21px;
+            & span {
+                margin: 0 10px;
+            }
+        }
+        & .order {
+            float: right;
+            background: #3A5896;
+            color : #fff;
+            padding: 5px 25px;
+            border-radius: 8px;
+            margin-right: 150px;
+        }
+    }
+    &.visible {
+        bottom: 0;
+    }
+}
+
+.go-to-top {
+    position: fixed;
+    display: inline-block;
+    right: 18px;
+    bottom: -40px;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 1;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-decoration: none;
+    background: 0 0;
+    color: #a2a8b2;
+    cursor: pointer;
+    @include transition(all 0.25s ease);
+    & i.icon-top {
+        position: relative;
+        display: inline-block;
+        width: 37px;
+        height: 37px;
+        background-position: -943px -20px;
+        vertical-align: middle;
+        line-height: 1;
+        font-size: 0;
+        background-image: url("https://wstatic-cdn.plaync.com/uikit/nccommunity/img/icon/comm-icon-default_@1x.png");
+        background-repeat: no-repeat;
+        opacity: .7;
+    }
+    &.visible {
+        bottom: 18px;
+    }
+}
+
+footer {
+    color: #fff;
+    background-color: #3b3e43;
+    text-align: center;
+    padding: 60px 0;
+}
+
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+  }
+  @keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+  }
