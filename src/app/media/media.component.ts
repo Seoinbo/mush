@@ -42,6 +42,7 @@ export class MediaComponent {
             }
         }
 
+        // Play switching animations.
         let that = this;
         this.videoSwitched = false;
         this.videoSwitchLock = true;
