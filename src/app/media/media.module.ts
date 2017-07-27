@@ -4,8 +4,6 @@ import { NgArrayPipesModule } from 'ngx-pipes';
 
 import { MediaComponent } from './Media.component';
 
-
-
 @NgModule({
   declarations: [
     MediaComponent,
