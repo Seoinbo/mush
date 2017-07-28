@@ -1,13 +1,9 @@
-<div class="screen" [class.video-switching]="videoSwitched">
-    <div class="video" [style.visibility]="videoSwitchLock ? 'hidden' : 'visible'">
-        <div class="source"><img src="{{selected.src}}"/></div>
-        <div class="msg">
-            <h2>{{videoTitle}}</h2>
-            <p>{{videoDescription}}</p>
-        </div>
+<div class="carousel">
+    <div *ngFor="let video of videos | reverse" class="box" data-type="a" [title]="video.title" [date]="dateFormat(video.time)" [image]="video.src">
     </div>
 </div>
-<div class="media-nav">
-    <a *ngFor="let video of videos | reverse" [class.active]="selected.id == video.id" href="#" (click)="loadVideo(video.id)" class="media-load-btn" title="{{video.title}}">{{dateFormat(video.time)}}</a>
-    <a class="media-load-btn" id="media-more">more</a>
+<div class="nav">
+    <div class="buttons">
+    <a class="prev" href="#">PREV</a>
+    <a class="next" href="#">NEXT</a>
 </div>

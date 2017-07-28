@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
 import { Data } from '../data';
 
-declare const moment: any;
-declare const $: any;
+declare const moment: any
 
 @Component({
     selector: '.media',
@@ -24,17 +24,7 @@ export class MediaComponent {
 
     constructor() {
         this.videos = Data.get("media");
-        this.loadVideo(this.videos[this.videos.length - 1].id);
-    }
-
-    ngAfterViewInit() {
-        $('.carousel').slick({
-            infinite: false,
-            centerMode: true,
-            variableWidth: true,
-            prevArrow: ".media .nav .buttons .prev",
-            nextArrow: ".media .nav .buttons .next"
-        });
+        this.loadVideo(this.videos[this.videos.length-1].id);
     }
 
     loadVideo(vid: number): boolean {
@@ -50,18 +40,18 @@ export class MediaComponent {
         let that = this;
         this.videoSwitched = false;
         this.videoSwitchLock = true;
-        this.timer1 = setTimeout(function () {
+        this.timer1 = setTimeout( function() {
             that.videoSwitchLock = false;
         }, 250);
         if (this.timer2 && this.timer2.state == "scheduled") {
             clearTimeout(this.timer2);
         }
-        this.timer2 = setTimeout(function () {
+        this.timer2 = setTimeout( function() {
             if (that.timer3 && that.timer3.state == "scheduled") {
                 clearTimeout(that.timer3);
             }
             that.videoSwitched = true;
-            that.timer3 = setTimeout(function () {
+            that.timer3 = setTimeout( function() {
                 that.videoSwitched = false;
             }, 7000);
         }, 200);
