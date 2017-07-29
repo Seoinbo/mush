@@ -1,6 +1,10 @@
 <div class="carousel">
-    <div *ngFor="let video of videos | reverse" class="box" data-type="a" [title]="video.title" [date]="dateFormat(video.time)" [image]="video.src">
-    </div>
+    <ng-template ngFor let-video [ngForOf]="videos | reverse">
+        <div *ngIf="video.type=='a'" class="box" data-type="a" [title]="video.title" [date]="dateFormat(video.time)" [image]="video.src"></div>
+        <div *ngIf="video.type=='b'" class="box" data-type="b" [title]="video.title" [date]="dateFormat(video.time)" [image]="video.src"></div>
+        <div *ngIf="video.type=='c'" class="box" data-type="c" [title]="video.title" [date]="dateFormat(video.time)" [image]="video.src"></div>
+        <div *ngIf="video.type=='d'" class="box" data-type="d" [title]="video.title" [date]="dateFormat(video.time)" [image]="video.src"></div>
+    </ng-template>
 </div>
 <div class="nav">
     <div class="buttons">
