@@ -2,19 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { NgArrayPipesModule } from 'ngx-pipes';
 
+import { NgSwitch } from '@angular/common';
+
 import { MediaComponent } from './Media.component';
 import { BoxAComponent } from './boxa.component';
-// import { BoxBComponent } from './boxb.component';
-// import { BoxCComponent } from './boxc.component';
-// import { BoxDComponent } from './boxd.component';
+import { BoxBComponent } from './boxb.component';
+import { BoxCComponent } from './boxc.component';
+import { BoxDComponent } from './boxd.component';
 
 @NgModule({
   declarations: [
     MediaComponent,
     BoxAComponent,
-    // BoxBComponent,
-    // BoxCComponent,
-    // BoxDComponent
+    BoxBComponent,
+    BoxCComponent,
+    BoxDComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,9 @@ import { BoxAComponent } from './boxa.component';
   exports: [
     MediaComponent
   ],
-  providers: []
+  providers: [NgSwitch],
+  entryComponents: [
+    BoxAComponent
+  ]
 })
 export class MediaModule { }

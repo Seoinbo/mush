@@ -7,11 +7,5 @@ import { Component, Input } from '@angular/core';
 
 export class BoxDComponent {
   @Input()
-  title: string;
-
-  @Input()
-  date: string;
-
-  @Input()
-  image: string;
+  args: any;
 }

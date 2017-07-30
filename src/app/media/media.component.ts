@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Data } from '../data';
+import { BoxAComponent } from './boxa.component';
+
 
 declare const moment: any;
 declare const $: any;
@@ -22,7 +24,11 @@ export class MediaComponent {
     selected: any;
     prevYear: number = 0;
 
+    boxes: any[] = [];
+
     constructor() {
+        this.loadData();
+
         this.videos = Data.get("media");
         this.loadVideo(this.videos[this.videos.length - 1].id);
     }
@@ -35,6 +41,20 @@ export class MediaComponent {
             prevArrow: ".media .nav .buttons .prev",
             nextArrow: ".media .nav .buttons .next"
         });
+    }
+
+    loadData() {
+        let data = Data.get("media");
+        for (let row of data) {
+            let type = BoxAComponent;
+            // type.title = "asdf";
+            this.boxes.push({
+                type: row.type,
+                image: row.image,
+                title: row.title,
+                date: this.dateFormat(row.time)
+            });
+        }
     }
 
     loadVideo(vid: number): boolean {
