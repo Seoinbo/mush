@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { NgArrayPipesModule } from 'ngx-pipes';
-
-import { NgSwitch } from '@angular/common';
+import { YoutubePlayerModule } from 'ng2-youtube-player';
 
 import { MediaComponent } from './Media.component';
-import { BoxAComponent } from './boxa.component';
-import { BoxBComponent } from './boxb.component';
-import { BoxCComponent } from './boxc.component';
-import { BoxDComponent } from './boxd.component';
+import { BoxAComponent } from './box/boxa.component';
+import { BoxBComponent } from './box/boxb.component';
+import { BoxCComponent } from './box/boxc.component';
+import { BoxDComponent } from './box/boxd.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +19,12 @@ import { BoxDComponent } from './boxd.component';
   ],
   imports: [
     BrowserModule,
-    NgArrayPipesModule
+    NgArrayPipesModule,
+    YoutubePlayerModule
   ],
   exports: [
     MediaComponent
   ],
-  providers: [NgSwitch],
-  entryComponents: [
-    BoxAComponent
-  ]
+  providers: []
 })
 export class MediaModule { }

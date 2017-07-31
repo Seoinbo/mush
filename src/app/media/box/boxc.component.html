@@ -1,5 +1,5 @@
 <div class="part top">
-    <div class="source"><img src="{{args.image}}" /></div>
+    <div class="source" [style.background-image]="'url('+args.images[0]+')'"></div>
     <div class="cover">
         <div class="typo">
             <h2>{{args.title}}</h2>
@@ -8,7 +8,7 @@
     </div>
 </div>
 <div class="part bottom">
-    <div class="source"><img src="{{args.image}}" /></div>
+    <div class="source" [style.background-image]="'url('+args.images[1]+')'"></div>
     <div class="cover">
         <div class="typo">
             <h2>{{args.title}}</h2>

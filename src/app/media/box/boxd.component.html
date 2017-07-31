@@ -1,5 +1,5 @@
 <div class="part top">
-    <div class="source"><img src="{{args.image}}" /></div>
+    <div class="source" [style.background-image]="'url('+args.images[0]+')'"><iframe width="890" height="501" src="https://www.youtube.com/embed/1iGx2LlKldo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0"></iframe></div>
     <div class="cover">
         <div class="typo">
             <h2>{{args.title}}</h2>
@@ -8,7 +8,7 @@
     </div>
 </div>
 <div class="part bottom">
-    <div class="source"><img src="{{args.image}}" /></div>
+    <div class="source" [style.background-image]="'url('+args.images[1]+')'"></div>
     <div class="cover">
         <div class="typo">
             <h2>{{args.title}}</h2>
@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="part bottom">
-    <div class="source"><img src="{{args.image}}" /></div>
+    <div class="source" [style.background-image]="'url('+args.images[2]+')'"></div>
     <div class="cover">
         <div class="typo">
             <h2>{{args.title}}</h2>

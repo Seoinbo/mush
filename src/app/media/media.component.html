@@ -1,12 +1,14 @@
+<div class="picinfo">
+    <h2>{{selected.title}}</h2>
+    <p>{{selected.date}}</p>
+</div>
 <div class="carousel">
-    <ng-template ngFor let-box [ngForOf]="boxes">
-        <div *ngIf="box.type=='a'" class="box" data-type="a" [args]="box"></div>
-        <div *ngIf="box.type=='b'" class="box" data-type="b" [args]="box"></div>
-        <div *ngIf="box.type=='c'" class="box" data-type="c" [args]="box"></div>
-        <div *ngIf="box.type=='d'" class="box" data-type="d" [args]="box"></div>
-    </ng-template>  
-
-        <!-- <pic-a class="box" [title]="video.title" [date]="dateFormat(video.time)" [image]="video.src"></pic-a> -->
+    <ng-template ngFor let-boxData [ngForOf]="boxes">
+        <div *ngIf="boxData.type=='a'" class="box type-a" [args]="boxData"></div>
+        <div *ngIf="boxData.type=='b'" class="box type-b" [args]="boxData"></div>
+        <div *ngIf="boxData.type=='c'" class="box type-c" [args]="boxData"></div>
+        <div *ngIf="boxData.type=='d'" class="box type-d" [args]="boxData"></div>
+    </ng-template>
 </div>
 <div class="nav">
     <div class="buttons">

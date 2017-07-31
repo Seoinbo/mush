@@ -7,8 +7,8 @@ export class Data {
                 title: "Introducing Daydream",
                 desc: "Simple, high quality virtual reality",
                 time: 1472914800, // 20160904
-                video: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg"
+                video: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
+                image: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg"
             }, {
                 id: 2,
                 type: "b",
@@ -35,7 +35,7 @@ export class Data {
                 image: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg"
             }, {
                 id: 5,
-                type: "a",
+                type: "d",
                 title: "Get the latest news",
                 desc: "By clicking Sign Up",
                 time: 1496415600, // 20170603
@@ -43,20 +43,28 @@ export class Data {
                 image: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg"
             }, {
                 id: 6,
-                type: "a",
+                type: "d",
+                title: "Google VR Blog",
+                desc: "Product Safety, Warranty and Regulatory Information",
+                time: 1500390000, // 20170719
+                video: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
+                image: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg"
+            }, {
+                id: 7,
+                type: "d",
                 title: "Google VR Blog",
                 desc: "Product Safety, Warranty and Regulatory Information",
                 time: 1500390000, // 20170719
                 video: "https://www.dothome.co.kr/static/images/main/main-slide14.jpg",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide14.jpg"
             }, {
-                id: 7,
+                id: 8,
                 type: "a",
                 title: "Easy-to-use",
                 desc: "Everything you need is built into the headset—just pick it up and hop right into VR",
                 time: 1501513200, // 20170801
-                video: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg"
+                video: "1iGx2LlKldo",
+                image: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg"
             }
         ]
     };
