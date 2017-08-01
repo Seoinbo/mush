@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList } from '@angular/core';
+import { BoxComponent } from './box.component';
+
 import { Data } from '../data';
+
 
 declare const moment: any;
 declare const $: any;
@@ -10,12 +13,15 @@ declare const $: any;
 })
 
 export class MediaComponent {
-    boxes: any[] = [];
-    selected: any;
+    @ViewChildren(BoxComponent)
+    protected boxComponents: QueryList<BoxComponent>;
+
+    protected boxes: any[] = [];
+    protected selected: any;
 
     constructor() {
         this.loadData();
-        this.focus(this.boxes[0].id);
+        this.selected = this.boxes[0];
     }
 
     ngAfterViewInit() {
@@ -27,8 +33,14 @@ export class MediaComponent {
             prevArrow: ".media .nav .buttons .prev",
             nextArrow: ".media .nav .buttons .next"
         }).on("afterChange", function (event, slick, currentSlide) {
-            that.focus(that.boxes[currentSlide].id);
+            that.focus(currentSlide);
         });
+
+        // Focus first slide.
+        setTimeout( function() {
+            that.focus(0);
+        }, 1000);
+
     }
 
     loadData() {
@@ -51,15 +63,17 @@ export class MediaComponent {
             this.boxes[i].videos.push(row.video);
             prevType = row.type;
         }
-        console.log(this.boxes)
     }
 
-    focus(id: number): boolean {
-        for (let v of this.boxes) {
-            if (v.id == id) {
-                this.selected = v;
+    focus(index: number): boolean {
+        this.boxComponents.forEach( function (box, i, arr) {
+            if (index == i) {
+                box.focusIn();
+            } else {
+                box.focusOut();
             }
-        }
+        });
+        this.selected = this.boxes[index];
         return false;
     }
 

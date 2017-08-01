@@ -4,18 +4,12 @@ import { NgArrayPipesModule } from 'ngx-pipes';
 import { YoutubePlayerModule } from 'ng2-youtube-player';
 
 import { MediaComponent } from './Media.component';
-import { BoxAComponent } from './box/boxa.component';
-import { BoxBComponent } from './box/boxb.component';
-import { BoxCComponent } from './box/boxc.component';
-import { BoxDComponent } from './box/boxd.component';
+import { BoxComponent } from './box.component';
 
 @NgModule({
   declarations: [
     MediaComponent,
-    BoxAComponent,
-    BoxBComponent,
-    BoxCComponent,
-    BoxDComponent
+    BoxComponent
   ],
   imports: [
     BrowserModule,

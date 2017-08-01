@@ -3,12 +3,7 @@
     <p>{{selected.date}}</p>
 </div>
 <div class="carousel">
-    <ng-template ngFor let-boxData [ngForOf]="boxes">
-        <div *ngIf="boxData.type=='a'" class="box type-a" [args]="boxData"></div>
-        <div *ngIf="boxData.type=='b'" class="box type-b" [args]="boxData"></div>
-        <div *ngIf="boxData.type=='c'" class="box type-c" [args]="boxData"></div>
-        <div *ngIf="boxData.type=='d'" class="box type-d" [args]="boxData"></div>
-    </ng-template>
+    <div *ngFor="let boxData of boxes" class="box type-{{boxData.type}}" [args]="boxData"></div>
 </div>
 <div class="nav">
     <div class="buttons">

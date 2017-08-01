@@ -7,7 +7,7 @@ export class Data {
                 title: "Introducing Daydream",
                 desc: "Simple, high quality virtual reality",
                 time: 1472914800, // 20160904
-                video: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
+                video: "t-B3_iCLVHg",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg"
             }, {
                 id: 2,
@@ -15,7 +15,7 @@ export class Data {
                 title: "Standalone VR headsets with Daydream",
                 desc: "Experience Daydream standalone headsets built with our partners HTC VIVE",
                 time: 1479049200, // 20161114
-                video: "https://www.dothome.co.kr/static/images/main/main-slide10.jpg",
+                video: "",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide10.jpg"
             }, {
                 id: 3,
@@ -23,7 +23,7 @@ export class Data {
                 title: "Lean more",
                 desc: "a leader in VR, and Lenovo, a leader in mobile & computing innovation",
                 time: 1484665200, // 20170118
-                video: "https://www.dothome.co.kr/static/images/main/main-slide11.jpg",
+                video: "99riHQyN4jw",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide11.jpg"
             }, {
                 id: 4,
@@ -31,7 +31,7 @@ export class Data {
                 title: "Bigger ahhhhs",
                 desc: "Explore new worlds, kick back in your personal VR cinema, and play games that put you in the center of the action",
                 time: 1490626800, // 20170328
-                video: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg",
+                video: "",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg"
             }, {
                 id: 5,
@@ -39,7 +39,7 @@ export class Data {
                 title: "Get the latest news",
                 desc: "By clicking Sign Up",
                 time: 1496415600, // 20170603
-                video: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
+                video: "",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg"
             }, {
                 id: 6,
@@ -47,7 +47,7 @@ export class Data {
                 title: "Google VR Blog",
                 desc: "Product Safety, Warranty and Regulatory Information",
                 time: 1500390000, // 20170719
-                video: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
+                video: "",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg"
             }, {
                 id: 7,
@@ -55,7 +55,7 @@ export class Data {
                 title: "Google VR Blog",
                 desc: "Product Safety, Warranty and Regulatory Information",
                 time: 1500390000, // 20170719
-                video: "https://www.dothome.co.kr/static/images/main/main-slide14.jpg",
+                video: "vceapOCJVRY",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide14.jpg"
             }, {
                 id: 8,

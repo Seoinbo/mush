@@ -43,6 +43,8 @@ header {
     & .menu {
         position: relative;
         top: 50%;
+        width: 420px;
+        margin: 0 auto;
         margin-top: -15px;
         // float: right;
         & ul {
@@ -126,21 +128,24 @@ header {
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
-                background: #e1e1e1 no-repeat center bottom/cover;
+                background: #000;
                 & youtube-player {
                     position: absolute;
                     top: 50%;
-                    transform: translate(0, -50%) scale(1.15, 1.15);
+                    transform: translate(0, -50%) scale(1.2, 1.2);
                 }
             }
             & .cover {
                 position: absolute;
                 display: table;
+                // display: none;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                // background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNFN0VFOTY2RURBNjExRTY4OEMxOENDNThBNkM4NzgwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNFN0VFOTY3RURBNjExRTY4OEMxOENDNThBNkM4NzgwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0U3RUU5NjRFREE2MTFFNjg4QzE4Q0M1OEE2Qzg3ODAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0U3RUU5NjVFREE2MTFFNjg4QzE4Q0M1OEE2Qzg3ODAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6EonRtAAAAJUlEQVR42mLUM3ZmAIJlQBwFYjAhcUA0AyNUBQwsg6mAawMIMADY/AZBY1h5aQAAAABJRU5ErkJggg==") repeat 0 0;
+                overflow: hidden;
+                background: transparent no-repeat center bottom/cover;
+                @include transition(all .6s ease);
                 & .typo {
                     // display: table-cell;
                     display: none !important;
@@ -154,6 +159,9 @@ header {
                         margin: 7px 0 0 0;
                         font-size: 15px;
                     }
+                }
+                &.cover-fade-out {
+                    opacity: 0;
                 }
             }
             &.type-a {

@@ -10,8 +10,7 @@ export class MenuComponent {
     {title: "MENU1", href: "#menu1", target: "_self", selected: false},
     {title: "MENU2", href: "#menu2", target: "_self", selected: false},
     {title: "MENU3", href: "#menu3", target: "_self", selected: false},
-    {title: "MENU4", href: "#menu4", target: "_self", selected: false},
-    {title: "BLOG", href: "#blog", target: "_blank", selected: false}
+    {title: "MENU4", href: "#menu4", target: "_self", selected: false}
   ];
 
   ngOnInit() {
