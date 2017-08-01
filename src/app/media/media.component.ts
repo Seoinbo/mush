@@ -39,7 +39,7 @@ export class MediaComponent {
         // Focus first slide.
         setTimeout( function() {
             that.focus(0);
-        }, 1000);
+        }, 2000);
 
     }
 

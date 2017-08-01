@@ -63,7 +63,7 @@ export class Data {
                 title: "Easy-to-use",
                 desc: "Everything you need is built into the headset—just pick it up and hop right into VR",
                 time: 1501513200, // 20170801
-                video: "1iGx2LlKldo",
+                video: "n8d79M0LtfY",
                 image: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg"
             }
         ]
