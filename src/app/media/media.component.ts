@@ -1,5 +1,6 @@
-import { Component, ViewChildren, QueryList } from '@angular/core';
+import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { BoxComponent } from './box.component';
+import { HeaderComponent } from '../header/header.component';
 
 import { Data } from '../data';
 
@@ -16,8 +17,18 @@ export class MediaComponent {
     @ViewChildren(BoxComponent)
     protected boxComponents: QueryList<BoxComponent>;
 
+    @ViewChild(HeaderComponent)
+    protected headerComponent: HeaderComponent;
+
+    private dbOffset: number = 0;
+    private dbLimit: number = 4;
+    private boxCount: number = 0;
+    private preloadCount: number = 2;
     protected boxes: any[] = [];
     protected selected: any;
+
+    private navHidden: boolean = false;
+    private picinfoHidden: boolean = true;
 
     constructor() {
         this.loadData();
@@ -32,7 +43,24 @@ export class MediaComponent {
             variableWidth: true,
             prevArrow: ".media .nav .buttons .prev",
             nextArrow: ".media .nav .buttons .next"
+        }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            // Toggle visiblity via picinfo top.
+            if (nextSlide <= 0 || nextSlide >= that.boxCount -1) {
+                that.picinfoHidden = true;
+                $("header").removeClass("hidden");
+            } else {
+                that.picinfoHidden = false;
+                $("header").addClass("hidden");
+            }
         }).on("afterChange", function (event, slick, currentSlide) {
+            // Load more boxes.
+            if (currentSlide + 1 + that.preloadCount >= that.boxCount) {
+                that.loadData(2);
+                setTimeout(function () {
+                    slick.reinit();
+                }, 250);
+            }
+
             that.focus(currentSlide);
         });
 
@@ -43,26 +71,24 @@ export class MediaComponent {
 
     }
 
-    loadData() {
-        let data = Data.get("media").reverse();
-        let prevType = null;
-        let i = -1;
+    loadData(limit: number = this.dbLimit) {
+        let data = Data.get("media", this.dbOffset, limit);
         for (let row of data) {
-            if (prevType != row.type) {
-                i++;
-                this.boxes[i] = {
-                    id: row.id,
-                    type: row.type,
-                    images: [],
-                    videos: [],
-                    title: row.title,
-                    date: this.dateFormat(row.time)
-                };
-            }
-            this.boxes[i].images.push(row.image);
-            this.boxes[i].videos.push(row.video);
-            prevType = row.type;
+            this.addItem(row);
         }
+    }
+
+    addItem(item) {
+        this.boxes.push({
+            id: item.id,
+            type: item.type,
+            images: item.images.split(","),
+            videos: item.videos.split(","),
+            title: item.title,
+            date: this.dateFormat(item.time)
+        });
+        this.boxCount++;
+        this.dbOffset++;
     }
 
     focus(index: number): boolean {

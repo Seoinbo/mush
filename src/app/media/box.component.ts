@@ -43,7 +43,7 @@ export class BoxComponent {
     }
 
     focusOut () {
-        this.pause();
+        this.stop();
     }
 
     play() {
@@ -61,7 +61,7 @@ export class BoxComponent {
                 player.playVideo();
                 setTimeout( function() {
                     that.hideCover();
-                }, 1000);
+                }, 600);
             }
         });
     }
@@ -72,10 +72,28 @@ export class BoxComponent {
         });
     }
 
+    stop() {
+        let that = this;
+        this.players.forEach( function(player) {
+            that.showCover();
+            setTimeout( function () {
+                player.stopVideo();
+            }, 650);
+        });
+    }
+
     hideCover() {
         for (let i = 0; i < 3; i++) {
             if (this.players[i]) {
                 this.coverHidden[i] = true;
+            }
+        }
+    }
+
+    showCover() {
+        for (let i = 0; i < 3; i++) {
+            if (this.players[i]) {
+                this.coverHidden[i] = false;
             }
         }
     }

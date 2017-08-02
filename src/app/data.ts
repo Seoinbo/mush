@@ -6,71 +6,66 @@ export class Data {
                 type: "a",
                 title: "Introducing Daydream",
                 desc: "Simple, high quality virtual reality",
-                time: 1472914800, // 20160904
-                video: "t-B3_iCLVHg",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg"
+                videos: "rA1_TKtbqAE",
+                images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
+                time: 1472914800 // 20160904
             }, {
                 id: 2,
                 type: "b",
                 title: "Standalone VR headsets with Daydream",
                 desc: "Experience Daydream standalone headsets built with our partners HTC VIVE",
-                time: 1479049200, // 20161114
-                video: "",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide10.jpg"
+                videos: "",
+                images: "https://www.dothome.co.kr/static/images/main/main-slide10.jpg",
+                time: 1479049200 // 20161114
             }, {
                 id: 3,
-                type: "c",
-                title: "Lean more",
-                desc: "a leader in VR, and Lenovo, a leader in mobile & computing innovation",
-                time: 1484665200, // 20170118
-                video: "99riHQyN4jw",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide11.jpg"
+                type: "a",
+                title: "Introducing Daydream",
+                desc: "Simple, high quality virtual reality",
+                videos: "t-B3_iCLVHg",
+                images: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
+                time: 1472914800 // 20160904
             }, {
                 id: 4,
                 type: "c",
-                title: "Bigger ahhhhs",
-                desc: "Explore new worlds, kick back in your personal VR cinema, and play games that put you in the center of the action",
-                time: 1490626800, // 20170328
-                video: "",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg"
+                title: "Lean more",
+                desc: "a leader in VR, and Lenovo, a leader in mobile & computing innovation",
+                videos: ",99riHQyN4jw",
+                images: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg,https://www.dothome.co.kr/static/images/main/main-slide11.jpg",
+                time: 1484665200 // 20170118
             }, {
                 id: 5,
-                type: "d",
+                type: "b",
                 title: "Get the latest news",
                 desc: "By clicking Sign Up",
-                time: 1496415600, // 20170603
-                video: "",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg"
+                videos: "",
+                images: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg",
+                time: 1496415600 // 20170603
             }, {
                 id: 6,
-                type: "d",
-                title: "Google VR Blog",
-                desc: "Product Safety, Warranty and Regulatory Information",
-                time: 1500390000, // 20170719
-                video: "",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg"
-            }, {
-                id: 7,
-                type: "d",
-                title: "Google VR Blog",
-                desc: "Product Safety, Warranty and Regulatory Information",
-                time: 1500390000, // 20170719
-                video: "vceapOCJVRY",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide14.jpg"
-            }, {
-                id: 8,
                 type: "a",
                 title: "Easy-to-use",
                 desc: "Everything you need is built into the headset—just pick it up and hop right into VR",
-                time: 1501513200, // 20170801
-                video: "n8d79M0LtfY",
-                image: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg"
+                videos: "n8d79M0LtfY",
+                images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
+                time: 1501513200 // 20170801
             }
         ]
     };
 
-    static get(type: string) {
-        return this._data[type];
+    static get(type: string, offset:number = 0, limit: number = -1) {
+        if (limit < 0) {
+            limit = 9999;
+        }
+        let rows = [];
+        let len = this._data[type].length;
+        for (let i = offset, n = 0; i < len; i++, n++) {
+            if (n >= limit) {
+                break;
+            }
+            rows.push(this._data[type][i]);
+        }
+        return rows;
     }
 }
 

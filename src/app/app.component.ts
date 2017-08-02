@@ -13,10 +13,10 @@ export class AppComponent {
     title = 'app';
 
     // class flag
-    topNavfloating: boolean = false;
-    topButtonVisible: boolean = false;
+    private topNavfloating: boolean = false;
+    private topButtonVisible: boolean = false;
 
-    document: Document;
+    protected document: Document;
 
     constructor( @Inject(Windoc) private windoc: Windoc) {
         this.document = this.windoc.document();
