@@ -1,42 +1,59 @@
+@charset "utf-8";
 @import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
 
-$fontStack: 'Noto Sans KR', "Roboto","Helvetica",arial,sans-serif;
-$pageWidth: 980px;
-$topNavHeight: 75px;
-
 body {
-    font-family: $fontStack;
+    font-family: 'Noto Sans KR', "Roboto","Helvetica",arial,sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 15px;
-    line-height: 32px;
     color: #555;
 }
-h2 {
+img {
+    border:0;
+}
+button {
+    margin:0;
+    padding:0;
+    border:0;
+}
+h2, h3, h4 {
     font-weight: normal;
 }
-a {text-decoration:none;}
-a:active {text-decoration:none;}
-a:link {text-decoration:none;}
-a:visited {text-decoration:none;}
-a:hover {text-decoration:underline;}
-a, a:link, a:visited, a:hover, a:active, a:focus {color:inherit;}
+a {
+    text-decoration: none;
+    color:inherit;
+    &:active {
+        text-decoration: none;
+        color:inherit;
+    }
+    &:link {
+        text-decoration: none;
+        color:inherit;
+    }
+    &:visited {
+        text-decoration: none;
+        color:inherit;
+    }
+    &:hover {
+        text-decoration: underline;
+        color:inherit;
+    }
+}
 
 header {
     position: fixed;
     z-index: 10;
     top: 0;
     width: 100%;
-    height: $topNavHeight;
-    background: #fff;
-    border-bottom: 1px solid #fff;
+    height: 75px;
+    background: transparent;
     @include transition(opacity .6s ease);
     &.hidden {
         opacity: 0;
     }
     &.floating {
-        border-color: #c1c1c1 !important;
+        border: 1px solid #c1c1c1 !important;
         margin-top: -20px;
+        background: #fff;
         opacity: 1 !important;
     }
     & .logo {
@@ -44,19 +61,19 @@ header {
         float: left;
         top: 50%;
         margin-top: -15px;
+        margin-left: 25px;
         & h2 {
             margin: 10px 35px;
-            font-size: 17px;
+            font-size: 19px;
         }
     }
     & .menu {
         position: relative;
         top: 50%;
         width: 430px;
-        // margin: 0 auto;
-        float: right;
         margin-top: -15px;
-        // float: right;
+        margin-right: 20px;
+        float: right;
         & ul {
             margin: 0;
             padding: 0;
@@ -74,9 +91,6 @@ header {
                         text-decoration: underline;
                     }
                 }
-                &:last-child {
-                    margin-right: 50px;
-                }
             }
         }
     }
@@ -84,7 +98,7 @@ header {
 
 .content {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 50px;
     & .title {
         text-align: center;
     }
@@ -107,7 +121,6 @@ header {
     margin: 10px 0 45px 0;
     & .picinfo.top {
         text-align: center;
-        @include transition(all .35s ease);
         & h2 {
             margin-bottom: 0;
             font-size: 24px;
@@ -120,37 +133,6 @@ header {
             opacity: 0;
         }
     }
-    & .picinfo.left {
-        float: left;
-        width: 50%;
-        margin-top: 210px;
-        margin-left: -220px;
-        text-align: center;
-        & h2 {
-            margin-bottom: 0;
-            font-size: 24px;
-        }
-        & p {
-            margin: 5px 0 0 0;
-            font-size: 13px;
-        }
-    }
-    & .picinfo.right {
-        float: right;
-        text-align: center;
-
-        margin-top: 210px;
-        margin-right: 220px;
-        & h2 {
-            margin-bottom: 0;
-            font-size: 24px;
-        }
-        & p {
-            margin: 5px 0 0 0;
-            font-size: 13px;
-        }
-    }
-
     & .picstream {
         position: relative;
         width: 100%;
@@ -163,7 +145,63 @@ header {
             left: 0;
             width: 100%;
             height: 100%;
-            // background: #eee;
+            background: #eee;
+            & .left-side {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                float: left;
+                width: 50%;
+                height: 100%;
+                &.wideType {
+                    margin-left: -220px;
+                }
+                &.halfType {
+                    margin-left: -110px;
+                }
+                & .picinfo {
+                    max-width: 270px;
+                    padding: 0 25px;
+                    margin: 0 auto;
+                    text-align: left;
+                    & h2 {
+                        margin-bottom: 0;
+                        font-size: 24px;
+                    }
+                    & p {
+                        margin: 15px 0 0 0;
+                        font-size: 13px;
+                    }
+                }
+            }
+            & .right-side {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                float: right;
+                width: 50%;
+                height: 100%;
+                &.wideType {
+                    margin-right: -220px;
+                }
+                &.halfType {
+                    margin-right: -110px;
+                }
+                & .picinfo {
+                    max-width: 270px;
+                    padding: 0 25px;
+                    margin: 0 auto;
+                    text-align: left;
+                    & h2 {
+                        margin-bottom: 0;
+                        font-size: 24px;
+                    }
+                    & p {
+                        margin: 15px 0 0 0;
+                        font-size: 13px;
+                    }
+                }
+            }
         }
         & .carousel {
             position: relative;
@@ -197,7 +235,6 @@ header {
                     height: 100%;
                     overflow: hidden;
                     background: transparent no-repeat center bottom/cover;
-                    @include transition(all .6s ease);
                     & .typo {
                         // display: table-cell;
                         display: none !important;
@@ -211,9 +248,6 @@ header {
                             margin: 7px 0 0 0;
                             font-size: 15px;
                         }
-                    }
-                    &.cover-fade-out {
-                        opacity: 0;
                     }
                 }
                 &.type-a {
@@ -364,7 +398,7 @@ header {
     @include transition(all 0.25s ease);
     & .cart-box {
         margin: 30px auto;
-        max-width: $pageWidth;
+        max-width: 980;
         & .bill {
             float: left;
             margin-left: 150px;
@@ -428,32 +462,4 @@ footer {
     background-color: #3b3e43;
     text-align: center;
     padding: 60px 0;
-}
-
-
-@-webkit-keyframes fade-out {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-@keyframes fade-out {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-}
-
-@-webkit-keyframes scale-in {
-  0% {transform: scale(1.2);}
-  100% {transform: scale(1.1);}
-}
-@keyframes scale-in {
-  0% {transform: scale(1.2);}
-  100% {transform: scale(1.1);}
-}
-
-@-webkit-keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-@keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
 }

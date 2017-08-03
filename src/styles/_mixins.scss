@@ -1,40 +1,72 @@
 @mixin transition($transition...) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
     -webkit-transition: $transition;
-    transition:         $transition;
+    transition: $transition;
 }
 
 // generic transform
 @mixin transform($transforms) {
-	   -moz-transform: $transforms;
-	     -o-transform: $transforms;
-	    -ms-transform: $transforms;
-	-webkit-transform: $transforms;
-          transform: $transforms;
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
 }
+
 // rotate
 @mixin rotate ($deg) {
-  @include transform(rotate(#{$deg}deg));
+    @include transform(rotate(#{$deg}deg));
 }
- 
+
 // scale
 @mixin scale($scale) {
-	 @include transform(scale($scale));
-} 
+    @include transform(scale($scale));
+}
+
 // translate
 @mixin translate ($x, $y) {
-   @include transform(translate($x, $y));
+    @include transform(translate($x, $y));
 }
+
 // skew
 @mixin skew ($x, $y) {
-   @include transform(skew(#{$x}deg, #{$y}deg));
+    @include transform(skew(#{$x}deg, #{$y}deg));
 }
+
 //transform origin
 @mixin transform-origin ($origin) {
-    moz-transform-origin: $origin;
-	     -o-transform-origin: $origin;
-	    -ms-transform-origin: $origin;
-	-webkit-transform-origin: $origin;
-          transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
 }
+
+@-webkit-keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+@keyframes fade-out {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes scale-in {
+  0% {transform: scale(1.2);}
+  100% {transform: scale(1.1);}
+}
+@keyframes scale-in {
+  0% {transform: scale(1.2);}
+  100% {transform: scale(1.1);}
+}
+
+@-webkit-keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+

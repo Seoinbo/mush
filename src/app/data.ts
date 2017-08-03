@@ -4,8 +4,8 @@ export class Data {
             {
                 id: 1,
                 type: "a",
-                title: "Introducing Daydream",
-                desc: "Simple, high quality virtual reality",
+                title: "Introducing Daydream. Simple and high quality!",
+                desc: "Experience Daydream standalone headsets built with our partners HTC VIVE.",
                 videos: "rA1_TKtbqAE",
                 images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
                 time: 1472914800 // 20160904
@@ -44,9 +44,9 @@ export class Data {
             }, {
                 id: 6,
                 type: "a",
-                title: "Easy-to-use",
+                title: "Hop right into VR",
                 desc: "Everything you need is built into the headset—just pick it up and hop right into VR",
-                videos: "n8d79M0LtfY",
+                videos: "n8d79M0LtfY", // n8d79M0LtfY
                 images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
                 time: 1501513200 // 20170801
             }

@@ -1,8 +1,21 @@
 import { Component, Input } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
     selector: 'div.box',
-    templateUrl: './box.component.html'
+    templateUrl: './box.component.html',
+    animations: [
+        trigger('coverViewState', [
+            state('inactive', style({
+                opacity: 0
+            })),
+            state('active',   style({
+                opacity: 1
+            })),
+            transition('inactive => active', animate('600ms ease')),
+            transition('active => inactive', animate('600ms ease'))
+        ])
+    ]
 })
 
 export class BoxComponent {
@@ -20,12 +33,17 @@ export class BoxComponent {
         showinfo: 0,
         autoplay: 0
     }
+    private playerReady: boolean[] = [false, false];
 
-    private coverHidden: boolean[] = [false, false, false];
-    private playerReady: boolean[] = [false, false, false];
+    // for animations
+    private coverViewStates: string[] = ["active", "active"];
+
+    // Timers
+    private playTimer;
+    private stopTimer;
+    private coverHideTimer;
 
     setPlayer(p: YT.Player, i: number) {
-        let that = this;
         this.players[i] = p;
         p.cuePlaylist(this.args.videos[i]);
         p.setLoop(true);
@@ -47,19 +65,22 @@ export class BoxComponent {
     }
 
     play() {
+        // Stop duplicated timer
+        clearTimeout(this.stopTimer);
+
         let that = this;
         this.players.forEach( function(player, i) {
             if (that.playerReady[i] == false) {
-                setTimeout( function() {
+                that.playTimer = setTimeout( function() {
                     player.playVideo();
                     that.playerReady[i] = true;
+                    that.coverHideTimer = setTimeout( function() {
+                        that.hideCover();
+                    }, 600);
                 }, 500);
-                setTimeout( function() {
-                    that.hideCover();
-                }, 1500);
             } else {
                 player.playVideo();
-                setTimeout( function() {
+                that.coverHideTimer = setTimeout( function() {
                     that.hideCover();
                 }, 600);
             }
@@ -73,27 +94,31 @@ export class BoxComponent {
     }
 
     stop() {
+        // Stop duplicated timer
+        clearTimeout(this.playTimer);
+        clearTimeout(this.coverHideTimer);
+
         let that = this;
         this.players.forEach( function(player) {
             that.showCover();
-            setTimeout( function () {
+            that.stopTimer = setTimeout( function () {
                 player.stopVideo();
             }, 650);
         });
     }
 
     hideCover() {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             if (this.players[i]) {
-                this.coverHidden[i] = true;
+                this.coverViewStates[i] = "inactive";
             }
         }
     }
 
     showCover() {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             if (this.players[i]) {
-                this.coverHidden[i] = false;
+                this.coverViewStates[i] = "active";
             }
         }
     }

@@ -1,11 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-
-import { Windoc } from "./services/Windoc";
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Windoc } from "./services/windoc";
 import { AppComponent } from './app.component';
-
 import { NgModule } from '@angular/core';
-
 import { HeaderModule } from './header/header.module';
 import { IntroModule } from './intro/intro.module';
 import { MediaModule } from './media/media.module';
@@ -21,6 +18,7 @@ import { FooterModule } from './footer/footer.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HeaderModule,
     IntroModule,
     MediaModule,

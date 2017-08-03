@@ -1,17 +1,30 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { BoxComponent } from './box.component';
 import { HeaderComponent } from '../header/header.component';
-
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Data } from '../data';
-
 
 declare const moment: any;
 declare const $: any;
 
 @Component({
     selector: '.media',
-    templateUrl: './media.component.html'
+    templateUrl: './media.component.html',
+    animations: [
+        trigger('viewState', [
+            state('inactive', style({
+                opacity: 0
+            })),
+            state('active',   style({
+                opacity: 1
+            })),
+            transition('inactive => active', animate('350ms ease')),
+            transition('active => inactive', animate('350ms ease'))
+        ])
+    ]
 })
+
+
 
 export class MediaComponent {
     @ViewChildren(BoxComponent)
@@ -26,13 +39,25 @@ export class MediaComponent {
     private preloadCount: number = 2;
     protected boxes: any[] = [];
     protected selected: any;
+    protected picTitle: string = "";
+    protected picDate: string = "";
 
+    private bgTextType: string = "wideType";
+
+    // for animations
+    private viewState: string = 'inactive';
     private navHidden: boolean = false;
-    private picinfoHidden: boolean = true;
 
     constructor() {
         this.loadData();
-        this.selected = this.boxes[0];
+        this.selectItem(0);
+
+        // 배경 텍스트의 크기 타입 설정
+        if (this.boxes[0].type == 'a') {
+            this.bgTextType = 'wideType';
+        } else {
+            this.bgTextType = 'halfType';
+        }
     }
 
     ngAfterViewInit() {
@@ -46,10 +71,10 @@ export class MediaComponent {
         }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
             // Toggle visiblity via picinfo top.
             if (nextSlide <= 0 || nextSlide >= that.boxCount -1) {
-                that.picinfoHidden = true;
+                that.viewState = 'inactive';
                 $("header").removeClass("hidden");
             } else {
-                that.picinfoHidden = false;
+                that.viewState = 'active';
                 $("header").addClass("hidden");
             }
         }).on("afterChange", function (event, slick, currentSlide) {
@@ -85,10 +110,25 @@ export class MediaComponent {
             images: item.images.split(","),
             videos: item.videos.split(","),
             title: item.title,
+            desc: item.desc,
             date: this.dateFormat(item.time)
         });
         this.boxCount++;
         this.dbOffset++;
+    }
+
+    selectItem(i) {
+        this.selected = this.boxes[i];
+        if (i <= 0) {
+            this.picTitle = this.boxes[i+1].title;
+            this.picDate = this.boxes[i+1].date;
+        } else {
+            if (this.viewState == 'inactive') {
+                return;
+            }
+            this.picTitle = this.selected.title;
+            this.picDate = this.selected.date;
+        }
     }
 
     focus(index: number): boolean {
@@ -99,7 +139,7 @@ export class MediaComponent {
                 box.focusOut();
             }
         });
-        this.selected = this.boxes[index];
+        this.selectItem(index);
         return false;
     }
 

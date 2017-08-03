@@ -1,5 +1,5 @@
 import { Component, HostListener, Inject } from '@angular/core';
-import { Windoc } from "./services/Windoc";
+import { Windoc } from "./services/windoc";
 
 import * as $ from 'jquery';
 declare const ScrollMagic: any

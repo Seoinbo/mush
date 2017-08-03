@@ -1,20 +1,26 @@
-<div class="picinfo top" [class.hidden]="picinfoHidden">
-    <h2>{{selected.title}}</h2>
-    <p>{{selected.date}}</p>
+<div class="picinfo top" [@viewState]="viewState">
+    <h2>{{picTitle}}</h2>
+    <p>{{picDate}}</p>
 </div>
 <div class="picstream">
     <div class="carousel-bg">
-        <div class="picinfo left">
-            <h2>{{boxes[0].title}}</h2>
-            <p>{{boxes[0].date}}</p>
+        <div class="left-side {{bgTextType}}">
+            <div class="picinfo">
+                <h2>{{boxes[0].title}}</h2>
+                <p>{{boxes[0].desc}}</p>
+                <p>{{boxes[0].date}}</p>
+            </div>
         </div>
-        <div class="picinfo right">
-            <h2>{{boxes[boxes.length-1].title}}</h2>
-            <p>{{boxes[boxes.length-1].date}}</p>
+        <div class="right-side {{bgTextType}}">
+            <div class="picinfo">
+                <h2>{{boxes[boxes.length-1].title}}</h2>
+                <p>{{boxes[boxes.length-1].desc}}</p>
+                <p>{{boxes[boxes.length-1].date}}</p>
+            </div>
         </div>
     </div>
      <div class="carousel">
-        <div *ngFor="let boxData of boxes" class="box type-{{boxData.type}}" [args]="boxData"></div>
+           <div *ngFor="let boxData of boxes" class="box type-{{boxData.type}}" [args]="boxData"></div>
     </div>
     <div class="nav">
         <div class="buttons">
