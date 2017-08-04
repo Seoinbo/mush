@@ -1,5 +1,6 @@
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, ViewChild } from '@angular/core';
 import { Windoc } from "./services/windoc";
+import { MediaComponent } from './media/media.component';
 
 import * as $ from 'jquery';
 declare const ScrollMagic: any
@@ -10,7 +11,11 @@ declare const ScrollMagic: any
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    @ViewChild(MediaComponent)
+    protected mediaComponent: MediaComponent;
+
     title = 'app';
+    protected isMobile: boolean = false;
 
     // class flag
     private topNavfloating: boolean = false;
@@ -47,6 +52,25 @@ export class AppComponent {
             this.topButtonVisible = true;
         }
 
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        let isMobile;
+        let windowWidth = event.target.innerWidth;
+        if (windowWidth > 980) {
+            isMobile = false;
+        } else {
+            isMobile = true;
+        }
+        if (isMobile != this.isMobile) {
+            let deviceType = "desktop";
+            if (isMobile) {
+                deviceType = "mobile";
+            }
+            this.mediaComponent.onChangeDeviceType(deviceType);
+            this.isMobile = isMobile;
+        }
     }
 
     ngAfterViewInit() {

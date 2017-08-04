@@ -1,6 +1,25 @@
 // Mobile mode
 @media screen and (max-width: 980px) {
-
+    header {
+        & .logo {
+            display: none;
+        }
+        & .menu {
+            width: 285px;
+            color: #fff;
+            float: inherit;
+            margin: 0 auto;
+            & ul {
+                & li {
+                    margin: 10px 10px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .content {
+        margin-top: 0;
+    }
 }
 
 @media screen and (min-width: 981px) and (max-width: 1280px) {

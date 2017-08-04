@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
 import { Windoc } from "./services/windoc";
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { FooterModule } from './footer/footer.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    Ng2DeviceDetectorModule.forRoot(),
     HeaderModule,
     IntroModule,
     MediaModule,

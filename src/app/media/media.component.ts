@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { BoxComponent } from './box.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Ng2DeviceService } from 'ng2-device-detector';
 import { DataService } from '../services/data.service';
 
 declare const moment: any;
@@ -27,6 +28,9 @@ export class MediaComponent {
     @ViewChildren(BoxComponent)
     protected boxComponents: QueryList<BoxComponent>;
 
+    // is mobile mode?
+    protected isMobile = false;
+
     private dbOffset: number = 0;
     private dbLimit: number = 4;
     private preloadCount: number = 2;
@@ -44,7 +48,13 @@ export class MediaComponent {
     private prevButtonViewState: string = 'inactive';
     private nextButtonViewState: string = 'inactive';
 
-    constructor(private dataService: DataService) {
+    constructor(private dataService: DataService, private deviceService: Ng2DeviceService) {
+        // Detect device type.
+        let deviceInfo = this.deviceService.getDeviceInfo();
+        if (["android", "iphone"].indexOf(deviceInfo.device) > -1) {
+            this.isMobile = true;
+        }
+
         this.loadDatabase();
         this.changeTitle(0);
 
@@ -63,13 +73,30 @@ export class MediaComponent {
 
     ngAfterViewInit() {
         let that = this;
-        let aa = $(".carousel").slick({
-            infinite: false,
-            centerMode: true,
-            variableWidth: true,
-            prevArrow: ".media .nav .buttons .prev",
-            nextArrow: ".media .nav .buttons .next"
-        }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+
+        // Initiate carousel.
+        if (this.isMobile) {
+            this.slickMobile();
+        } else {
+            this.slickDesktop();
+        }
+
+        // Focus first slide.
+        setTimeout( function() {
+            that.focus(0);
+        }, 2000);
+    }
+
+    initSlick(options) {
+        let that = this;
+        let $carousel = $(".carousel");
+        options.infinite = false;
+        options.prevArrow = ".media .nav .buttons .prev";
+        options.nextArrow = ".media .nav .buttons .next";
+        if ($carousel.hasClass("slick-initialized")) {
+            $carousel.slick("unslick");
+        }
+        $carousel.slick(options).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
             // Toggle visiblity for the picinfo top.
             if (nextSlide <= 0 || nextSlide >= that.boxCount -1) {
                 that.topPicinfoViewState = 'inactive';
@@ -99,25 +126,20 @@ export class MediaComponent {
             }
             that.changeTitle(currentSlide);
         });
+    }
 
-        // Focus first slide.
-        setTimeout( function() {
-            that.focus(0);
-        }, 2000);
+    slickMobile() {
+        this.initSlick({
+            centerMode: false,
+            variableWidth: false
+        });
+    }
 
-        setTimeout( function() {
-            // that.slickOpts.centerMode = false;
-            // that.slickOpts.variableWidth = false;
-            let sli = $(".carousel").slick("getSlick");
-            sli.slickSetOption("centerMode", false);
-            sli.slickSetOption("variableWidth", false);
-            sli.resize();
-            sli.reinit();
-
-            console.log(sli.slickGetOption("variableWidth"));
-
-        }, 3000);
-
+    slickDesktop() {
+        this.initSlick({
+            centerMode: true,
+            variableWidth: true
+        });
     }
 
     loadDatabase(limit: number = this.dbLimit) {
@@ -172,5 +194,16 @@ export class MediaComponent {
     dateFormat(time): string {
         var date = moment(time * 1000);
         return date.format("YYYY.MM");
+    }
+
+    onChangeDeviceType(deviceType: string) {
+        // Reinitiate carousel.
+        if (deviceType == "mobile") {
+            this.isMobile = true;
+            this.slickMobile();
+        } else {
+            this.isMobile = false;
+            this.slickDesktop();
+        }
     }
 }
