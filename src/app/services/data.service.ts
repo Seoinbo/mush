@@ -1,5 +1,8 @@
-export class Data {
-    static _data: any = {
+import { Injectable  } from '@angular/core';
+
+@Injectable()
+export class DataService {
+    _data: any = {
         "media": [
             {
                 id: 1,
@@ -53,7 +56,7 @@ export class Data {
         ]
     };
 
-    static get(type: string, offset:number = 0, limit: number = -1) {
+    get(type: string, offset:number = 0, limit: number = -1) {
         if (limit < 0) {
             limit = 9999;
         }

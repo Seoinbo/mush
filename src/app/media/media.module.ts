@@ -7,6 +7,8 @@ import { YoutubePlayerModule } from 'ng2-youtube-player';
 import { MediaComponent } from './media.component';
 import { BoxComponent } from './box.component';
 
+import { DataService } from '../services/data.service';
+
 @NgModule({
   declarations: [
     MediaComponent,
@@ -21,6 +23,6 @@ import { BoxComponent } from './box.component';
   exports: [
     MediaComponent
   ],
-  providers: []
+  providers: [DataService]
 })
 export class MediaModule { }

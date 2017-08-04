@@ -5,7 +5,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     selector: 'div.box',
     templateUrl: './box.component.html',
     animations: [
-        trigger('coverViewState', [
+        trigger('fade', [
             state('inactive', style({
                 opacity: 0
             })),
@@ -36,7 +36,7 @@ export class BoxComponent {
     private playerReady: boolean[] = [false, false];
 
     // for animations
-    private coverViewStates: string[] = ["active", "active"];
+    private coverImageViewStates: string[] = ["active", "active"];
 
     // Timers
     private playTimer;
@@ -110,7 +110,7 @@ export class BoxComponent {
     hideCover() {
         for (let i = 0; i < 2; i++) {
             if (this.players[i]) {
-                this.coverViewStates[i] = "inactive";
+                this.coverImageViewStates[i] = "inactive";
             }
         }
     }
@@ -118,7 +118,7 @@ export class BoxComponent {
     showCover() {
         for (let i = 0; i < 2; i++) {
             if (this.players[i]) {
-                this.coverViewStates[i] = "active";
+                this.coverImageViewStates[i] = "active";
             }
         }
     }

@@ -1,8 +1,7 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { BoxComponent } from './box.component';
-import { HeaderComponent } from '../header/header.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Data } from '../data';
+import { DataService } from '../services/data.service';
 
 declare const moment: any;
 declare const $: any;
@@ -15,7 +14,7 @@ declare const $: any;
             state('inactive', style({
                 opacity: 0
             })),
-            state('active',   style({
+            state('active', style({
                 opacity: 1
             })),
             transition('inactive => active', animate('350ms ease')),
@@ -24,69 +23,81 @@ declare const $: any;
     ]
 })
 
-
-
 export class MediaComponent {
     @ViewChildren(BoxComponent)
     protected boxComponents: QueryList<BoxComponent>;
 
-    @ViewChild(HeaderComponent)
-    protected headerComponent: HeaderComponent;
-
     private dbOffset: number = 0;
     private dbLimit: number = 4;
-    private boxCount: number = 0;
     private preloadCount: number = 2;
+
     protected boxes: any[] = [];
     protected selected: any;
-    protected picTitle: string = "";
-    protected picDate: string = "";
-
-    private bgTextType: string = "wideType";
+    private boxCount: number = 0;
+    private picTitle: string = "";
+    private picDate: string = "";
+    private mainPicType: string = "wideType";
 
     // for animations
-    private viewState: string = 'inactive';
-    private navHidden: boolean = false;
+    private topPicinfoViewState: string = 'inactive';
+    private mainPicinfoViewState: string = 'active';
+    private prevButtonViewState: string = 'inactive';
+    private nextButtonViewState: string = 'inactive';
 
-    constructor() {
-        this.loadData();
-        this.selectItem(0);
+    constructor(private dataService: DataService) {
+        this.loadDatabase();
+        this.changeTitle(0);
 
         // 배경 텍스트의 크기 타입 설정
         if (this.boxes[0].type == 'a') {
-            this.bgTextType = 'wideType';
+            this.mainPicType = 'wideType';
         } else {
-            this.bgTextType = 'halfType';
+            this.mainPicType = 'halfType';
+        }
+
+        // 다음 버튼 초기 설정
+        if (this.boxes.length > 1) {
+            this.nextButtonViewState = "active";
         }
     }
 
     ngAfterViewInit() {
         let that = this;
-        $(".carousel").slick({
+        let aa = $(".carousel").slick({
             infinite: false,
             centerMode: true,
             variableWidth: true,
             prevArrow: ".media .nav .buttons .prev",
             nextArrow: ".media .nav .buttons .next"
         }).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-            // Toggle visiblity via picinfo top.
+            // Toggle visiblity for the picinfo top.
             if (nextSlide <= 0 || nextSlide >= that.boxCount -1) {
-                that.viewState = 'inactive';
-                $("header").removeClass("hidden");
+                that.topPicinfoViewState = 'inactive';
+                that.mainPicinfoViewState = 'active';
             } else {
-                that.viewState = 'active';
-                $("header").addClass("hidden");
+                that.topPicinfoViewState = 'active';
+                that.mainPicinfoViewState = 'inactive';
             }
+
+            // Toggle visiblity for the next and prev buttons.
+            if (nextSlide <= 0) {
+                that.prevButtonViewState = "inactive";
+            } else if (nextSlide >= that.boxCount -1) {
+                that.nextButtonViewState = "inactive";
+            } else {
+                that.prevButtonViewState = "active";
+                that.nextButtonViewState = "active";
+            }
+
         }).on("afterChange", function (event, slick, currentSlide) {
             // Load more boxes.
             if (currentSlide + 1 + that.preloadCount >= that.boxCount) {
-                that.loadData(2);
+                that.loadDatabase(2);
                 setTimeout(function () {
                     slick.reinit();
                 }, 250);
             }
-
-            that.focus(currentSlide);
+            that.changeTitle(currentSlide);
         });
 
         // Focus first slide.
@@ -94,10 +105,23 @@ export class MediaComponent {
             that.focus(0);
         }, 2000);
 
+        setTimeout( function() {
+            // that.slickOpts.centerMode = false;
+            // that.slickOpts.variableWidth = false;
+            let sli = $(".carousel").slick("getSlick");
+            sli.slickSetOption("centerMode", false);
+            sli.slickSetOption("variableWidth", false);
+            sli.resize();
+            sli.reinit();
+
+            console.log(sli.slickGetOption("variableWidth"));
+
+        }, 3000);
+
     }
 
-    loadData(limit: number = this.dbLimit) {
-        let data = Data.get("media", this.dbOffset, limit);
+    loadDatabase(limit: number = this.dbLimit) {
+        let data = this.dataService.get("media", this.dbOffset, limit);
         for (let row of data) {
             this.addItem(row);
         }
@@ -117,13 +141,13 @@ export class MediaComponent {
         this.dbOffset++;
     }
 
-    selectItem(i) {
+    changeTitle(i) {
         this.selected = this.boxes[i];
         if (i <= 0) {
             this.picTitle = this.boxes[i+1].title;
             this.picDate = this.boxes[i+1].date;
         } else {
-            if (this.viewState == 'inactive') {
+            if (this.topPicinfoViewState == 'inactive') {
                 return;
             }
             this.picTitle = this.selected.title;
@@ -139,7 +163,9 @@ export class MediaComponent {
                 box.focusOut();
             }
         });
-        this.selectItem(index);
+        // Move to the slide.
+        $(".carousel").slick("slickGoTo", index);
+
         return false;
     }
 
