@@ -17,14 +17,14 @@
                 <p>{{boxes[boxes.length-1].desc}}</p>
                 <p>{{boxes[boxes.length-1].date}}</p>
             </div>
-        </div> -->
+        </div>  -->
     </div>
     <div class="carousel">
         <div *ngFor="let boxData of boxes; let i = index" class="box type-{{boxData.type}}" [args]="boxData" (click)="focus(i)"></div>
     </div>
-     <!-- <div class="nav">
+    <!-- <div class="nav">
         <div class="buttons">
         <a class="prev" href="#" [@viewState]="prevButtonViewState">PREV</a>
         <a class="next" href="#" [@viewState]="nextButtonViewState">NEXT</a>
-    </div> -->
+    </div>  -->
 </div>

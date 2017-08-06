@@ -2,13 +2,17 @@
 @media screen and (max-width: 980px) {
     header {
         & .logo {
-            display: none;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            margin-left: 0;
         }
         & .menu {
             width: 285px;
             color: #fff;
             float: inherit;
             margin: 0 auto;
+            margin-top: -10px;
             & ul {
                 & li {
                     margin: 10px 10px;
@@ -16,6 +20,15 @@
                 }
             }
         }
+    }
+    & .floating {
+        & .logo {
+            display: none;
+        }
+    }
+    .media {
+        margin-top: 0;
+       
     }
     .content {
         margin-top: 0;
