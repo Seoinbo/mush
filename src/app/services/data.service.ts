@@ -137,5 +137,9 @@ export class DataService {
         }
         return rows;
     }
+
+    count(type: string) : number {
+        return this._data[type].length;
+    }
 }
 

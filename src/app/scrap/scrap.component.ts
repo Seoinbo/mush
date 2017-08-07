@@ -12,9 +12,13 @@ export class ScrapComponent {
 
     private dbOffset: number = 0;
     private dbLimit: number = 4;
-    private boxCount: number = 0;
+    private artiCount: number = 0;
+    private artiTotal: number = 0;
+
+    private moreButtonVisible: boolean = true;
 
     constructor(private dataService: DataService) {
+        this.artiTotal = this.dataService.count("scrap");
         this.loadDatabase();
     }
 
@@ -23,6 +27,11 @@ export class ScrapComponent {
         for (let row of data) {
             this.addItem(row);
         }
+    }
+
+    private loadMore(event) {
+        event.preventDefault();
+        this.loadDatabase();
     }
 
     addItem(item) {
@@ -36,8 +45,12 @@ export class ScrapComponent {
             image: item.image,
             link: item.link
         });
-        this.boxCount++;
+        this.artiCount++;
         this.dbOffset++;
+
+        if (this.artiCount >= this.artiTotal) {
+            this.moreButtonVisible = false;
+        }
     }
 
 }

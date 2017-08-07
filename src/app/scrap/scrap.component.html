@@ -2,11 +2,16 @@
     <h2 class="title">Scrap</h2>
         <div class="scrap-box">
             <div *ngFor="let scrap of scraps" class="article">
-                <div class="thumb" [style.background-image]="'url('+scrap.image+')'"></div>
-                <h3>{{scrap.title}}</h3>
-                <p>{{scrap.desc}}</p>
-                <a href="{{scrap.source}}">{{scrap.srctit}}</a>
+                <a href="{{scrap.source}}" target="_blank">
+                    <div class="thumb" [style.background-image]="'url('+scrap.image+')'">
+                        <div class="bg"></div>
+                        <div class="overlay">자세히 보기</div>
+                    </div>
+                    <h3>{{scrap.title}}</h3>
+                    <p>{{scrap.desc}}</p>
+                    <a href="#">{{scrap.srctit}}</a>
+                </a>
             </div>
         </div>
-    <div class="more"><a href="#">more</a></div>
+    <div class="more" *ngIf="moreButtonVisible"><a href="#" (click)="loadMore($event)">4개 더보기</a></div>
 </div>
