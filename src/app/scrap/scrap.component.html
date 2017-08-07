@@ -1,8 +1,12 @@
-<h2 class="title">Scrap</h2>
-<div class="scrap-box">
-    <div class="article"><span>article</span></div>
-    <div class="article"><span>article</span></div>
-    <div class="article"><span>article</span></div>
-    <div class="article"><span>article</span></div>
+<div class="boundary">
+    <h2 class="title">Scrap</h2>
+        <div class="scrap-box">
+            <div *ngFor="let scrap of scraps" class="article">
+                <div class="thumb" [style.background-image]="'url('+scrap.image+')'"></div>
+                <h3>{{scrap.title}}</h3>
+                <p>{{scrap.desc}}</p>
+                <a href="{{scrap.source}}">{{scrap.srctit}}</a>
+            </div>
+        </div>
+    <div class="more"><a href="#">more</a></div>
 </div>
-<div class="more"><a href="#">more</a>
