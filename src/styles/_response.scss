@@ -29,7 +29,7 @@
     .media {
         margin-top: 0;
         margin-bottom: 20px;
-       
+
     }
     .intro {
         & p {
@@ -61,7 +61,7 @@
 }
 
 // Media area
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1650px) {
     .media {
         & .carousel-bg {
             background: transparent !important;
