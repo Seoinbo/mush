@@ -119,6 +119,15 @@ export class DataService {
                 source: "www.naver.com",
                 image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_339x222_102278677778141503.png",
                 link: "about:blank"
+            }, {
+                id: 8,
+                type: "dic",
+                title: "충청남도 논산시 명재고택",
+                desc: "'익다'라는 말은 열매나 씨가 여물 때, 고기나 곡식이 열을 받아 맛이 변했을 때, 혹은 술이나 장이 맛이 들 때 사용한다. 다른 의미의 '익다'는 자주 경험해 서투르지 않고 익숙할 때 사용한다. 여름의 뜨거운 햇볕 아래 익어가는 장독대들이 보인다. 우리 또한 서툴렀던 봄을 지나 무더운 여름 아래 익어가고 있는지도 모른다.",
+                srctit: "조선일보",
+                source: "www.naver.com",
+                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_750x352_102272018524634867.jpeg",
+                link: "about:blank"
             }
         ]
     };
