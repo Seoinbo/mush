@@ -31,6 +31,8 @@ button {
 }
 h2, h3, h4 {
     font-weight: normal;
+    margin: 0;
+    padding: 0;
 }
 a {
     text-decoration: none;
@@ -342,24 +344,31 @@ header {
     & .scrap-box {
         width: 100%;
         padding: 0 15px;
+        @media screen and (max-width: 500px) {
+            padding: 0;
+        }
         & .article {
             position: relative;
             display: inline-block;
             width: 25%;
             height: 405px;
             padding: 0 8px 0 8px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             vertical-align: top;
             @include transition(height .35s);
             @media screen and (max-width: 500px) {
                 width: 100%;
-                height: 75px;
+                height: 115px;
+                padding: 0;
                 overflow: hidden;
                 &.expend {
                     height: 355px;
-                    & a.expend-button {
-
-                    }
+                    & .expend-button {
+                        background: -webkit-linear-gradient(rgba(0,0,0,0.5), transparent);
+                        background: -moz-linear-gradient(rgba(0,0,0,0.5), transparent);
+                        background: -o-linear-gradient(rgba(0,0,0,0.5), transparent);
+                        background: linear-gradient(rgba(0,0,0,0.5), transparent);
+                    }       
                     & .thumb {
                         &:after {
                             background: transparent;
@@ -392,14 +401,17 @@ header {
                 left: 0;
                 top: 0;
                 width: 100%;
-                height: 75px;
+                height: 115px;
                 z-index: 3;
-                & h3 {
-                    font-size: 16px;
+                background: none;
+                & h4 {
+                    font-size: 17px;
                     color: #fff;
-                    width: 75%;
+                    width: 100%;
                     height: 25px;
-                    padding: 0 20px;
+                    padding: 0 34px;
+                    text-align: center;
+                    margin-top: 40px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
@@ -416,7 +428,7 @@ header {
                 @media screen and (max-width: 500px) {
                     height: 210px;
                     &:after {
-                        background: rgba(0,0,0,0.35);
+                        background: rgba(0,0,0,0.5);
                         bottom: 0;
                         content: '';
                         left: 0;
@@ -447,12 +459,18 @@ header {
                 text-align: justify;
                 @media screen and (max-width: 750px) {
                     height: 90px;
+                    padding: 0 25px;
                 }
             }
             & a {
                 font-size: 13px;
                 color: #999;
                 float: right;
+                @media screen and (max-width: 750px) {
+                    float: none;
+                    display: block;
+                    text-align: center;
+                }
             }
         }
 
