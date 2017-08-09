@@ -35,6 +35,10 @@ export class ScrapComponent {
     }
 
     addItem(item) {
+        let ex: boolean = false;
+        if (this.artiCount <= 0) {
+            ex = true;
+        }
         this.scraps.push({
             id: item.id,
             type: item.type,
@@ -43,13 +47,39 @@ export class ScrapComponent {
             srctit: item.srctit,
             source: item.source,
             image: item.image,
-            link: item.link
+            link: item.link,
+            expended: ex
         });
         this.artiCount++;
         this.dbOffset++;
 
         if (this.artiCount >= this.artiTotal) {
             this.moreButtonVisible = false;
+        }
+    }
+
+    private extend(event, index) {
+        event.preventDefault();
+        let len = this.scraps.length;
+        for (let i = 0; i < len; i++) {
+            if (i == index) {
+                this.scraps[i].expended = true;
+            } else {
+                this.scraps[i].expended = false;
+            }
+        }
+    }
+
+    private shrink(event, index) {
+        event.preventDefault();
+        this.scraps[index].expended = false;
+    }
+
+    private toogle(event, index) {
+        if (this.scraps[index].expended == false) {
+            this.extend(event, index);
+        } else {
+            this.shrink(event, index);
         }
     }
 

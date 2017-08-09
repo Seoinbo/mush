@@ -1,13 +1,16 @@
-<div class="boundary">
+<div class="boundary expend">
     <h2 class="title">Scrap</h2>
         <div class="scrap-box">
-            <div *ngFor="let scrap of scraps" class="article">
-                <a href="{{scrap.source}}" target="_blank">
+            <div *ngFor="let scrap of scraps; let i = index" class="article" [class.expend]="scrap.expended">
+                <a clss="click-area" href="{{scrap.source}}" target="_blank">
                     <div class="thumb" [style.background-image]="'url('+scrap.image+')'"></div>
                     <h3>{{scrap.title}}</h3>
                     <p>{{scrap.desc}}</p>
                     <a>{{scrap.srctit}}</a>
                 </a>
+                <div class="expend-button" (click)="toogle($event, i)">
+                    <h3>{{scrap.title}}</h3>
+                </div>
             </div>
         </div>
     <div class="more" *ngIf="moreButtonVisible"><a href="#" (click)="loadMore($event)">4개 더보기</a></div>

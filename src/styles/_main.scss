@@ -341,15 +341,43 @@ header {
 .scrap {
     & .scrap-box {
         width: 100%;
+        padding: 0 15px;
         & .article {
+            position: relative;
             display: inline-block;
-            width: 230px;
-            height: 410px;
-            margin-right: 15px;
-            margin-bottom: 45px;
+            width: 25%;
+            height: 405px;
+            padding: 0 8px 0 8px;
+            margin-bottom: 15px;
             vertical-align: top;
-            // border: 1px solid #999;
-            & a {
+            @include transition(height .35s);
+            @media screen and (max-width: 500px) {
+                width: 100%;
+                height: 75px;
+                overflow: hidden;
+                &.expend {
+                    height: 355px;
+                    & a.expend-button {
+
+                    }
+                    & .thumb {
+                        &:after {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+            @media screen and (min-width: 501px) and (max-width: 750px) {
+                width: 50%;
+                height: 355px;
+            }
+            @media screen and (min-width: 751px) and (max-width: 880px) {
+                width: 33.3%;
+            }
+            @media screen and (min-width: 881px) {
+                width: 25%;
+            }
+            & a.click-area {
                 display: block;
                 text-decoration: none;
                 &:hover {
@@ -358,13 +386,48 @@ header {
                     }
                 }
             }
+            & .expend-button {
+                position: absolute;
+                display: block;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 75px;
+                z-index: 3;
+                & h3 {
+                    font-size: 16px;
+                    color: #fff;
+                    width: 75%;
+                    height: 25px;
+                    padding: 0 20px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
             &:last-child {
                 margin-right: 0;
             }
             & .thumb {
+                position: relative;
                 width: 100%;
-                height: 150px;
+                height: 145px;
                 background: transparent no-repeat center bottom/cover;
+                @media screen and (max-width: 500px) {
+                    height: 210px;
+                    &:after {
+                        background: rgba(0,0,0,0.35);
+                        bottom: 0;
+                        content: '';
+                        left: 0;
+                        pointer-events: none;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        @include transition(background-color .5s);
+                        z-index: 1;
+                    }
+                }
             }
             & h3 {
                 max-height: 50px;
@@ -372,6 +435,9 @@ header {
                 color: #333;
                 font-size: 17px;
                 font-weight: normal;
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
             }
             & p {
                 height: 133px;
@@ -379,6 +445,9 @@ header {
                 font-size: 15px;
                 overflow: hidden;
                 text-align: justify;
+                @media screen and (max-width: 750px) {
+                    height: 90px;
+                }
             }
             & a {
                 font-size: 13px;
