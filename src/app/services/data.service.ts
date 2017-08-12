@@ -129,6 +129,30 @@ export class DataService {
                 image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_750x352_102272018524634867.jpeg",
                 link: "about:blank"
             }
+        ],
+        "products": [
+            {
+                id: 1,
+                title: "Progress Lighting P3884",
+                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0809/cropImg_339x222_102721593234280900.jpeg",
+                oprice: 0,
+                price: 100000,
+                soldout: 0
+            }, {
+                id: 2,
+                title: "Eddie Bauer Sherpa Throw",
+                image: "http://postfiles15.naver.net/MjAxNzA4MTFfMjMx/MDAxNTAyNDI3NTY1Njc5.wGuNrmll9rOdxaqsaltpL2uDuIVd3XmJg90DtOKzIiEg.ZdrO5Ebi15kshnxSiT7Ww57EM16c-1FQk_fKK9ABHvIg.JPEG.china_lab/image_537067151502427416200.jpg?type=w966",
+                oprice: 0,
+                price: 200000,
+                soldout: 1
+            }, {
+                id: 1,
+                title: "White Monterey 6 Drawer",
+                image: "http://postfiles8.naver.net/MjAxNzA4MDlfNDgg/MDAxNTAyMjcxMjc0MzAx.uF6pXPS29LI1m4SaVwUrPMSl4imT1e6LiWrIygaq-Y4g.qn8FejbmQxs-I73Jkl7bIxO_Tv6Hdl9ARJP1gufqDhQg.PNG.rainy8841/image.png?type=w773",
+                oprice: 300000,
+                price: 285000,
+                soldout: 0
+            }
         ]
     };
 
