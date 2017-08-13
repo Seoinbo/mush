@@ -43,6 +43,25 @@
     transform-origin: $origin;
 }
 
+@mixin box-shadow($value, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $value;
+    -moz-box-shadow:inset $value;
+    box-shadow:inset $value;
+  } @else {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+  }
+}
+
+@mixin user-select($value) {
+    -webkit-user-select: $value;
+    -moz-user-select: $value;    
+    -ms-user-select: $value;      
+    user-select: $value;
+}
+
 @-webkit-keyframes fade-out {
   0% {opacity: 1;}
   100% {opacity: 0;}

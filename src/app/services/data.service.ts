@@ -146,9 +146,9 @@ export class DataService {
                 price: 200000,
                 soldout: 1
             }, {
-                id: 1,
+                id: 3,
                 title: "White Monterey 6 Drawer",
-                image: "http://postfiles8.naver.net/MjAxNzA4MDlfNDgg/MDAxNTAyMjcxMjc0MzAx.uF6pXPS29LI1m4SaVwUrPMSl4imT1e6LiWrIygaq-Y4g.qn8FejbmQxs-I73Jkl7bIxO_Tv6Hdl9ARJP1gufqDhQg.PNG.rainy8841/image.png?type=w773",
+                image: "http://cfile1.uf.tistory.com/image/2637823857667FC8268AB0",
                 oprice: 300000,
                 price: 285000,
                 soldout: 0

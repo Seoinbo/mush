@@ -77,7 +77,7 @@ export class BoxComponent {
                     that.coverHideTimer = setTimeout( function() {
                         that.hideCover();
                     }, 600);
-                }, 500);
+                }, 800);
             } else {
                 player.playVideo();
                 that.coverHideTimer = setTimeout( function() {

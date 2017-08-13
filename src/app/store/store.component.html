@@ -2,8 +2,13 @@
     <h2 class="title">Store</h2>
     <div class="product-box">
         <div *ngFor="let product of products" class="product">
-            <div class="top">
-                <div class="thumb" [style.background-image]="'url('+product.image+')'"></div>
+            <div class="top" (click)="add($event, product.id)">
+                <div class="thumb" [style.background-image]="'url('+product.image+')'">
+                    <div class="cover">
+                        <div class="bg"></div>
+                        <span class="text">ADD CART</span>
+                    </div>
+                </div>
                 <h3 class="title">{{product.title}}</h3>
             </div>
             <div class="separator">
@@ -18,7 +23,7 @@
                 </div>
                 <div class="right">
                     <h4>수량</h4>
-                    <i class="minus"></i><span class="quantity">9</span><i class="plus"></i>
+                    <a class="pm-buttons minus" href="#" (click)="remove($event, product.id)"><i></i></a><span class="quantity">{{product.quantity}}</span><a class="pm-buttons plus" href="#"  (click)="add($event, product.id)"><i></i></a>
                 </div>
             </div>
         </div>

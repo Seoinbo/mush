@@ -9,6 +9,7 @@ import { IntroModule } from './intro/intro.module';
 import { MediaModule } from './media/media.module';
 import { ScrapModule } from './scrap/scrap.module';
 import { StoreModule } from './store/store.module';
+import { CartModule } from './store/cart.module';
 import { HowToEatModule } from './hte/hte.module';
 import { FooterModule } from './footer/footer.module';
 
@@ -25,6 +26,7 @@ import { FooterModule } from './footer/footer.module';
     MediaModule,
     ScrapModule,
     StoreModule,
+    CartModule,
     HowToEatModule,
     FooterModule
   ],
