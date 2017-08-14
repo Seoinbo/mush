@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { StoreComponent } from './Store.component';
+import { StoreComponent } from './store.component';
+import { StoreService } from './store.service';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,8 @@ import { StoreComponent } from './Store.component';
   exports: [
     StoreComponent
   ],
-  providers: []
+  providers: [
+      StoreService
+  ]
 })
 export class StoreModule { }

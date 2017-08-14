@@ -1,4 +1,9 @@
 .intro {
+    @media screen and (max-width: 980px) {
+        & p {
+            width: 85%;
+        }
+    }
     & p {
         margin: 0 auto;
         max-width: 650px;

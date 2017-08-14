@@ -1,29 +1,71 @@
 .cart {
     position: fixed;
-    bottom: -100px;
+    bottom: -115px;
     width: 100%;
-    height: 100px;
+    height: 115px;
     background: #fff;
-    border-top: 1px solid #999;
+    border-top: 1px solid #e1e1e1;
     @include transition(all 0.25s ease);
+    @include box-shadow(0 0px 5px #e1e1e1);
     & .cart-box {
-        margin: 30px auto;
-        max-width: 980;
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        max-width: $pageWidth;
         & .bill {
-            float: left;
-            margin-left: 150px;
-            font-size: 21px;
-            & span {
-                margin: 0 10px;
+            display: inline-block;
+            width: 70%;
+            margin-top: 25px;
+            padding-left: 80px;
+            padding-right: 20px;
+            & dl {
+                display: inline-block;
+                width: 25%;
+                margin-left: -4px;
+                &.total strong {
+                    color: $titleColor;
+                    font-size: 29px;
+                }
             }
+            & dt {
+                font-size: 15px;
+                color: #999;
+            }
+            & dd {
+                font-size: 17px;
+                font-weight: normal;
+                letter-spacing: -2px;
+                line-height: 36px;
+                & strong {
+                    font-size: 24px;
+                    font-weight: normal;
+                }
+            }
+
         }
-        & .order {
-            float: right;
-            background: #3A5896;
-            color : #fff;
-            padding: 5px 25px;
-            border-radius: 8px;
-            margin-right: 150px;
+        & .separator {
+            display: inline-block;
+            width: 1px;
+            height: 100%;
+            margin-left: -5px;
+            border-right: 1px dashed #e1e1e1;
+        }
+        & .funcs {
+            display: inline-block;
+            width: 30%;
+            height: 100%;
+            margin-top: 25px;
+            margin-left: -4px;
+            padding-top: 5px;
+            padding-left: 35px;
+            & .order {
+                display: inline-block;
+                padding: 13px 40px;
+                background: #ea002c;
+                color : #fff;
+                font-weight: bold;
+            }
         }
     }
     &.visible {

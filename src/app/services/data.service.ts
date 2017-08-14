@@ -141,7 +141,7 @@ export class DataService {
             }, {
                 id: 2,
                 title: "Eddie Bauer Sherpa Throw",
-                image: "http://postfiles15.naver.net/MjAxNzA4MTFfMjMx/MDAxNTAyNDI3NTY1Njc5.wGuNrmll9rOdxaqsaltpL2uDuIVd3XmJg90DtOKzIiEg.ZdrO5Ebi15kshnxSiT7Ww57EM16c-1FQk_fKK9ABHvIg.JPEG.china_lab/image_537067151502427416200.jpg?type=w966",
+                image: "http://cfile8.uf.tistory.com/image/252EFD3C57594DFA2A46FE",
                 oprice: 0,
                 price: 200000,
                 soldout: 1

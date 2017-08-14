@@ -20,11 +20,6 @@
                 border-bottom: none;
                 cursor: pointer;
                 @include user-select(none);
-                &:hover {
-                    & .cover {
-                        opacity: 1 !important;
-                    }
-                }
                 & .thumb {
                     position: relative;
                     width: 100%;
@@ -38,12 +33,15 @@
                         height: 100%;
                         opacity: 0;
                         @include transition(opacity .35s);
+                        &.visible {
+                            opacity: 1 !important;
+                        }
                         & .bg {
                             position: absolute;
                             width: 100%;
                             height: 100%;
                             background-color: #000000;
-                            opacity: .5;
+                            opacity: .35;
                         }
                         & .text {
                             position: relative;
@@ -62,7 +60,7 @@
                     padding: 30px 20px;
                     width: 100%;
                     font-size: 17px;
-                    color: #353535;
+                    color: $titleColor;
                     line-height: 28px;
                     text-align: center;
                 }
@@ -89,7 +87,7 @@
                 border: 1px solid #e1e1e1;
                 border-top: none;
                 & h4 {
-                    font-size: 14px;
+                    font-size: 15px;
                     color: #999;
                 }
                 & .left {
@@ -100,13 +98,13 @@
                     border-right: 1px solid #e1e1e1;
                     & .price {
                         display: block;
-                        // margin-top: -3px;
-                        line-height: 35px;
+                        font-size: 17px;
+                        line-height: 36px;
                         & strong {
                             font-size: 29px;
                             font-weight: normal;
                             color: #ea002c;
-                            letter-spacing: -1px;
+                            letter-spacing: -2px;
 
                         }
                     }
@@ -134,7 +132,7 @@
                             background: url("/assets/images/store.png") no-repeat;
                         }
                         &.plus i {
-                            margin-top: 7px;
+                            margin-top: 9px;
                             margin-left: 10px;
                             background-position: 0 0;
                         }
@@ -142,7 +140,7 @@
                             background-position: -30px 0;
                         }
                         &.minus i {
-                            margin-top: 7px;
+                            margin-top: 9px;
                             margin-left: 5px;
                             background-position: 0 -30px;
                         }
@@ -152,9 +150,13 @@
                     }
                     & .quantity {
                         display: inline-block;
-                        // margin-top: -3px;
                         font-size: 29px;
                         line-height: 35px;
+                        color:$titleColor;
+                        @include transition(all .35s);
+                        &[data-quantity='0'] {
+                            color: #c1c1c1;
+                        }
                     }
                 }
             }

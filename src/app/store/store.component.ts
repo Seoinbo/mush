@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { StoreService } from './store.service';
 
 @Component({
   selector: '.store',
@@ -7,53 +7,36 @@ import { DataService } from '../services/data.service';
 })
 
 export class StoreComponent {
-    protected products: any[] = [];
+    private coverText: string = "ADD TO CART";
+    private coverVisible: boolean[] = [false, false ,false];
 
-    constructor(private dataService: DataService) {
-        this.loadDatabase();
-    }
-
-    loadDatabase() {
-        let data = this.dataService.get("products");
-        for (let row of data) {
-            this.addItem(row);
-        }
-    }
-
-    addItem(item) {
-        this.products.push({
-            id: item.id,
-            title: item.title,
-            image: item.image,
-            oprice: this.numberWithCommas(item.oprice),
-            price: this.numberWithCommas(item.price),
-            soldout: item.soldout == 1 ? true : false,
-            quantity: 0 // 상품 담은 개수
-        });
+    constructor(private storeService: StoreService) {
     }
 
     private add(event, id, count = 1) {
-        let len = this.products.length;
-        for (let i = 0; i < len; i++) {
-            let product = this.products[i];
-            if (product.id == id) {
-                product.quantity += count;
-                if (product.quantity < 0) {
-                    product.quantity = 0;
-                } else if (product.quantity >= 50) {
-                    product.quantity = 50;
-                }
-                break;
-            }
-        }
+        this.storeService.incr(id, count);
         event.preventDefault();
     }
 
     private remove(event, id, count = 1) {
-        this.add(event, id, count * -1);
+        this.storeService.decr(id, count);
+        event.preventDefault();
     }
 
-    numberWithCommas(x) {
+    private activeCover(index, text: string) {
+        this.coverVisible[index] = true;
+        this.coverText = text;
+    }
+
+    private inactiveCover(index) {
+        this.coverVisible[index] = false;
+    }
+
+    get products(): any {
+        return this.storeService.getProducts();
+    }
+
+    withComma(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 }

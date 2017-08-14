@@ -7,7 +7,7 @@ $halfPicWidth: 400px;
 
 /* Text color */
 $titleColor: #353535;
-$baseColor: #797979;
+$baseColor: #696969;
 
 * {
     vertical-align: top;
@@ -55,6 +55,12 @@ a {
 .content {
     width: 100%;
     margin-top: 120px;
+    @media screen and (max-width: 980px) {
+        margin-top: 0;
+        & section {
+            padding: 15px 0 55px 0;
+        }
+    }
     & .title {
         text-align: center;
     }
