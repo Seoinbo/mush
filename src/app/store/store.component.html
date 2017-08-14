@@ -18,12 +18,12 @@
             <div class="bottom">
                 <div class="left">
                     <h4>가격</h4>
-                    <span class="price"><strong>{{withComma(product.price)}}</strong> 원</span>
-                    <span *ngIf="product.oprice != 0" class="o-price">{{withComma(product.oprice)}} 원</span>
+                    <span class="price"><strong>{{product.price|withComma}}</strong> 원</span>
+                    <span *ngIf="product.price != product.oprice" class="o-price">{{product.oprice|withComma}} 원</span>
                 </div>
                 <div class="right">
                     <h4>수량</h4>
-                    <a class="pm-buttons minus" (mouseover)="activeCover(i, 'REMOVE TO CART')" (mouseout)="inactiveCover(i)" href="#" (click)="remove($event, product.id)"><i></i></a><span class="quantity" [attr.data-quantity]="product.quantity">{{withComma(product.quantity)}}</span><a class="pm-buttons plus" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)" href="#"  (click)="add($event, product.id)"><i></i></a>
+                    <a class="pm-buttons minus" (mouseover)="activeCover(i, 'REMOVE TO CART')" (mouseout)="inactiveCover(i)" href="#" (click)="remove($event, product.id)"><i></i></a><span class="quantity" [attr.data-quantity]="product.quantity">{{product.quantity|withComma}}</span><a class="pm-buttons plus" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)" href="#"  (click)="add($event, product.id)"><i></i></a>
                 </div>
             </div>
         </div>

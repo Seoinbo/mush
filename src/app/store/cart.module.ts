@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { CartComponent } from './cart.component';
 import { StoreService } from './store.service';
 
+import { NumberPipes } from '../pipes/numbers';
 
 @NgModule({
   declarations: [
-    CartComponent,
+    CartComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NumberPipes
   ],
   exports: [
     CartComponent

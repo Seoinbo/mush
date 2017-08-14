@@ -4,12 +4,15 @@ import { NgModule } from '@angular/core';
 import { StoreComponent } from './store.component';
 import { StoreService } from './store.service';
 
+import { NumberPipes } from '../pipes/numbers';
+
 @NgModule({
   declarations: [
-    StoreComponent,
+    StoreComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NumberPipes
   ],
   exports: [
     StoreComponent

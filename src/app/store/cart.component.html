@@ -2,19 +2,19 @@
     <div class="bill">
         <dl>
             <dt>상품가격</dt>
-            <dd><strong>300,000</strong>&nbsp;원</dd>
+            <dd><strong>{{price | withComma}}</strong>&nbsp;원</dd>
         </dl>
         <dl>
             <dt>할인금액</dt>
-            <dd><strong>15,000</strong>&nbsp;원</dd>
+            <dd><strong>{{discount | withComma}}</strong>&nbsp;원</dd>
         </dl>
         <dl>
             <dt>배송비</dt>
-            <dd><strong>4,000</strong>&nbsp;원</dd>
+            <dd><strong>{{shipping | withComma}}</strong>&nbsp;원</dd>
         </dl>
         <dl class="total">
             <dt>결제예정금액</dt>
-            <dd><strong>{{discount}}</strong>&nbsp;원</dd>
+            <dd><strong>{{total | withComma}}</strong>&nbsp;원</dd>
         </dl>
     </div>
     <div class="separator"></div>

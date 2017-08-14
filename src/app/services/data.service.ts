@@ -153,13 +153,21 @@ export class DataService {
                 price: 285000,
                 soldout: 0
             }
-        ]
+        ],
+        "shipping": {
+            fee: 3500, // 배송비
+            cutline: 200000 // 총금액이 이 금액 이상이면 배송 무료
+        }
     };
 
     get(type: string, offset:number = 0, limit: number = -1) {
         if (limit < 0) {
             limit = 9999;
         }
+        if (!(this._data[type] instanceof Array)) {
+            return this._data[type];
+        }
+
         let rows = [];
         let len = this._data[type].length;
         for (let i = offset, n = 0; i < len; i++, n++) {

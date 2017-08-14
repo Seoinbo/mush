@@ -35,8 +35,4 @@ export class StoreComponent {
     get products(): any {
         return this.storeService.getProducts();
     }
-
-    withComma(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
 }

@@ -13,6 +13,7 @@ import { CartModule } from './store/cart.module';
 import { HowToEatModule } from './hte/hte.module';
 import { FooterModule } from './footer/footer.module';
 
+
 @NgModule({
   declarations: [
     AppComponent

@@ -22,9 +22,10 @@ export class StoreService {
             id: item.id,
             title: item.title,
             image: item.image,
-            oprice: item.oprice,
+            oprice: item.oprice <= 0 ? item.price : item.oprice,
             price: item.price,
             soldout: item.soldout == 1 ? true : false,
+            shipping: item.shipping,
             quantity: 0 // 상품 담은 개수
         });
     }
@@ -51,5 +52,9 @@ export class StoreService {
 
     getProducts(): any[] {
         return this.products;
+    }
+
+    public get shipping(): any {
+        return this.dataService.get("shipping");
     }
 }
