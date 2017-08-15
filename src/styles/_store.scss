@@ -1,4 +1,7 @@
 .store {
+    & .boundary {
+        max-width: 100% !important;
+    }
     background: #f6f6f6;
     background-image: -ms-linear-gradient(top, #F6F6F6 90%, #EEEEEE 100%);
     background-image: -moz-linear-gradient(top, #F6F6F6 90%, #EEEEEE 100%);
@@ -9,12 +12,23 @@
         width: 100%;
         margin-bottom: 25px;
         text-align: center;
+        padding: 0 15px;
         & .product {
             display: inline-block;
-            width: 320px;
+            max-width: 320px;
+            width: 100%;
             margin: 0 8px;
+            margin-bottom: 25px;
             background: #fff;
             @include box-shadow(1px 1px 3px #eeeeee);
+            @media screen and (max-width: 500px) {
+                max-width: 100%;
+                margin: 8px 0 0 0;
+                @include box-shadow(none);
+            }
+            @media screen and (min-width: 501px) and (max-width: 700px) {
+                max-width: 420px;
+            }
             & .top {
                 border: 1px solid #e1e1e1;
                 border-bottom: none;
@@ -63,11 +77,17 @@
                     color: $titleColor;
                     line-height: 28px;
                     text-align: center;
+                    @media screen and (max-width: 1050px) {
+                        padding: 15px 10px 0 10px;
+                    }
                 }
             }
             & .separator {
                 height: 12px;
                 background: url("/assets/images/store_dash.jpg") repeat 0 0;
+                @media screen and (max-width: 1050px) {
+                    display: none;
+                }
                 & .edge-left {
                     display: block;
                     float: left;
@@ -92,9 +112,9 @@
                 }
                 & .left {
                     display: inline-block;
-                    width: 60%;
+                    width: 55%;
                     margin: 15px 0 20px 0;
-                    padding: 5px 0 5px 15px;
+                    padding: 5px 0 5px 10px;
                     border-right: 1px solid #e1e1e1;
                     & .price {
                         display: block;
@@ -117,9 +137,9 @@
                 }
                 & .right {
                     display: inline-block;
-                    width: 40%;
+                    width: 45%;
                     margin: 15px 0 20px -4px;
-                    padding: 5px 15px 5px 0;
+                    padding: 5px 10px 5px 0;
                     @include user-select(none);
                     & a.pm-buttons {
                         display: inline-block;

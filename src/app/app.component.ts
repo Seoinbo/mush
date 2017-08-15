@@ -78,7 +78,7 @@ export class AppComponent {
         // build scene
         new ScrollMagic.Scene({ triggerElement: ".store", duration: "550" })
             .setClassToggle(".cart", "visible")
-            .addIndicators({ name: "cart" })
+            // .addIndicators({ name: "cart" })
             .addTo(controller);
     }
 }

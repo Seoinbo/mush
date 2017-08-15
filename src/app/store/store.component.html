@@ -2,9 +2,9 @@
     <h2 class="title">Store</h2>
     <div class="product-box">
         <div *ngFor="let product of products; let i = index" class="product">
-            <div class="top" (click)="add($event, product.id)">
+            <div class="top" (click)="add($event, product.id)" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)">
                 <div class="thumb" [style.background-image]="'url('+product.image+')'">
-                    <div class="cover" [class.visible]="coverVisible[i]" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)">
+                    <div class="cover" [class.visible]="coverVisible[i]">
                         <div class="bg"></div>
                         <span class="text">{{coverText}}</span>
                     </div>
