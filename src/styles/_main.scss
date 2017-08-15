@@ -8,7 +8,6 @@ $halfPicWidth: 400px;
 /* Text color */
 $titleColor: #353535;
 $baseColor: #696969;
-
 * {
     vertical-align: top;
     box-sizing: border-box;
@@ -67,6 +66,7 @@ a {
     & section {
         padding: 50px 0 75px 0;
         & .boundary {
+            position: relative;
             margin: 0 auto;
             max-width: $pageWidth;
         }
