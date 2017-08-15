@@ -55,7 +55,7 @@
                 display: block;
                 margin-top: 40px;
                 & .thumb {
-                    display: inline-block;
+                    display: block;
                     float: left;
                     width: 120px;
                     height: 155px;
@@ -63,7 +63,7 @@
                     // background: #999;
                 }
                 & dl {
-                    display: inline-block;
+                    display: block;
                     float: left;
                     margin: 5px 0 0 18px;
                     & dt {
