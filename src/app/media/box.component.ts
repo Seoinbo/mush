@@ -27,6 +27,7 @@ export class BoxComponent {
     @Input()
     args: any;
 
+    private isMobile: boolean = false;
     private boxHeight: number = 550;
 
     // via Youtube iframe API
@@ -54,6 +55,7 @@ export class BoxComponent {
         let deviceInfo = this.deviceService.getDeviceInfo();
         if (["android", "iphone"].indexOf(deviceInfo.device) > -1) {
             this.boxHeight = this.windoc.height;
+            this.isMobile = true;
         }
     }
 
