@@ -54,10 +54,13 @@
             & .source-link {
                 display: block;
                 margin-top: 40px;
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
                 & .thumb {
                     display: block;
                     float: left;
-                    width: 120px;
+                    width: 110px;
                     height: 155px;
                     background: url("/assets/images/thumb_book_beta13.jpg") no-repeat center center/cover;
                     // background: #999;
@@ -86,5 +89,5 @@
             }
         }
     }
-    
+
 }

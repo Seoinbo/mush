@@ -86,5 +86,14 @@
         width: 100%;
         margin-top: 15px;
         text-align: center;
+        & a {
+            margin-top: 23px;
+            padding: 6px 36px 7px 36px;
+            width: 105px;
+            border-radius: 35px;
+            background-color: #b2b2b2;
+            font-size: 15px;
+            color: #fff;
+        }
     }
 }

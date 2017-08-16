@@ -3,6 +3,33 @@ import { Injectable  } from '@angular/core';
 @Injectable()
 export class DataService {
     _data: any = {
+        "menu": [
+            {
+                id: 1,
+                title: "MENU1",
+                href: "#sparassis-crispa",
+                target: "_self",
+                selected: false
+            }, {
+                id: 2,
+                title: "MENU2",
+                href: "#store",
+                target: "_self",
+                selected: false
+            }, {
+                id: 3,
+                title: "MENU3",
+                href: "https://order.pay.naver.com/home?tabMenu=SHOPPING",
+                target: "_blank",
+                selected: false
+            }, {
+                id: 4,
+                title: "MENU4",
+                href: "#scrap",
+                target: "_self",
+                selected: false
+            },
+        ],
         "media": [
             {
                 id: 1,

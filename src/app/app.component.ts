@@ -24,7 +24,7 @@ export class AppComponent {
     protected document: Document;
 
     constructor( @Inject(Windoc) private windoc: Windoc) {
-        this.document = this.windoc.document();
+        this.document = this.windoc.document;
     }
 
     // Browser scroll move to top.
@@ -76,9 +76,13 @@ export class AppComponent {
     ngAfterViewInit() {
         var controller = new ScrollMagic.Controller();
         // build scene
-        new ScrollMagic.Scene({ triggerElement: ".store", duration: "550" })
+        new ScrollMagic.Scene({ triggerElement: "#store", duration: this.storeHeight })
             .setClassToggle(".cart", "visible")
             // .addIndicators({ name: "cart" })
             .addTo(controller);
+    }
+
+    private storeHeight() {
+        return $("#store").outerHeight();
     }
 }

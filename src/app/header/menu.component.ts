@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: '.menu',
@@ -6,21 +7,9 @@ import { Component } from '@angular/core';
 })
 
 export class MenuComponent {
-  menu: MenuItem[] = [
-    {title: "MENU1", href: "#menu1", target: "_self", selected: false},
-    {title: "MENU2", href: "#menu2", target: "_self", selected: false},
-    {title: "MENU3", href: "#menu3", target: "_self", selected: false},
-    {title: "MENU4", href: "#menu4", target: "_self", selected: false}
-  ];
+    menu: any[];
 
-  ngOnInit() {
-  }
-
-}
-
-export class MenuItem {
-  title: string;
-  href: string;
-  target: string;
-  selected: boolean;
+    constructor(private headerService: HeaderService) {
+        this.menu = this.headerService.menu;
+    }
 }

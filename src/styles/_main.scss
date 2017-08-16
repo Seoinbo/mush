@@ -56,9 +56,6 @@ a {
     margin-top: 120px;
     @media screen and (max-width: 980px) {
         margin-top: 0;
-        & section {
-            padding: 0 0 55px 0 !important;
-        }
     }
     & .title {
         text-align: center;

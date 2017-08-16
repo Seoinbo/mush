@@ -1,13 +1,32 @@
-import {Injectable, EventEmitter} from '@angular/core';
+import { Injectable  } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Injectable()
-export class EmitterService {
-    private static emitters: { [ID: string]: EventEmitter<any> } = {};
+export class HeaderService {
+    private _menu: any[] = [];
 
-    static get(ID: string): EventEmitter<any> {
-        if (!this.emitters[ID]) {
-            this.emitters[ID] = new EventEmitter();
+    constructor(private dataService: DataService) {
+        this.loadDatabase();
+    }
+
+    loadDatabase() {
+        let data = this.dataService.get("menu");
+        for (let row of data) {
+            this.addItem(row);
         }
-        return this.emitters[ID];
+    }
+
+    addItem(item) {
+        this._menu.push({
+            id: item.id,
+            title: item.title,
+            href: item.href,
+            target: item.target,
+            selected: item.selected
+        });
+    }
+
+    get menu(): any[] {
+        return this._menu;
     }
 }

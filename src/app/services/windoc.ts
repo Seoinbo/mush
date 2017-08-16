@@ -7,23 +7,27 @@ export class Windoc {
 
     }
 
-    window(): Window {
+    get window(): Window {
         return window;
     }
 
-    document(): Document {
+    get document(): Document {
         return this._document;
     }
 
-    windowHeight(): number {
-        var body = this._document.body;
-        var html = this._document.documentElement;
-        var height = Math.max(
-            body.scrollHeight,
-            body.offsetHeight,
-            html.clientHeight,
-            html.scrollHeight,
-            html.offsetHeight);
-        return height;
+    get width(): number {
+        let w = this.window,
+            d = this.document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0];
+        return  w.innerWidth || e.clientWidth || g.clientWidth;
+    }
+
+    get height(): number {
+        let w = this.window,
+            d = this.document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0];
+        return w.innerHeight|| e.clientHeight|| g.clientHeight;
     }
 }

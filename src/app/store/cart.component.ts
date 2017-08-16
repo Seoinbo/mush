@@ -58,4 +58,11 @@ export class CartComponent {
         }
         return total;
     }
+
+    private order(event, type: string) {
+        event.preventDefault();
+        if (type == 'npay') {
+            alert("서비스 준비중 입니다");
+        }
+    }
 }

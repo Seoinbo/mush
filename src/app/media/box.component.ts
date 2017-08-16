@@ -1,9 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Ng2DeviceService } from 'ng2-device-detector';
+import { Windoc } from "../services/windoc";
 
 @Component({
     selector: 'div.box',
     templateUrl: './box.component.html',
+    host: {
+        '[style.height]': 'boxHeight + "px"'
+    },
     animations: [
         trigger('fade', [
             state('inactive', style({
@@ -21,6 +26,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class BoxComponent {
     @Input()
     args: any;
+
+    private boxHeight: number = 550;
 
     // via Youtube iframe API
     protected players: YT.Player[] = [];
@@ -42,6 +49,13 @@ export class BoxComponent {
     private playTimer;
     private stopTimer;
     private coverHideTimer;
+
+    constructor (private windoc: Windoc, private deviceService: Ng2DeviceService) {
+        let deviceInfo = this.deviceService.getDeviceInfo();
+        if (["android", "iphone"].indexOf(deviceInfo.device) > -1) {
+            this.boxHeight = this.windoc.height;
+        }
+    }
 
     setPlayer(p: YT.Player, i: number) {
         this.players[i] = p;
