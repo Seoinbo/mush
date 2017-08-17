@@ -25,7 +25,8 @@ export class StoreService {
             oprice: item.oprice <= 0 ? item.price : item.oprice,
             price: item.price,
             soldout: item.soldout == 1 ? true : false,
-            shipping: item.shipping,
+            readytime: item.readytime, // 상품 재판매일
+            reason: item.reason, // 품절된 이유
             quantity: 0 // 상품 담은 개수
         });
     }

@@ -41,7 +41,6 @@ export class ScrapComponent {
             title: item.title,
             desc: item.desc,
             srctit: item.srctit,
-            source: item.source,
             image: item.image,
             link: item.link
         });

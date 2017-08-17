@@ -2,7 +2,7 @@
     <h2 class="title">Scrap</h2>
     <div class="scrap-box">
         <div *ngFor="let scrap of scraps" class="article">
-            <a class="click-area" href="{{scrap.source}}" target="_blank">
+            <a class="click-area" href="{{scrap.link}}" target="_blank">
                 <div class="thumb" [style.background-image]="'url('+scrap.image+')'"></div>
                 <h3>{{scrap.title}}</h3>
                 <p>{{scrap.desc}}</p>

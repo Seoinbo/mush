@@ -84,77 +84,36 @@ export class DataService {
         "scrap": [
             {
                 id: 1,
-                type: "news",
-                title: "수확의 기쁨을 느끼고 가을 농사를 준비하는 달",
-                desc: "매년 8월 상순은 가마솥 더위가 절정을 이룬다. 중순까지 막바지 무더위가 이어지다가 하순 께가 되면 슬그머니 꼬리를 내린다. 예비 귀농·귀촌인이나 초보 귀농·귀촌인들이 알아두어야 할 ‘8월의 전원생활’은 무엇일까?",
-                srctit: "두산백과사전",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0626/cropImg_166x108_98923112182913433.png",
-                link: "about:blank"
-
+                type: "dic",
+                title: "꽃송이버섯",
+                desc: "버섯의 자실체는 백색이나 밤색으로 물결치는 꽃잎이 다수 모인 것 같은 모양이다. 전체의 지름은 10~30cm이고, 하얀 양배추를 닮아 아름답다. 근부는 덩이 모양인 공통의 자루로 되어 있고 자실층은 꽃잎 모양의 얇은 조각이 아래쪽에 발달한다. 꽃잎같은 조각의 두께는 0.1cm 정도이다. 살은 연하지만 치아를 자른 것 같은 모양이다. 버섯의 표면과 뒷면의 구별이 있다.",
+                srctit: "네이버 지식백과 한국의 버섯",
+                image: "./assets/images/thumb_sparassis_radicata_naver.jpg",
+                link: "http://terms.naver.com/entry.nhn?docId=770115&cid=46689&categoryId=46689"
             }, {
                 id: 2,
-                type: "blog",
-                title: "제주도 한 외딴 농장 파티에 CEO들이 모여드는 까닭",
-                desc: "우리나라 사람들에게 제주도는 각별한 관광지다. 철저한 계획을 세워 값진 시간을 쪼개 방문하는 곳이기도 하고, 때로는 갑자기 어디론가 훌쩍 떠나고 싶을 때 큰 부담 없이 찾는 장소기도 하다. 한국인이 아끼는 명소, 제주도로 삶의 터전을 옮긴 CEO들이 한곳에 모인 에코파티 현장을 찾았다.",
-                srctit: "네이버",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_339x222_102278677778141503.png",
-                link: "about:blank"
+                type: "news",
+                title: "신비의 꽃송이버섯 전남 첫 인공재배 성공",
+                desc: "전남도산림자원연구소가 국내 최초로 꽃송이버섯 인공재배에 성공, 농가에 재배기술을 이전한데 이어 국내 소비 촉진과 해외 수출 등 산업화 방안을 적극 모색하고 있다. 17일 전남도산림자원연구소에 따르면 꽃송이버섯은 꽃양배추모양을 띠고 씹는 감촉과 향이 독특해 애호가들 사이에선 '신비의 버섯'으로 불린다. 특히 최근 연구 결과 건조한 꽃송이버섯에서 100g당 43.6%의 베타글루칸이 함유돼 있어 인체의 면역력을 높이고 암, 고혈압, 당뇨 등에도 탁월하다고 밝혀 국내에서는 물론 일본, 중국 등 해외에서도 인기가 높다.",
+                srctit: "전남일보",
+                image: "./assets/images/thumb_jnilbo.jpg",
+                link: "http://www.jnilbo.com/read.php3?aid=1476716400508410002"
             }, {
                 id: 3,
-                type: "dic",
-                title: "충청남도 논산시 명재고택",
-                desc: "'익다'라는 말은 열매나 씨가 여물 때, 고기나 곡식이 열을 받아 맛이 변했을 때, 혹은 술이나 장이 맛이 들 때 사용한다. 다른 의미의 '익다'는 자주 경험해 서투르지 않고 익숙할 때 사용한다. 여름의 뜨거운 햇볕 아래 익어가는 장독대들이 보인다. 우리 또한 서툴렀던 봄을 지나 무더운 여름 아래 익어가고 있는지도 모른다.",
-                srctit: "조선일보",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_750x352_102272018524634867.jpeg",
-                link: "about:blank"
+                type: "video",
+                title: "명품! 꽃송이버섯의 다양한 효능",
+                desc: "꽃송이버섯 효능 중 가장 많이 알려져 있는 효능은 항암효과 입니다. 꽃송이버섯에는 베타글루칸이 50%이상 함류되어 있는것으로 알려져 있는데요. 베타글루칸은 종양의 전이를 억제 하고 암과 관련된 혈관이 생성되는 것을 억제합니다. 버섯 100g당 베타글루칸 함량은 꽃송이버섯(43.6g), 노랑느타리바섯(37.6g), 일반느타리버섯(19~28g), 잎새버섯(15~20g), 영지버섯(8~15g), 송이버섯(18.1g) 순으로 꽃송이 버섯이 가장많이 함유하고 있습니다. 한 연구에 따르면 항종양 활성, 대장암 세포 역제, 대장 활동을 활발하게 한다는 실험 결과가 있습니다.",
+                srctit: "TV조선 내 몸 사용설명서 110회",
+                image: "./assets/images/thumb_mybody.jpg",
+                link: "https://youtu.be/wUVvBqsMN1A"
             }, {
                 id: 4,
-                type: "etc",
-                title: "김매기와 물관리만 잘하면 누구나 할 수 있어요",
-                desc: "우리나라 사람들에게 제주도는 각별한 관광지다. 철저한 계획을 세워 값진 시간을 쪼개 방문하는 곳이기도 하고, 때로는 갑자기 어디론가 훌쩍 떠나고 싶을 때 큰 부담 없이 찾는 장소기도 하다. 한국인이 아끼는 명소, 제주도로 삶의 터전을 옮긴 CEO들이 한곳에 모인 에코파티 현장을 찾았다.",
-                srctit: "카카오스토리",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_339x222_102278952269194915.png",
-                link: "about:blank"
-            }, {
-                id: 5,
                 type: "news",
-                title: "1㎏에 1000만원 하는 제주 양식 ‘해마’, 중국 노린다",
-                desc: "우리나라 사람들에게 제주도는 각별한 관광지다. 철저한 계획을 세워 값진 시간을 쪼개 방문하는 곳이기도 하고, 때로는 갑자기 어디론가 훌쩍 떠나고 싶을 때 큰 부담 없이 찾는 장소기도 하다. 한국인이 아끼는 명소, 제주도로 삶의 터전을 옮긴 CEO들이 한곳에 모인 에코파티 현장을 찾았다.",
-                srctit: "브런치 블로그",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/imgnews/image/origin/025/2017/07/05/2732988.jpg",
-                link: "about:blank"
-            }, {
-                id: 6,
-                type: "news",
-                title: "사라진 토종 단감, 지금 먹는 건 일본에서 온 품종",
-                desc: "우리나라 사람들에게 제주도는 각별한 관광지다. 철저한 계획을 세워 값진 시간을 쪼개 방문하는 곳이기도 하고, 때로는 갑자기 어디론가 훌쩍 떠나고 싶을 때 큰 부담 없이 찾는 장소기도 하다. 한국인이 아끼는 명소, 제주도로 삶의 터전을 옮긴 CEO들이 한곳에 모인 에코파티 현장을 찾았다.",
-                srctit: "네이버",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0803/cropImg_166x108_102212231940461773.jpeg",
-                link: "about:blank"
-            }, {
-                id: 7,
-                type: "news",
-                title: "제주도 한 외딴 농장 파티에 CEO들이 모여드는 까닭",
-                desc: "우리나라 사람들에게 제주도는 각별한 관광지다. 철저한 계획을 세워 값진 시간을 쪼개 방문하는 곳이기도 하고, 때로는 갑자기 어디론가 훌쩍 떠나고 싶을 때 큰 부담 없이 찾는 장소기도 하다. 한국인이 아끼는 명소, 제주도로 삶의 터전을 옮긴 CEO들이 한곳에 모인 에코파티 현장을 찾았다.",
-                srctit: "다음 뉴스",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_339x222_102278677778141503.png",
-                link: "about:blank"
-            }, {
-                id: 8,
-                type: "dic",
-                title: "충청남도 논산시 명재고택",
-                desc: "'익다'라는 말은 열매나 씨가 여물 때, 고기나 곡식이 열을 받아 맛이 변했을 때, 혹은 술이나 장이 맛이 들 때 사용한다. 다른 의미의 '익다'는 자주 경험해 서투르지 않고 익숙할 때 사용한다. 여름의 뜨거운 햇볕 아래 익어가는 장독대들이 보인다. 우리 또한 서툴렀던 봄을 지나 무더운 여름 아래 익어가고 있는지도 모른다.",
-                srctit: "조선일보",
-                source: "www.naver.com",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0804/cropImg_750x352_102272018524634867.jpeg",
-                link: "about:blank"
+                title: "베타글루칸(β-glucan)이란?",
+                desc: "다당류의 일종으로 면역증강작용을 가지고 있으며 효모의 세포벽, 버섯류, 곡류 등에 존재하고 있다. 인간 정상 세포의 면역기능을 활성화시켜 암세포의 증식과 재발을 억제하고 혈당과 혈중 콜레스테롤을 감소시키며 지질대사를 개선하여 체지방 형성과 축적을 억제한다.",
+                srctit: "두산백과사전",
+                image: "http://cfile29.uf.tistory.com/image/2365084D550F66D80F97B6",
+                link: "http://terms.naver.com/entry.nhn?docId=1256075&cid=40942&categoryId=32098"
             }
         ],
         "products": [
@@ -164,21 +123,27 @@ export class DataService {
                 image: "https://s.pstatic.net/static/www/mobile/edit/2017/0809/cropImg_339x222_102721593234280900.jpeg",
                 oprice: 0,
                 price: 100000,
-                soldout: 0
+                soldout: 0,
+                readytime: 1508166000,
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }, {
                 id: 2,
                 title: "Eddie Bauer Sherpa Throw",
                 image: "http://cfile8.uf.tistory.com/image/252EFD3C57594DFA2A46FE",
                 oprice: 0,
                 price: 200000,
-                soldout: 1
+                soldout: 1,
+                readytime: 1508166000,
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }, {
                 id: 3,
                 title: "White Monterey 6 Drawer",
                 image: "http://cfile1.uf.tistory.com/image/2637823857667FC8268AB0",
                 oprice: 300000,
                 price: 285000,
-                soldout: 0
+                soldout: 1,
+                readytime: 1502895600,
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }
         ],
         "shipping": {

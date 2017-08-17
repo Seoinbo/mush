@@ -10,6 +10,7 @@
                     </div>
                 </div>
                 <h3 class="title">{{product.title}}</h3>
+                <div *ngIf="product.soldout" class="soldout-remain">{{remains(i)}}</div>
             </div>
             <div class="separator">
                 <span class="edge-left"></span>
@@ -22,8 +23,13 @@
                     <span *ngIf="product.price != product.oprice" class="o-price">{{product.oprice|withComma}} 원</span>
                 </div>
                 <div class="right">
-                    <h4>수량</h4>
-                    <a class="pm-buttons minus" (mouseover)="activeCover(i, 'REMOVE TO CART')" (mouseout)="inactiveCover(i)" href="#" (click)="remove($event, product.id)"><i></i></a><span class="quantity" [attr.data-quantity]="product.quantity">{{product.quantity|withComma}}</span><a class="pm-buttons plus" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)" href="#"  (click)="add($event, product.id)"><i></i></a>
+                    <ng-template [ngIf]="!product.soldout">
+                        <h4>수량</h4>
+                        <a class="pm-buttons minus" (mouseover)="activeCover(i, 'REMOVE TO CART')" (mouseout)="inactiveCover(i)" href="#" (click)="remove($event, product.id)"><i></i></a><span class="quantity" [attr.data-quantity]="product.quantity">{{product.quantity|withComma}}</span><a class="pm-buttons plus" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)" href="#"  (click)="add($event, product.id)"><i></i></a>
+                    </ng-template>
+                    <ng-template [ngIf]="product.soldout">
+                        <span class="soldout-msg">품절</span><a class="soldout-reason">(?)</a>
+                    </ng-template>
                 </div>
             </div>
         </div>

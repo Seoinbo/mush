@@ -81,6 +81,10 @@
                         padding: 15px 10px 0 10px;
                     }
                 }
+                & .soldout-remain {
+                    padding: 0 20px 10px 20px;
+                    font-size: 15px;
+                }
             }
             & .separator {
                 height: 12px;
@@ -177,6 +181,17 @@
                         &[data-quantity='0'] {
                             color: #c1c1c1;
                         }
+                    }
+                    & .soldout-msg {
+                        display: inline-block;
+                        margin-top: 10px;
+                        font-size: 17px;
+                        line-height: 35px;
+                    }
+                    & .soldout-reason {
+                        display: inline-block;
+                        margin-top: 10px;
+                        line-height: 35px;
                     }
                 }
             }
