@@ -34,53 +34,120 @@ export class DataService {
             {
                 id: 1,
                 type: "a",
-                title: "Introducing Daydream. Simple and high quality!",
-                desc: "Experience Daydream standalone headsets built with our partners HTC VIVE.",
+                title: "매일 얼마나 자랐는지 확인합니다",
+                desc: "매일 아침 버섯재배사에 갑니다. 재배사를 한 바퀴 돌고 나면 안심이 되거든요.",
                 videos: "rA1_TKtbqAE",
-                images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
-                time: 1472914800 // 20160904
+                images: "http://stimg.emart.com/upload/poweroflocalfoods/20161209_0950011_060.jpg?tmstmp=1503046475743",
+                time: 1506809300 // 20171001
             }, {
                 id: 2,
                 type: "b",
-                title: "Standalone VR headsets with Daydream",
-                desc: "Experience Daydream standalone headsets built with our partners HTC VIVE",
-                videos: "",
-                images: "https://www.dothome.co.kr/static/images/main/main-slide10.jpg",
-                time: 1479049200 // 20161114
+                title: "분양 3개월째",
+                desc: "제법 많이 컸습니다. 아주 잘 자라고 있어요.",
+                videos: "rA1_TKtbqAE",
+                images: "http://data.1freewallpapers.com/download/cute-kitten.jpg",
+                time: 1504714580 // 201709204
             }, {
                 id: 3,
-                type: "a",
-                title: "Introducing Daydream",
-                desc: "Simple, high quality virtual reality",
-                videos: "t-B3_iCLVHg",
-                images: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
-                time: 1472914800 // 20160904
+                type: "c",
+                title: "패키지 디자인",
+                desc: "상품 패키지 샘플이 나왔습니다.",
+                videos: "rA1_TKtbqAE",
+                images: "http://cfile2.uf.tistory.com/image/271DD73656A36E1E31F3A0,http://cfile30.uf.tistory.com/image/250E514256A36E14171CA6",
+                time: 1501517600 // 201706211
             }, {
                 id: 4,
-                type: "c",
-                title: "Lean more",
-                desc: "a leader in VR, and Lenovo, a leader in mobile & computing innovation",
-                videos: ",99riHQyN4jw",
-                images: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg,https://www.dothome.co.kr/static/images/main/main-slide11.jpg",
-                time: 1484665200 // 20170118
+                type: "b",
+                title: "홈페이지도 직접 만듭니다",
+                desc: "농사도 짓고 홈페이지도 만듭니다.",
+                videos: "rA1_TKtbqAE",
+                images: "https://www.digipen.edu/fileadmin/website_data/images/slideshows/CE007.jpg",
+                time: 1500826400 // 201706211
             }, {
                 id: 5,
-                type: "b",
-                title: "Get the latest news",
-                desc: "By clicking Sign Up",
-                videos: "",
-                images: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg",
-                time: 1496415600 // 20170603
+                type: "c",
+                title: "꽃송이 버섯 배지 도착",
+                desc: "전문가가 만든 버섯 배지를 분양받았습니다. 앞으로 6개월가량 정성을 다해 키워보겠습니다.",
+                videos: "rA1_TKtbqAE",
+                images: "http://cfile7.uf.tistory.com/image/196CCF4150DCED8A11BE2B,http://monco.co.kr/design/upload_file/__HTMLEDITOR__/zymo_hana/50956673507e9676e283eddd86c83ed5_217_1.jpg",
+                time: 1498017800 // 201706211
             }, {
                 id: 6,
                 type: "a",
-                title: "Hop right into VR",
-                desc: "Everything you need is built into the headset—just pick it up and hop right into VR",
-                videos: "n8d79M0LtfY", // n8d79M0LtfY
-                images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
-                time: 1501513200 // 20170801
+                title: "상주 두리산",
+                desc: "우리 농장은 상주 두리산 아래 위치해 있습니다. 산세가 험하고 수풀이 우거져 인적이 드문 곳이지요. 덕분에 자연산 표고버섯을 가끔 맛볼 수 있습니다.",
+                videos: "rA1_TKtbqAE",
+                images: "http://vilcap.com/wp-content/uploads/2016/09/Maggie-tower-view-nc1.jpg",
+                time: 1496535800
+            }, {
+                id: 7,
+                type: "b",
+                title: "버섯 재배사 설치",
+                desc: "이제 이곳을 버섯 배지로 가득 채울 예정입니다.",
+                videos: "rA1_TKtbqAE",
+                images: "http://010-8991-7397.com/wp-content/uploads/2014/06/KakaoTalk_20160228_182532053.jpg",
+                time: 1495095440
+            }, {
+                id: 8,
+                type: "a",
+                title: "35년간 농사만 지었습니다",
+                desc: "사과, 포도, 곶감 모두 내 자식들이 먹는다 생각하고, 안전한 식품을 재배하기 위해 노력했습니다.",
+                videos: "rA1_TKtbqAE",
+                images: "http://stimg.emart.com/upload/poweroflocalfoods/20161208_0919055_040.jpg?tmstmp=1503045613021",
+                time: 1488294000 // 20170301
             }
         ],
+        // "media": [
+        //     {
+        //         id: 1,
+        //         type: "a",
+        //         title: "Introducing Daydream. Simple and high quality!",
+        //         desc: "Experience Daydream standalone headsets built with our partners HTC VIVE.",
+        //         videos: "rA1_TKtbqAE",
+        //         images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
+        //         time: 1472914800 // 20160904
+        //     }, {
+        //         id: 2,
+        //         type: "b",
+        //         title: "Standalone VR headsets with Daydream",
+        //         desc: "Experience Daydream standalone headsets built with our partners HTC VIVE",
+        //         videos: "",
+        //         images: "https://www.dothome.co.kr/static/images/main/main-slide10.jpg",
+        //         time: 1479049200 // 20161114
+        //     }, {
+        //         id: 3,
+        //         type: "a",
+        //         title: "Introducing Daydream",
+        //         desc: "Simple, high quality virtual reality",
+        //         videos: "t-B3_iCLVHg",
+        //         images: "https://www.dothome.co.kr/static/images/main/main-slide15.jpg",
+        //         time: 1472914800 // 20160904
+        //     }, {
+        //         id: 4,
+        //         type: "c",
+        //         title: "Lean more",
+        //         desc: "a leader in VR, and Lenovo, a leader in mobile & computing innovation",
+        //         videos: ",99riHQyN4jw",
+        //         images: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg,https://www.dothome.co.kr/static/images/main/main-slide11.jpg",
+        //         time: 1484665200 // 20170118
+        //     }, {
+        //         id: 5,
+        //         type: "b",
+        //         title: "Get the latest news",
+        //         desc: "By clicking Sign Up",
+        //         videos: "",
+        //         images: "https://www.dothome.co.kr/static/images/main/main-slide4.jpg",
+        //         time: 1496415600 // 20170603
+        //     }, {
+        //         id: 6,
+        //         type: "a",
+        //         title: "Hop right into VR",
+        //         desc: "Everything you need is built into the headset—just pick it up and hop right into VR",
+        //         videos: "n8d79M0LtfY", // n8d79M0LtfY
+        //         images: "https://www.dothome.co.kr/static/images/main/main-slide3.jpg",
+        //         time: 1501513200 // 20170801
+        //     }
+        // ],
         "scrap": [
             {
                 id: 1,
