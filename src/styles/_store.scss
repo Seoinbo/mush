@@ -29,6 +29,11 @@
             @media screen and (min-width: 501px) and (max-width: 700px) {
                 max-width: 420px;
             }
+            &.soldout {
+                & .title {
+                    padding-bottom: 2px !important;
+                }
+            }
             & .top {
                 border: 1px solid #e1e1e1;
                 border-bottom: none;
@@ -82,8 +87,8 @@
                     }
                 }
                 & .soldout-remain {
-                    padding: 0 20px 10px 20px;
-                    font-size: 15px;
+                    padding: 0 20px 8px 20px;
+                    font-size: 14px;
                 }
             }
             & .separator {

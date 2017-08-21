@@ -4,6 +4,7 @@
     </div>
     <div class="cover">
         <div class="image" [@fade]="coverImageViewStates[0]" [style.background-image]="'url('+args.images[0]+')'"></div>
+        <div class="bg"></div>
         <div class="typo">
             <h2>{{args.title}}</h2>
             <p>{{args.desc}}</p>
@@ -18,6 +19,7 @@
         </div>
         <div class="cover">
             <div class="image" [@fade]="coverImageViewStates[0]" [style.background-image]="'url('+args.images[0]+')'"></div>
+            <div class="bg"></div>
         </div>
     </div>
     <div class="part bottom">
@@ -25,12 +27,12 @@
             <!-- <youtube-player *ngIf="args.videos[1]" [width]="430" [height]="300" [playerVars]="playerOptions" (ready)="setPlayer($event, 1)" (change)="onStateChange($event, 1)"></youtube-player> -->
         </div>
         <div class="cover">
-            <div class="image" [@fade]="coverImageViewStates[1]" [style.background-image]="'url('+args.images[1]+')'">
-                <div class="typo">
-                    <h2>{{args.title}}</h2>
-                    <p>{{args.desc}}</p>
-                    <p>{{args.date}}</p>
-                </div>
+            <div class="image" [@fade]="coverImageViewStates[1]" [style.background-image]="'url('+args.images[1]+')'"></div>
+            <div class="bg"></div>
+            <div class="typo">
+                <h2>{{args.title}}</h2>
+                <p>{{args.desc}}</p>
+                <p>{{args.date}}</p>
             </div>
         </div>
     </div>

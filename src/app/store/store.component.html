@@ -1,12 +1,12 @@
 <div class="boundary">
     <h2 class="title">Store</h2>
     <div class="product-box">
-        <div *ngFor="let product of products; let i = index" class="product">
-            <div class="top" (click)="add($event, product.id)" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)">
+        <div *ngFor="let product of products; let i = index" class="product" [class.soldout]="product.soldout">
+            <div class="top" (click)="add($event, i)" (mouseover)="activeCover(i, '장바구니 담기')" (mouseout)="inactiveCover(i)">
                 <div class="thumb" [style.background-image]="'url('+product.image+')'">
                     <div class="cover" [class.visible]="coverVisible[i]">
                         <div class="bg"></div>
-                        <span class="text">{{coverText}}</span>
+                        <span class="text">{{coverText[i]}}</span>
                     </div>
                 </div>
                 <h3 class="title">{{product.title}}</h3>
@@ -25,7 +25,7 @@
                 <div class="right">
                     <ng-template [ngIf]="!product.soldout">
                         <h4>수량</h4>
-                        <a class="pm-buttons minus" (mouseover)="activeCover(i, 'REMOVE TO CART')" (mouseout)="inactiveCover(i)" href="#" (click)="remove($event, product.id)"><i></i></a><span class="quantity" [attr.data-quantity]="product.quantity">{{product.quantity|withComma}}</span><a class="pm-buttons plus" (mouseover)="activeCover(i, 'ADD TO CART')" (mouseout)="inactiveCover(i)" href="#"  (click)="add($event, product.id)"><i></i></a>
+                        <a class="pm-buttons minus" (mouseover)="activeCover(i, '장바구니 빼기')" (mouseout)="inactiveCover(i)" href="#" (click)="remove($event, i)"><i></i></a><span class="quantity" [attr.data-quantity]="product.quantity">{{product.quantity|withComma}}</span><a class="pm-buttons plus" (mouseover)="activeCover(i, '장바구니 담기')" (mouseout)="inactiveCover(i)" href="#"  (click)="add($event, i)"><i></i></a>
                     </ng-template>
                     <ng-template [ngIf]="product.soldout">
                         <span class="soldout-msg">품절</span><a class="soldout-reason">(?)</a>

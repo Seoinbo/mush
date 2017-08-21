@@ -7,26 +7,39 @@ import { StoreService } from './store.service';
 })
 
 export class StoreComponent {
-    private coverText: string = "ADD TO CART";
+    private coverText: string[] = ["", "", ""];
     private coverVisible: boolean[] = [false, false ,false];
     private now: number = Math.round(new Date().getTime() / 1000);
 
     constructor(private storeService: StoreService) {
     }
 
-    private add(event, id, count = 1) {
-        this.storeService.incr(id, count);
+    private add(event, index, count = 1) {
+        let product = this.products[index];
+        if (product.soldout) {
+            return;
+        }
+        this.storeService.incr(product.id, count);
         event.preventDefault();
     }
 
-    private remove(event, id, count = 1) {
-        this.storeService.decr(id, count);
+    private remove(event, index, count = 1) {
+        let product = this.products[index];
+        if (product.soldout) {
+            return;
+        }
+        this.storeService.decr(product.id, count);
         event.preventDefault();
     }
 
     private activeCover(index, text: string) {
+        let product = this.products[index];
         this.coverVisible[index] = true;
-        this.coverText = text;
+        if (product.soldout) {
+            this.coverText[index] = "품절";
+        } else {
+            this.coverText[index] = text;
+        }
     }
 
     private inactiveCover(index) {
