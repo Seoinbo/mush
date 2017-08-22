@@ -23,6 +23,7 @@
         "../node_modules/slick-carousel/slick/slick.css"
       ],
       "scripts": [
+        "../src/assets/scripts/analytics.js",
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/moment/min/moment-with-locales.min.js",
         "../node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js",
