@@ -1,5 +1,5 @@
 <div class="boundary">
-    <h2 class="title">Store</h2>
+    <h2 class="title">상품주문</h2>
     <div class="product-box">
         <div *ngFor="let product of products; let i = index" class="product" [class.soldout]="product.soldout">
             <div class="top" (click)="add($event, i)" (mouseover)="activeCover(i, '장바구니 담기')" (mouseout)="inactiveCover(i)">

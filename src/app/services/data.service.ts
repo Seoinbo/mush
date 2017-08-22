@@ -168,11 +168,11 @@ export class DataService {
             }, {
                 id: 3,
                 type: "video",
-                title: "명품! 꽃송이버섯의 다양한 효능",
+                title: "꽃송이버섯 베타글루칸 1.3",
                 desc: "꽃송이버섯 효능 중 가장 많이 알려져 있는 효능은 항암효과 입니다. 꽃송이버섯에는 베타글루칸이 50%이상 함류되어 있는것으로 알려져 있는데요. 베타글루칸은 종양의 전이를 억제 하고 암과 관련된 혈관이 생성되는 것을 억제합니다. 버섯 100g당 베타글루칸 함량은 꽃송이버섯(43.6g), 노랑느타리바섯(37.6g), 일반느타리버섯(19~28g), 잎새버섯(15~20g), 영지버섯(8~15g), 송이버섯(18.1g) 순으로 꽃송이 버섯이 가장많이 함유하고 있습니다. 한 연구에 따르면 항종양 활성, 대장암 세포 역제, 대장 활동을 활발하게 한다는 실험 결과가 있습니다.",
-                srctit: "TV조선 내 몸 사용설명서 110회",
-                image: "./assets/images/thumb_mybody.jpg",
-                link: "https://youtu.be/wUVvBqsMN1A"
+                srctit: "나카지마 미쯔오 도쿄의대 교수",
+                image: "./assets/images/thumb_book_beta13.jpg",
+                link: "http://book.naver.com/bookdb/book_detail.nhn?bid=7443914"
             }, {
                 id: 4,
                 type: "news",
