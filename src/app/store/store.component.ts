@@ -46,12 +46,20 @@ export class StoreComponent {
         this.coverVisible[index] = false;
     }
 
-    get products(): any {
+    private get products(): any {
         return this.storeService.getProducts();
     }
 
+    private get shipping(): number {
+        let shipping = this.storeService.shipping;
+        if (shipping.fee <= 0) {
+            return 3500;
+        }
+        return shipping.fee;
+    }
+
     // 몇 개월/일 전 표기
-    protected remains(index): string {
+    private remains(index): string {
         let product = this.products[index];
         let remain = product.readytime - this.now;
         if (remain < 0) {

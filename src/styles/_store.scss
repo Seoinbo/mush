@@ -10,7 +10,6 @@
     background-image: linear-gradient(to bottom, #F6F6F6 90%, #EEEEEE 100%);
     & .product-box {
         width: 100%;
-        margin-bottom: 25px;
         text-align: center;
         padding: 0 15px;
         & .product {
@@ -199,6 +198,75 @@
                         line-height: 35px;
                     }
                 }
+            }
+        }
+    }
+    & .notice {
+        width: 100%;
+        margin: 60px auto 0 auto;
+        padding: 0 45px;
+        max-width: 980px; 
+        & h4 {
+            color: #666;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+        & ul {
+            margin-top: 5px;
+            padding-left: 20px;
+            font-size: 14px;
+            text-align: justify;
+            line-height: 1.5;
+            & li {
+                margin-top: 2px;
+            }
+        }
+        & table {
+            font-size: 13px;
+            width:100%;
+            margin-top: 15px;
+            border:0;
+            border-collapse:collapse;
+            & tr {
+                border-top: 1px solid #c9c9c9;
+                border-bottom: 1px solid #c9c9c9;
+            }
+            & th {
+                padding: 5px 8px 6px 10px;
+                font-weight: normal;
+                vertical-align: middle;
+                background: #eee;
+            }
+            & td {
+                padding: 5px 8px 6px 10px;
+                border: 0;
+                line-height: 1.4;
+            }
+        }
+        & > .left {
+            display: inline-block;
+            width: 50%;
+            padding-right: 20px;
+            @media screen and (max-width: 980px) {
+                width: 100%;
+                padding: 0;
+            }
+            & h4:first-child {
+                margin-top: 0;
+            }
+        }
+        & > .right {
+            display: inline-block;
+            width: 50%;
+            margin-left: -4px;
+            padding-left: 20px;
+            @media screen and (max-width: 980px) {
+                width: 100%;
+                padding: 0;
+                margin-top: 20px;
+            }
+            & h4:first-child {
+                margin-top: 0;
             }
         }
     }
