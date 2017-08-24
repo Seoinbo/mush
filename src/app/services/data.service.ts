@@ -44,15 +44,15 @@ export class DataService {
                 type: "b",
                 title: "분양 3개월째",
                 desc: "제법 많이 컸습니다. 아주 잘 자라고 있어요.",
-                videos: "rA1_TKtbqAE",
-                images: "http://data.1freewallpapers.com/download/cute-kitten.jpg",
+                videos: "",
+                images: "./assets/images/thumb_jnilbo.jpg",
                 time: 1504714580 // 201709204
             }, {
                 id: 3,
                 type: "c",
                 title: "패키지 디자인",
                 desc: "상품 패키지 샘플이 나왔습니다.",
-                videos: "rA1_TKtbqAE",
+                videos: "",
                 images: "http://cfile2.uf.tistory.com/image/271DD73656A36E1E31F3A0,http://cfile30.uf.tistory.com/image/250E514256A36E14171CA6",
                 time: 1501517600 // 201706211
             }, {
@@ -60,7 +60,7 @@ export class DataService {
                 type: "b",
                 title: "홈페이지도 직접 만듭니다",
                 desc: "농사도 짓고 홈페이지도 만듭니다.",
-                videos: "rA1_TKtbqAE",
+                videos: "",
                 images: "https://www.digipen.edu/fileadmin/website_data/images/slideshows/CE007.jpg",
                 time: 1500826400 // 201706211
             }, {
@@ -68,7 +68,7 @@ export class DataService {
                 type: "c",
                 title: "꽃송이 버섯 배지 도착",
                 desc: "전문가가 만든 버섯 배지를 분양받았습니다. 앞으로 6개월가량 정성을 다해 키워보겠습니다.",
-                videos: "rA1_TKtbqAE",
+                videos: "",
                 images: "http://cfile7.uf.tistory.com/image/196CCF4150DCED8A11BE2B,http://monco.co.kr/design/upload_file/__HTMLEDITOR__/zymo_hana/50956673507e9676e283eddd86c83ed5_217_1.jpg",
                 time: 1498017800 // 201706211
             }, {
@@ -76,7 +76,7 @@ export class DataService {
                 type: "a",
                 title: "상주 두리산",
                 desc: "우리 농장은 상주 두리산 아래 위치해 있습니다. 산세가 험하고 수풀이 우거져 인적이 드문 곳이지요. 덕분에 자연산 표고버섯을 가끔 맛볼 수 있습니다.",
-                videos: "rA1_TKtbqAE",
+                videos: "",
                 images: "http://vilcap.com/wp-content/uploads/2016/09/Maggie-tower-view-nc1.jpg",
                 time: 1496535800
             }, {
@@ -84,7 +84,7 @@ export class DataService {
                 type: "b",
                 title: "버섯 재배사 설치",
                 desc: "이제 이곳을 버섯 배지로 가득 채울 예정입니다.",
-                videos: "rA1_TKtbqAE",
+                videos: "",
                 images: "http://010-8991-7397.com/wp-content/uploads/2014/06/KakaoTalk_20160228_182532053.jpg",
                 time: 1495095440
             }, {
@@ -92,7 +92,7 @@ export class DataService {
                 type: "a",
                 title: "35년간 농사만 지었습니다",
                 desc: "사과, 포도, 곶감 모두 내 자식들이 먹는다 생각하고, 안전한 식품을 재배하기 위해 노력했습니다.",
-                videos: "rA1_TKtbqAE",
+                videos: "",
                 images: "http://stimg.emart.com/upload/poweroflocalfoods/20161208_0919055_040.jpg?tmstmp=1503045613021",
                 time: 1488294000 // 20170301
             }

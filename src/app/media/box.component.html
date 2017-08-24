@@ -1,6 +1,6 @@
 <ng-template [ngIf]="args.type=='a' || args.type=='b'">
     <div class="source">
-           <!-- <youtube-player *ngIf="!isMobile && args.videos[0]" [videoId]="args.videos[0]" [width]="args.type == 'a' ? 890 : 400" [height]="550" [playerVars]="playerOptions" (ready)="setPlayer($event, 0)" (change)="onStateChange($event, 0)"></youtube-player>   -->
+            <youtube-player *ngIf="!isMobile && args.videos[0]" [videoId]="args.videos[0]" [width]="args.type == 'a' ? 890 : 400" [height]="550" [playerVars]="playerOptions" (ready)="setPlayer($event, 0)" (change)="onStateChange($event, 0)"></youtube-player>   
     </div>
     <div class="cover">
         <div class="image" [@fade]="coverImageViewStates[0]" [style.background-image]="'url('+args.images[0]+')'"></div>
