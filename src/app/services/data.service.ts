@@ -6,25 +6,25 @@ export class DataService {
         "menu": [
             {
                 id: 1,
-                title: "MENU1",
+                title: "꽃송이버섯",
                 href: "#sparassis-crispa",
                 target: "_self",
                 selected: false
             }, {
                 id: 2,
-                title: "MENU2",
+                title: "주문하기",
                 href: "#store",
                 target: "_self",
                 selected: false
             }, {
                 id: 3,
-                title: "MENU3",
+                title: "구매내역",
                 href: "https://order.pay.naver.com/home?tabMenu=SHOPPING",
                 target: "_blank",
                 selected: false
             }, {
                 id: 4,
-                title: "MENU4",
+                title: "관련글",
                 href: "#scrap",
                 target: "_self",
                 selected: false
@@ -208,7 +208,7 @@ export class DataService {
                 image: "http://cfile1.uf.tistory.com/image/2637823857667FC8268AB0",
                 oprice: 300000,
                 price: 285000,
-                soldout: 1,
+                soldout: 0,
                 readytime: 1502895600,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }

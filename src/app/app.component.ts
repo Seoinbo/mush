@@ -39,9 +39,9 @@ export class AppComponent {
         let pos = $(this.document).scrollTop();
 
         // Switching top-navigation status.
-        if (pos > 25) {
+        if (pos > 70) {
             this.topNavfloating = true;
-        } else if (this.topNavfloating && pos <= 25) {
+        } else if (this.topNavfloating && pos <= 70) {
             this.topNavfloating = false;
         }
 
