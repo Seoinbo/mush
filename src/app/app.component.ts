@@ -14,7 +14,7 @@ export class AppComponent {
     @ViewChild(MediaComponent)
     protected mediaComponent: MediaComponent;
 
-    title = 'app';
+    title = 'Doorisan';
     protected isMobile: boolean = false;
 
     // class flag

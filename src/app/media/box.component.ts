@@ -44,6 +44,7 @@ export class BoxComponent {
     private playerReady: boolean[] = [false, false];
 
     // for animations
+    private coverViewStates: string[] = ["active", "active"];
     private coverImageViewStates: string[] = ["active", "active"];
 
     // Timers
@@ -91,13 +92,13 @@ export class BoxComponent {
                     player.playVideo();
                     that.playerReady[i] = true;
                     that.coverHideTimer = setTimeout( function() {
-                        that.hideCover();
+                        that.hideCoverImage();
                     }, 600);
                 }, 800);
             } else {
                 player.playVideo();
                 that.coverHideTimer = setTimeout( function() {
-                    that.hideCover();
+                    that.hideCoverImage();
                 }, 600);
             }
         });
@@ -116,14 +117,24 @@ export class BoxComponent {
 
         let that = this;
         this.players.forEach( function(player) {
-            that.showCover();
+            that.showCoverImage();
             that.stopTimer = setTimeout( function () {
                 player.stopVideo();
             }, 650);
         });
     }
 
-    hideCover() {
+    mouseOver(i) {
+        this.coverViewStates[i] = "inactive";
+    }
+
+    mouseOut() {
+        for (let i = 0; i < 2; i++) {
+            this.coverViewStates[i] = "active";
+        }
+    }
+
+    hideCoverImage() {
         for (let i = 0; i < 2; i++) {
             if (this.players[i]) {
                 this.coverImageViewStates[i] = "inactive";
@@ -131,7 +142,7 @@ export class BoxComponent {
         }
     }
 
-    showCover() {
+    showCoverImage() {
         for (let i = 0; i < 2; i++) {
             if (this.players[i]) {
                 this.coverImageViewStates[i] = "active";

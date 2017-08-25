@@ -42,8 +42,8 @@ export class DataService {
             }, {
                 id: 2,
                 type: "b",
-                title: "분양 3개월째",
-                desc: "제법 많이 컸습니다. 아주 잘 자라고 있어요.",
+                title: "재배 3개월째",
+                desc: "제법 많이 컸습니다. 아주 잘 자라고 있어요. 버섯은 환경이 제일 중요하기 때문에 매일 온도와 습도를 확인하고 있습니다.",
                 videos: "",
                 images: "./assets/images/thumb_jnilbo.jpg",
                 time: 1504714580 // 201709204
@@ -51,31 +51,23 @@ export class DataService {
                 id: 3,
                 type: "c",
                 title: "패키지 디자인",
-                desc: "상품 패키지 샘플이 나왔습니다.",
+                desc: "상품 패키지 샘플이 나왔습니다. 선물용으로도 손색없게 고급스러운 느낌을 내려고 노력했습니다. 며느리가 고생을 많이 했습니다.",
                 videos: "",
                 images: "http://cfile2.uf.tistory.com/image/271DD73656A36E1E31F3A0,http://cfile30.uf.tistory.com/image/250E514256A36E14171CA6",
                 time: 1501517600 // 201706211
             }, {
-                id: 4,
-                type: "b",
-                title: "홈페이지도 직접 만듭니다",
-                desc: "농사도 짓고 홈페이지도 만듭니다.",
-                videos: "",
-                images: "https://www.digipen.edu/fileadmin/website_data/images/slideshows/CE007.jpg",
-                time: 1500826400 // 201706211
-            }, {
                 id: 5,
-                type: "c",
+                type: "b",
                 title: "꽃송이 버섯 배지 도착",
-                desc: "전문가가 만든 버섯 배지를 분양받았습니다. 앞으로 6개월가량 정성을 다해 키워보겠습니다.",
+                desc: "오랜 고민 끝에 우리 농장에서 처음으로 재배할 버섯을 정했습니다. 뛰어난 항암 효과로 최근 주목받고 있는 버섯인데요. 바로 꽃송이버섯 입니다. 비싼 소비자 가격 때문에 쉬운 결정은 아니었지만 건조된 버섯은 농민이 직거래를 하기에도 적합했습니다. 건조하면 안 좋을까 걱정하실 텐데 오히려 비타민D 성분이 더욱 증가한다고 합니다.",
                 videos: "",
-                images: "http://cfile7.uf.tistory.com/image/196CCF4150DCED8A11BE2B,http://monco.co.kr/design/upload_file/__HTMLEDITOR__/zymo_hana/50956673507e9676e283eddd86c83ed5_217_1.jpg",
+                images: "http://cfile7.uf.tistory.com/image/196CCF4150DCED8A11BE2B",
                 time: 1498017800 // 201706211
             }, {
                 id: 6,
                 type: "a",
                 title: "상주 두리산",
-                desc: "우리 농장은 상주 두리산 아래 위치해 있습니다. 산세가 험하고 수풀이 우거져 인적이 드문 곳이지요. 덕분에 자연산 표고버섯을 가끔 맛볼 수 있습니다.",
+                desc: "우리 농장은 경북 상주시 두리산자락에 있습니다. 산세가 험하고 수풀이 우거져 인적이 드문 외딴곳이지만, 공기가 맑고 토양이 우수해 식물이 자라기 좋은 환경입니다.",
                 videos: "",
                 images: "http://vilcap.com/wp-content/uploads/2016/09/Maggie-tower-view-nc1.jpg",
                 time: 1496535800
@@ -83,15 +75,15 @@ export class DataService {
                 id: 7,
                 type: "b",
                 title: "버섯 재배사 설치",
-                desc: "이제 이곳을 버섯 배지로 가득 채울 예정입니다.",
+                desc: "주된 작물이 포도였는데 버섯이 건강에 좋다 하여 앞으로 반절은 버섯 농사를 짓기로 했습니다. 아내와 둘이서 농사를 짓다 보니 더 일거리를 늘릴 수 없었습니다. 일단 재배 환경이 좋은 두리산 아래 버섯 재배사를 설치했습니다.",
                 videos: "",
                 images: "http://010-8991-7397.com/wp-content/uploads/2014/06/KakaoTalk_20160228_182532053.jpg",
                 time: 1495095440
             }, {
                 id: 8,
                 type: "a",
-                title: "35년간 농사만 지었습니다",
-                desc: "사과, 포도, 곶감 모두 내 자식들이 먹는다 생각하고, 안전한 식품을 재배하기 위해 노력했습니다.",
+                title: "농사만 35년",
+                desc: "안녕하세요. 경북 상주에서 35년 넘게 농사만 지어 온 착한 농부 서중교 입니다. 복숭아, 포도, 곶감 등 주로 과수 농사를 짓고 있으며 모두 내 자식들이 먹는다 생각하고 안전한 식품을 재배하기 위해 노력하고 있습니다. 지금까지 유통 마진 때문에 비싼 값에 구매하셨다면 농부가 직접 판매해 가격이 착한 최상품을 지금 만나보세요.",
                 videos: "",
                 images: "http://stimg.emart.com/upload/poweroflocalfoods/20161208_0919055_040.jpg?tmstmp=1503045613021",
                 time: 1488294000 // 20170301
