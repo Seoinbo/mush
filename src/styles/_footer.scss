@@ -20,14 +20,13 @@ footer {
             width: 50%;
             & .logo {
                 display: block;
-                width: 185px;
-                height: 55px;
-                background: #039be5;
-                color: #fff;
-                font-size: 1.688em;
-                font-weight: bold;
-                text-align: center;
-                line-height: 50px;
+                overflow: hidden;
+                width: 115px; 
+                height: 85px;
+                background-position: -170px -94px !important;
+                text-indent: 101%;
+                white-space: nowrap;
+                background: transparent url("/assets/images/logo_doori.png") no-repeat;
             }
         }
         & .right {
