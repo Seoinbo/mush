@@ -52,7 +52,7 @@ header {
     &.floating {
         opacity: 1;
         top: 0;
-        border-bottom: 1px solid #e1e1e1;
+        border-bottom: 1px solid #c1c1c1;
         @media screen and (max-width: 980px) {
             display: block;
             & .logo {

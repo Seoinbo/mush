@@ -1,5 +1,4 @@
 .intro {
-    padding: 0 !important;
     & .boundary {
         max-width: 100% !important;
         margin: 0 !important;
@@ -17,23 +16,26 @@
         @media screen and (max-width: 980px) {
             background: none;
         }
-        
     }
     & .typo {
         position: absolute;
         max-width: 555px;
         width: 100%;
-        height: 100%;
         top: 0;
         left: 0;
     }
     & .sparassis-crispa {
         height: 700px;
+        @media screen and (max-width: 980px) {
+            height: auto;
+        }
         & .typo {
             margin-top: 150px;
             padding: 0 50px;
             @media screen and (max-width: 980px) {
-                margin-left: 0px;
+                position: relative;
+                margin-top: 0;
+                margin-left: 0;
             }
             @media screen and (min-width: 981px) and (max-width: 1280px) {
                 margin-left: 90px;
@@ -70,16 +72,14 @@
                     display: none;
                 }
                 & .thumb {
-                    display: block;
-                    float: left;
+                    display: inline-block;
                     width: 168px;
                     height: 94px;
                     background: url("/assets/images/thumb_mybody.jpg") no-repeat center center/cover;
                     // background: #999;
                 }
                 & dl {
-                    display: block;
-                    float: left;
+                    display: inline-block;
                     margin: 0 0 0 15px;
                     & dt {
                         color: #000;

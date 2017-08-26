@@ -1,7 +1,7 @@
 <div class="boundary">
     <div class="section-title">
         <h2>상품주문</h2>
-        <p>생산자가 직접 판매해 유통마진 없는 착한 가격</p>
+        <p>생산자가 직접 판매해 유통<br>마진 없는 착한 가격</p>
     </div>
     <div class="product-box">
         <div *ngFor="let product of products; let i = index" class="product" [class.soldout]="product.soldout">
@@ -12,8 +12,14 @@
                         <span class="text">{{coverText[i]}}</span>
                     </div>
                 </div>
-                <h3 class="title">{{product.title}}</h3>
-                <div *ngIf="product.soldout" class="soldout-remain">{{remains(i)}}</div>
+                <div class="info">
+                    <h3 class="title">{{product.title}}</h3>
+                    <ng-template [ngIf]="deviceService.isMobile">
+                        <span class="price">{{product.price|withComma}}원</span>
+                        <span *ngIf="product.price != product.oprice" class="o-price">({{product.oprice|withComma}}원)</span>
+                    </ng-template>
+                    <div *ngIf="product.soldout" class="soldout-remain">{{remains(i)}}</div>
+                </div>
             </div>
             <div class="separator">
                 <span class="edge-left"></span>

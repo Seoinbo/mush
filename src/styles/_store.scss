@@ -12,6 +12,9 @@
         width: 100%;
         text-align: center;
         padding: 0 15px;
+        @media screen and (max-width: 500px) {
+            padding: 0;
+        }
         & .product {
             display: inline-block;
             max-width: 320px;
@@ -38,11 +41,24 @@
                 border-bottom: none;
                 cursor: pointer;
                 @include user-select(none);
+                @media screen and (max-width: 500px) {
+                    text-align: left;
+                    border-left: none;
+                    border-right: none;
+                    padding: 25px 25px 0 25px;
+                    margin-bottom: 10px;
+                }
                 & .thumb {
                     position: relative;
                     width: 100%;
                     height: 220px;
                     background: transparent no-repeat center center/cover;
+                    @media screen and (max-width: 500px) {
+                        display: inline-block;
+                        float: right;
+                        width: 80px;
+                        height: 80px;
+                    }
                     & .cover {
                         position: relative;
                         top: 0;
@@ -74,27 +90,51 @@
                         }
                     }
                 }
-                & .title {
-                    padding: 30px 20px;
-                    width: 100%;
-                    font-size: 1.063em;
-                    color: $titleColor;
-                    line-height: 28px;
-                    text-align: center;
-                    @media screen and (max-width: 1050px) {
-                        padding: 15px 10px 0 10px;
+                & .info {
+                    @media screen and (max-width: 500px) {
+                        display: inline-block;
+                        height: 80px;
                     }
-                }
-                & .soldout-remain {
-                    padding: 0 20px 8px 20px;
-                    font-size: 0.875em;
+                    & .title {
+                        padding: 30px 20px;
+                        width: 100%;
+                        font-size: 1.063em;
+                        color: $titleColor;
+                        line-height: 28px;
+                        text-align: center;
+                        @media screen and (max-width: 500px) {
+                            padding: 0;
+                            text-align: left;
+                        }
+                        @media screen and (min-width: 501px) and (max-width: 1050px) {
+                            padding: 15px 10px 0 10px;
+                        }
+                    }
+                    & .price {
+                        font-size: 0.938em;
+                    }
+                    & .o-price {
+                        font-size: 0.750em;
+                        text-decoration: line-through;
+                        line-height: 26px;
+                    }
+                    & .soldout-remain {
+                        width: 100%;
+                        padding: 0 20px 8px 20px;
+                        font-size: 0.875em;
+                        @media screen and (max-width: 500px) {
+                            display: none;
+                        }
+                    }
                 }
             }
             & .separator {
                 height: 12px;
                 background: url("/assets/images/store_dash.jpg") repeat 0 0;
                 @media screen and (max-width: 1050px) {
-                    display: none;
+                    & .edge-left, & .edge-right {
+                        display: none !important;
+                    }
                 }
                 & .edge-left {
                     display: block;
@@ -114,6 +154,11 @@
             & .bottom {
                 border: 1px solid #e1e1e1;
                 border-top: none;
+                @media screen and (max-width: 500px) {
+                    border-left: none;
+                    border-right: none;
+                    padding: 0 25px;
+                }
                 & h4 {
                     font-size: 0.875em;
                     color: #999;
@@ -124,6 +169,9 @@
                     margin: 15px 0 20px 0;
                     padding: 5px 0 5px 10px;
                     border-right: 1px solid #e1e1e1;
+                    @media screen and (max-width: 500px) {
+                        display: none;
+                    }
                     & .price {
                         display: block;
                         font-size: 1.063em;
@@ -149,28 +197,45 @@
                     margin: 15px 0 20px -4px;
                     padding: 5px 10px 5px 0;
                     @include user-select(none);
+                    @media screen and (max-width: 500px) {
+                        width: 100%;
+                        padding: 0;
+                        margin: 3px 0 10px 0;
+                        & h4 {
+                            display: none !important;
+                        }
+                    }
                     & a.pm-buttons {
                         display: inline-block;
-                        width: 35px;
+                        width: 40%;
                         height: 35px;
+                        @media screen and (max-width: 500px) {
+                            text-align: center !important;
+                        }
                         & i {
-                            display: block;
+                            display: inline-block;
                             width: 20px;
                             height: 20px;
                             background: url("/assets/images/store.png") no-repeat;
                         }
-                        &.plus i {
-                            margin-top: 9px;
-                            margin-left: 8px;
-                            background-position: 0 0;
+                        &.plus {
+                            text-align: left;
+                            & i {
+                                margin-top: 9px;
+                                margin-left: 8px;
+                                background-position: 0 0;
+                            }
                         }
                         &.plus:hover i {
                             background-position: -30px 0;
                         }
-                        &.minus i {
-                            margin-top: 9px;
-                            margin-left: 8px;
-                            background-position: 0 -30px;
+                        &.minus {
+                            text-align: right;
+                            & i {
+                                margin-top: 9px;
+                                margin-right: 5px;
+                                background-position: 0 -30px;
+                            }
                         }
                         &.minus:hover i {
                             background-position: -30px -30px;
@@ -205,7 +270,10 @@
         width: 100%;
         margin: 60px auto 0 auto;
         padding: 0 45px;
-        max-width: 980px; 
+        max-width: 980px;
+        @media screen and (max-width: 500px) {
+            margin-top: 35px;
+        }
         & h4 {
             color: #666;
             font-size: 0.875em;

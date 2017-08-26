@@ -178,7 +178,7 @@ export class DataService {
         "products": [
             {
                 id: 1,
-                title: "Progress Lighting P3884",
+                title: "말린 꽃송이버섯 100g",
                 image: "https://s.pstatic.net/static/www/mobile/edit/2017/0809/cropImg_339x222_102721593234280900.jpeg",
                 oprice: 0,
                 price: 100000,
@@ -187,7 +187,7 @@ export class DataService {
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }, {
                 id: 2,
-                title: "Eddie Bauer Sherpa Throw",
+                title: "백화포도 5kg",
                 image: "http://cfile8.uf.tistory.com/image/252EFD3C57594DFA2A46FE",
                 oprice: 0,
                 price: 200000,
@@ -196,7 +196,7 @@ export class DataService {
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }, {
                 id: 3,
-                title: "White Monterey 6 Drawer",
+                title: "청포도(샤인마스캇) 4kg",
                 image: "http://cfile1.uf.tistory.com/image/2637823857667FC8268AB0",
                 oprice: 300000,
                 price: 285000,
