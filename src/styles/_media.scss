@@ -7,11 +7,11 @@
         text-align: center;
         & h2 {
             margin-bottom: 0;
-            font-size: 24px;
+            font-size: 1.500em;
         }
         & p {
             margin: 5px 0 0 0;
-            font-size: 13px;
+            font-size: 0.813em;
         }
         &.hidden {
             opacity: 0;
@@ -55,19 +55,19 @@
                     word-break: keep-all;
                     & h2 {
                         margin-bottom: 0;
-                        font-size: 32px;
+                        font-size: 2.000em;
                         font-weight: normal;
                         line-height: 38px;
                         color: $titleColor;
                     }
                     & p {
                         margin: 12px 0 0 0;
-                        font-size: 17px;
+                        font-size: 1.063em;
                         font-weight: 300;
                         line-height: 1.3;
                     }
                     & .date {
-                        font-size: 15px;
+                        font-size: 0.938em;
                         display: inline-block;
                         margin-top: 12px;
                     }
@@ -92,11 +92,11 @@
                     text-align: left;
                     & h2 {
                         margin-bottom: 0;
-                        font-size: 24px;
+                        font-size: 1.500em;
                     }
                     & p {
                         margin: 15px 0 0 0;
-                        font-size: 13px;
+                        font-size: 0.813em;
                     }
                 }
             }
@@ -131,16 +131,17 @@
                     overflow: hidden;
                     &.focus {
                         & .image {
-                            transform: scale(1.05, 1.05);
+                            transform: scale(1, 1);
                         }
                         & .bg {
-                            opacity: .4;
+                            opacity: 0;
                         }
                     }
                     & .image {
                         width: 100%;
                         height: 100%;
                         background: transparent no-repeat center center/cover;
+                        transform: scale(1.05, 1.05);
                         @include transition(all .45s ease);
                     }
                     & .bg {
@@ -150,7 +151,7 @@
                         width: 100%;
                         height: 100%;
                         background-color: #000;
-                        opacity: 0;
+                        opacity: .4;
                         @include transition(opacity .6s ease);
                     }
                     & .typo {
@@ -163,20 +164,20 @@
                         text-align: justify;
                         & h2 {
                             margin: 0;
-                            font-size: 27px;
+                            font-size: 1.688em;
                             font-weight: normal;
                             line-height: 1.5;
                             color: #fff;
                         }
                         & p {
                             margin: 8px 0 0 0;
-                            font-size: 17px;
+                            font-size: 1.063em;
                             font-weight: 200;
                             line-height: 1.3;
                             opacity: .9;
                         }
                         & .date {
-                            font-size: 15px;
+                            font-size: 0.938em;
                             display: inline-block;
                             margin-top: 8px;
                         }
@@ -235,7 +236,7 @@
                 & a {
                     display: inline-block;
                     margin-top: 260px;
-                    font-size: 21px;
+                    font-size: 1.313em;
                     font-weight: 100;
                     color: #fff;
                 }

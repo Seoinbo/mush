@@ -1,16 +1,28 @@
 // Mobile mode
-@media screen and (min-width: 981px) and (max-width: 1280px) {
+.is-mobile {
+    font-size: 18px;
+    & .store .notice {
+        font-size: 16px;
+        
+    }
+    & .scrap .scrap-box .article .click-area {
+        & h3 {
+            max-height: 53px;
+        }
+        & p {
+            height: 71px;
+        }
+    }
+    & footer {
+        font-size: 16px;
+    }
 
-}
-
-@media screen and (min-width: 1281px) and (max-width: 1440px) {
-
-}
-
-@media screen and (min-width: 1441px) and (max-width: 1920px) {
-
-}
-
-@media screen and (min-width: 1921px) {
-
+    & .store .product-box .product .bottom .right a.pm-buttons {
+        &.plus:hover i {
+            background-position: 0 0;
+        }
+        &.minus:hover i {
+            background-position: 0 -30px;
+        }
+    }
 }

@@ -8,6 +8,7 @@ import { MediaComponent } from './media.component';
 import { BoxComponent } from './box.component';
 
 import { DataService } from '../services/data.service';
+import { DeviceService } from '../services/device.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,9 @@ import { DataService } from '../services/data.service';
   exports: [
     MediaComponent
   ],
-  providers: [DataService]
+  providers: [
+    DataService,
+    DeviceService
+  ]
 })
 export class MediaModule { }

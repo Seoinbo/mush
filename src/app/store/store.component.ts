@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StoreService } from './store.service';
+import { DeviceService } from '../services/device.service';
 
 @Component({
   selector: '.store',
@@ -11,7 +12,7 @@ export class StoreComponent {
     private coverVisible: boolean[] = [false, false ,false];
     private now: number = Math.round(new Date().getTime() / 1000);
 
-    constructor(private storeService: StoreService) {
+    constructor(private storeService: StoreService, private deviceService: DeviceService) {
     }
 
     private add(event, index, count = 1) {
@@ -33,6 +34,9 @@ export class StoreComponent {
     }
 
     private activeCover(index, text: string) {
+        if (this.deviceService.isMobile) {
+            return false;
+        }
         let product = this.products[index];
         this.coverVisible[index] = true;
         if (product.soldout) {

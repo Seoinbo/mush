@@ -3,32 +3,47 @@ header {
     z-index: 10;
     top: 0;
     width: 100%;
-    height: 45px;
+    height: 55px;
     background: #fff;
-    padding: 0 50px 0 50px;
-    margin-top: 35px;
+    padding: 5px 50px 5px 50px;
+    margin-top: 30px;
     @include transition(opacity .3s ease);
     @media screen and (max-width: 980px) {
-        display: none;
-        padding: 20px 15px 0 25px;
+        position: absolute;
+        top: 0;
+        padding: 5px 15px 5px 25px;
+        background: transparent;
+        & .menu {
+            color: #fff;
+            margin-right: 0 !important;
+            & ul li {
+                font-size: 1.063em !important;
+                font-weight: 400;
+                margin-right: 15px !important;
+            }
+        }
     }
     &.second-header {
         position: fixed;
         margin-top: 0;
         top: -45px;
         opacity: 0;
+        background: #fff;
         & .menu {
             color: $titleColor !important;
             @media screen and (max-width: 980px) {
-                margin-right: 0;
+                margin-right: 0 !important;
                 & ul li {
                     margin-right: 15px !important;
                 }
             }
             & ul li {
-                font-size: 15px;
+                font-size: 0.938em !important;
                 margin-right: 40px;
             }
+        }
+        & .logo h1 .logo-image {
+            background: transparent;
         }
     }
     &.hidden {
@@ -40,8 +55,6 @@ header {
         border-bottom: 1px solid #e1e1e1;
         @media screen and (max-width: 980px) {
             display: block;
-            top: -20px;
-            height: 65px;
             & .logo {
                 color: $titleColor;
             }
@@ -61,7 +74,7 @@ header {
         }
         & h1 {
             margin: 0;
-            font-size: 17px;
+            font-size: 1.063em;
             font-weight: bolder;
             & .logo-image {
                 display: block;
@@ -92,11 +105,11 @@ header {
                 display: inline-block;
                 text-align: center;
                 margin-right: 50px;
-                font-size: 19px;
+                font-size: 1.188em;
                 font-weight: 300;
                 line-height: 45px;
                 @media screen and (max-width: 980px) {
-                    font-size: 15px;
+                    font-size: 0.938em;
                     margin-right: 25px;
                     &:nth-child(1), &:nth-child(4) {
                         display: none;

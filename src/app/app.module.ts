@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
 import { Windoc } from "./services/windoc";
+import { DeviceService } from './services/device.service';
 import { RoutingModule } from './router.module';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -34,7 +35,8 @@ import { FooterModule } from './footer/footer.module';
     FooterModule
   ],
   providers: [
-      Windoc
+      Windoc,
+      DeviceService
   ],
   bootstrap: [AppComponent]
 })

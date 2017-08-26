@@ -1,7 +1,7 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { BoxComponent } from './box.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Ng2DeviceService } from 'ng2-device-detector';
+import { DeviceService } from '../services/device.service';
 import { DataService } from '../services/data.service';
 
 declare const moment: any;
@@ -33,7 +33,7 @@ export class MediaComponent {
 
     private dbOffset: number = 0;
     private dbLimit: number = 4;
-    private preloadCount: number = 2;
+    private preloadCount: number = 3;
 
     protected boxes: any[] = [];
     protected selected: any;
@@ -48,12 +48,8 @@ export class MediaComponent {
     private prevButtonViewState: string = 'inactive';
     private nextButtonViewState: string = 'inactive';
 
-    constructor(private dataService: DataService, private deviceService: Ng2DeviceService) {
-        // Detect device type.
-        let deviceInfo = this.deviceService.getDeviceInfo();
-        if (["android", "iphone"].indexOf(deviceInfo.device) > -1) {
-            this.isMobile = true;
-        }
+    constructor(private dataService: DataService, private deviceService: DeviceService) {
+        this.isMobile = deviceService.isMobile;
 
         this.loadDatabase();
         this.changeTitle(0);
@@ -76,9 +72,9 @@ export class MediaComponent {
 
         // Initiate carousel.
         if (this.isMobile) {
-            this.slickMobile();
+            this.onChangeDeviceType('mobile');
         } else {
-            this.slickDesktop();
+            this.onChangeDeviceType('desktop');
         }
 
         // Focus first slide.

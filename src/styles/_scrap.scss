@@ -45,7 +45,7 @@
                     margin-top: 15px;
                     overflow: hidden;
                     color: $titleColor;
-                    font-size: 17px;
+                    font-size: 1.063em;
                     font-weight: normal;
                     @media screen and (max-width: 500px) {
                         margin-top: 0;
@@ -59,7 +59,7 @@
                     height: 133px;
                     margin-top: 10px;
                     overflow: hidden;
-                    font-size: 15px;
+                    font-size: 0.938em;
                     text-align: justify;
                     @media screen and (max-width: 500px) {
                         height: 68px;
@@ -72,7 +72,7 @@
                     float: right;
                     margin-top: 10px;
                     color: #999;
-                    font-size: 13px;
+                    font-size: 0.813em;
                     @media screen and (max-width: 500px) {
                         float: none;
                         padding: 0 20px 0 0;
@@ -92,7 +92,7 @@
             width: 105px;
             border-radius: 35px;
             background-color: #b2b2b2;
-            font-size: 15px;
+            font-size: 0.938em;
             color: #fff;
         }
     }

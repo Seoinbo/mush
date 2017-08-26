@@ -45,25 +45,25 @@
                         display: none;
                     }
                     &.total strong {
-                        font-size: 24px !important;
+                        font-size: 1.500em !important;
                     }
                 }
                 &.total strong {
                     color: $titleColor;
-                    font-size: 29px;
+                    font-size: 1.813em;
                 }
             }
             & dt {
-                font-size: 15px;
+                font-size: 0.938em;
                 color: #999;
             }
             & dd {
-                font-size: 17px;
+                font-size: 1.063em;
                 font-weight: normal;
                 letter-spacing: -2px;
                 line-height: 36px;
                 & strong {
-                    font-size: 24px;
+                    font-size: 1.500em;
                     font-weight: normal;
                 }
             }

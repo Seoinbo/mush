@@ -1,7 +1,7 @@
 import { Component, Input, HostBinding } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Ng2DeviceService } from 'ng2-device-detector';
-import { Windoc } from "../services/windoc";
+import { DeviceService } from '../services/device.service';
+import { Windoc } from '../services/windoc';
 
 @Component({
     selector: 'div.box',
@@ -27,7 +27,6 @@ export class BoxComponent {
     @Input()
     args: any;
 
-    private isMobile: boolean = false;
     private boxHeight: number = 550;
 
     // via Youtube iframe API
@@ -44,7 +43,7 @@ export class BoxComponent {
     private playerReady: boolean[] = [false, false];
 
     // for animations
-    private coverViewStates: string[] = ["active", "active"];
+    private coverViewStates: string[] = ["inactive", "inactive"];
     private coverImageViewStates: string[] = ["active", "active"];
 
     // Timers
@@ -52,11 +51,9 @@ export class BoxComponent {
     private stopTimer;
     private coverHideTimer;
 
-    constructor (private windoc: Windoc, private deviceService: Ng2DeviceService) {
-        let deviceInfo = this.deviceService.getDeviceInfo();
-        if (["android", "iphone"].indexOf(deviceInfo.device) > -1) {
+    constructor (private windoc: Windoc, private deviceService: DeviceService) {
+        if (deviceService.isMobile) {
             this.boxHeight = this.windoc.height;
-            this.isMobile = true;
         }
     }
 
@@ -125,12 +122,15 @@ export class BoxComponent {
     }
 
     mouseOver(i) {
-        this.coverViewStates[i] = "inactive";
+        if (this.deviceService.isMobile) {
+            return false;
+        }
+        this.coverViewStates[i] = "active";
     }
 
     mouseOut() {
         for (let i = 0; i < 2; i++) {
-            this.coverViewStates[i] = "active";
+            this.coverViewStates[i] = "inactive";
         }
     }
 

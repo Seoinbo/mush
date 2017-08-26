@@ -1,5 +1,6 @@
 import { Component, HostListener, Inject, ViewChild } from '@angular/core';
 import { Windoc } from "./services/windoc";
+import { DeviceService } from './services/device.service';
 import { MediaComponent } from './media/media.component';
 
 import * as $ from 'jquery';
@@ -8,14 +9,17 @@ declare const ScrollMagic: any
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    styleUrls: ['./app.component.css'],
+    host: {
+        '[class.is-mobile]': 'deviceService.isMobile'
+    }
 })
 export class AppComponent {
     @ViewChild(MediaComponent)
     protected mediaComponent: MediaComponent;
 
+    private screenType: string = "desktop";
     title = 'Doorisan';
-    protected isMobile: boolean = false;
 
     // class flag
     private topNavfloating: boolean = false;
@@ -23,7 +27,7 @@ export class AppComponent {
 
     protected document: Document;
 
-    constructor( @Inject(Windoc) private windoc: Windoc) {
+    constructor(private windoc: Windoc, private deviceService: DeviceService) {
         this.document = this.windoc.document;
     }
 
@@ -56,20 +60,16 @@ export class AppComponent {
 
     @HostListener('window:resize', ['$event'])
     onResize(event) {
-        let isMobile;
+        let type;
         let windowWidth = event.target.innerWidth;
         if (windowWidth > 980) {
-            isMobile = false;
+            type = "desktop";
         } else {
-            isMobile = true;
+            type = "mobile";
         }
-        if (isMobile != this.isMobile) {
-            let deviceType = "desktop";
-            if (isMobile) {
-                deviceType = "mobile";
-            }
-            this.mediaComponent.onChangeDeviceType(deviceType);
-            this.isMobile = isMobile;
+        if (type != this.screenType) {
+            this.mediaComponent.onChangeDeviceType(type);
+            this.screenType = type;
         }
     }
 

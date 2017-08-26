@@ -66,7 +66,7 @@
                             display: block;
                             width: 100%;
                             height: 100%;
-                            font-size: 17px;
+                            font-size: 1.063em;
                             color: #ffffff;
                             text-align: center;
                             padding-top: 90px;
@@ -77,7 +77,7 @@
                 & .title {
                     padding: 30px 20px;
                     width: 100%;
-                    font-size: 17px;
+                    font-size: 1.063em;
                     color: $titleColor;
                     line-height: 28px;
                     text-align: center;
@@ -87,7 +87,7 @@
                 }
                 & .soldout-remain {
                     padding: 0 20px 8px 20px;
-                    font-size: 14px;
+                    font-size: 0.875em;
                 }
             }
             & .separator {
@@ -115,7 +115,7 @@
                 border: 1px solid #e1e1e1;
                 border-top: none;
                 & h4 {
-                    font-size: 15px;
+                    font-size: 0.875em;
                     color: #999;
                 }
                 & .left {
@@ -126,10 +126,10 @@
                     border-right: 1px solid #e1e1e1;
                     & .price {
                         display: block;
-                        font-size: 17px;
+                        font-size: 1.063em;
                         line-height: 36px;
                         & strong {
-                            font-size: 29px;
+                            font-size: 1.813em;
                             font-weight: normal;
                             color: #ea002c;
                             letter-spacing: -2px;
@@ -138,7 +138,7 @@
                     }
                     & .o-price {
                         display: block;
-                        font-size: 17px;
+                        font-size: 1.063em;
                         text-decoration: line-through;
                         margin-top: -3px;
                     }
@@ -161,7 +161,7 @@
                         }
                         &.plus i {
                             margin-top: 9px;
-                            margin-left: 10px;
+                            margin-left: 8px;
                             background-position: 0 0;
                         }
                         &.plus:hover i {
@@ -169,7 +169,7 @@
                         }
                         &.minus i {
                             margin-top: 9px;
-                            margin-left: 5px;
+                            margin-left: 8px;
                             background-position: 0 -30px;
                         }
                         &.minus:hover i {
@@ -178,7 +178,7 @@
                     }
                     & .quantity {
                         display: inline-block;
-                        font-size: 29px;
+                        font-size: 1.813em;
                         line-height: 35px;
                         color:$titleColor;
                         @include transition(all .35s);
@@ -189,7 +189,7 @@
                     & .soldout-msg {
                         display: inline-block;
                         margin-top: 10px;
-                        font-size: 17px;
+                        font-size: 1.063em;
                         line-height: 35px;
                     }
                     & .soldout-reason {
@@ -208,13 +208,13 @@
         max-width: 980px; 
         & h4 {
             color: #666;
-            font-size: 15px;
+            font-size: 0.875em;
             margin-top: 20px;
         }
         & ul {
             margin-top: 5px;
             padding-left: 20px;
-            font-size: 14px;
+            font-size: 0.875em;
             text-align: justify;
             line-height: 1.5;
             & li {
@@ -222,7 +222,7 @@
             }
         }
         & table {
-            font-size: 13px;
+            font-size: 0.813em;
             width:100%;
             margin-top: 15px;
             border:0;
