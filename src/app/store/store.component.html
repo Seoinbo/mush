@@ -1,7 +1,7 @@
 <div class="boundary">
     <div class="section-title">
         <h2>상품주문</h2>
-        <p>생산자가 직접 판매해 유통<br>마진 없는 착한 가격</p>
+        <p>농가에서 직접 판매해 유통<br>마진 없는 착한 가격</p>
     </div>
     <div class="product-box">
         <div *ngFor="let product of products; let i = index" class="product" [class.soldout]="product.soldout">
@@ -40,7 +40,7 @@
                                 (mouseout)="inactiveCover(i)" href="#" (click)="add($event, i)"><i></i></a>
                     </ng-template>
                     <ng-template [ngIf]="product.soldout">
-                        <span class="soldout-msg">품절</span><a class="soldout-reason">(?)</a>
+                        <span class="soldout-msg">품절</span><a class="soldout-reason">help</a>
                     </ng-template>
                 </div>
             </div>

@@ -21,12 +21,13 @@ footer {
             & .logo {
                 display: block;
                 overflow: hidden;
-                width: 115px; 
-                height: 85px;
-                background-position: -170px -94px !important;
+                width: 110px; 
+                height: 92px;
+                background-position: 0 0;
+                background-size: 100% auto !important;
                 text-indent: 101%;
                 white-space: nowrap;
-                background: transparent url("/assets/images/logo_doori.png") no-repeat;
+                background: transparent url("/assets/images/logo_d_gr.png") no-repeat;
             }
         }
         & .right {
