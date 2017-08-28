@@ -43,7 +43,7 @@ export class DataService {
                 id: 2,
                 type: "b",
                 title: "재배 3개월째",
-                desc: "제법 많이 컸습니다. 아주 잘 자라고 있어요. 버섯은 환경이 제일 중요하기 때문에 매일 온도와 습도를 확인하고 있습니다.",
+                desc: "제법 많이 컸습니다. 버섯은 환경이 제일 중요하기 때문에 매일 온도와 습도를 확인하고 있습니다.",
                 videos: "",
                 images: "./assets/images/thumb_jnilbo.jpg",
                 time: 1504714580 // 201709204
@@ -51,7 +51,7 @@ export class DataService {
                 id: 3,
                 type: "c",
                 title: "패키지 디자인",
-                desc: "상품 패키지 샘플이 나왔습니다. 선물용으로도 손색없게 고급스러운 느낌을 내려고 노력했습니다. 며느리가 고생을 많이 했습니다.",
+                desc: "상품 패키지 샘플이 나왔습니다. 선물용으로도 손색없게 고급스러운 느낌을 내려고 노력했습니다.",
                 videos: "",
                 images: "http://cfile2.uf.tistory.com/image/271DD73656A36E1E31F3A0,http://cfile30.uf.tistory.com/image/250E514256A36E14171CA6",
                 time: 1501517600 // 201706211
@@ -59,7 +59,7 @@ export class DataService {
                 id: 5,
                 type: "b",
                 title: "꽃송이 버섯 배지 도착",
-                desc: "오랜 고민 끝에 우리 농장에서 처음으로 재배할 버섯을 정했습니다. 뛰어난 항암 효과로 최근 주목받고 있는 버섯인데요. 바로 꽃송이버섯 입니다. 비싼 소비자 가격 때문에 쉬운 결정은 아니었지만 건조된 버섯은 농민이 직거래를 하기에도 적합했습니다. 건조하면 안 좋을까 걱정하실 텐데 오히려 비타민D 성분이 더욱 증가한다고 합니다.",
+                desc: "오랜 고민 끝에 우리 농장에서 처음 재배할 버섯을 꽃송이버섯으로 정했습니다. 뛰어난 항암 효과로 널리 알려 졌지만 인공재배가 시작된 것은 요즘이어서 그동안 쉽게 구하기 힘들던 버섯이기도 합니다.",
                 videos: "",
                 images: "http://cfile7.uf.tistory.com/image/196CCF4150DCED8A11BE2B",
                 time: 1498017800 // 201706211
@@ -75,7 +75,7 @@ export class DataService {
                 id: 7,
                 type: "b",
                 title: "버섯 재배사 설치",
-                desc: "주된 작물이 포도였는데 버섯이 건강에 좋다 하여 앞으로 반절은 버섯 농사를 짓기로 했습니다. 아내와 둘이서 농사를 짓다 보니 더 일거리를 늘릴 수 없었습니다. 일단 재배 환경이 좋은 두리산 아래 버섯 재배사를 설치했습니다.",
+                desc: "주된 작물이 포도였는데 버섯이 건강에 좋다 하여 앞으로 반절은 버섯 농사를 짓기로 했습니다. 아내와 둘이서 농사를 짓다 보니 더 일거리를 늘릴 순 없고, 일단 버섯 재배사 한동을  설치했습니다.",
                 videos: "",
                 images: "http://010-8991-7397.com/wp-content/uploads/2014/06/KakaoTalk_20160228_182532053.jpg",
                 time: 1495095440
@@ -83,7 +83,7 @@ export class DataService {
                 id: 8,
                 type: "a",
                 title: "농사만 35년",
-                desc: "안녕하세요. 경북 상주에서 35년 넘게 농사만 지어 온 착한 농부 서중교 입니다. 복숭아, 포도, 곶감 등 주로 과수 농사를 짓고 있으며 모두 내 자식들이 먹는다 생각하고 안전한 식품을 재배하기 위해 노력하고 있습니다. 지금까지 유통 마진 때문에 비싼 값에 구매하셨다면 농부가 직접 판매해 가격이 착한 최상품을 지금 만나보세요.",
+                desc: "안녕하세요. 경북 상주에서 35년 넘게 농사만 지어 온 착한 농부 서중교 입니다. 복숭아, 포도, 곶감 등 주로 과수 농사를 짓고 있으며 모두 내 자식들이 먹는다 생각하고 안전한 식품을 재배하기 위해 노력하고 있습니다. 지금까지 유통 마진 때문에 비싼 값에 구매하셨다면 농가에서 직접 판매해 가격이 착한 최상품을 지금 만나보세요.",
                 videos: "",
                 images: "http://stimg.emart.com/upload/poweroflocalfoods/20161208_0919055_040.jpg?tmstmp=1503045613021",
                 time: 1488294000 // 20170301
@@ -178,8 +178,8 @@ export class DataService {
         "products": [
             {
                 id: 1,
-                title: "말린 꽃송이버섯 100g",
-                image: "https://s.pstatic.net/static/www/mobile/edit/2017/0809/cropImg_339x222_102721593234280900.jpeg",
+                title: "건조 꽃송이버섯 100g",
+                image: "./assets/images/store_product1.jpg",
                 oprice: 0,
                 price: 100000,
                 soldout: 0,
@@ -187,20 +187,20 @@ export class DataService {
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }, {
                 id: 2,
-                title: "백화포도 5kg",
-                image: "http://cfile8.uf.tistory.com/image/252EFD3C57594DFA2A46FE",
-                oprice: 0,
-                price: 200000,
-                soldout: 1,
+                title: "건조 꽃송이버섯 300g",
+                image: "./assets/images/store_product2.jpg",
+                oprice: 300000,
+                price: 280000,
+                soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }, {
                 id: 3,
                 title: "청포도(샤인마스캇) 4kg",
-                image: "http://cfile1.uf.tistory.com/image/2637823857667FC8268AB0",
-                oprice: 300000,
-                price: 285000,
-                soldout: 0,
+                image: "./assets/images/store_product3.png",
+                oprice: 0,
+                price: 35000,
+                soldout: 1,
                 readytime: 1502895600,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
             }
