@@ -14,6 +14,7 @@ import { StoreModule } from './store/store.module';
 import { CartModule } from './store/cart.module';
 import { HowToEatModule } from './hte/hte.module';
 import { FooterModule } from './footer/footer.module';
+import { TooltipModule } from '../components/tooltip/tooltip.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FooterModule } from './footer/footer.module';
     StoreModule,
     CartModule,
     HowToEatModule,
-    FooterModule
+    FooterModule,
+    TooltipModule
   ],
   providers: [
       Windoc,

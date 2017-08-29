@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { StoreService } from './store.service';
 import { DeviceService } from '../services/device.service';
+import { Windoc } from '../services/windoc';
+import { TooltipService } from '../../components/tooltip/tooltip.service';
 
 @Component({
   selector: '.store',
@@ -12,7 +14,11 @@ export class StoreComponent {
     private coverVisible: boolean[] = [false, false ,false];
     private now: number = Math.round(new Date().getTime() / 1000);
 
-    constructor(private storeService: StoreService, private deviceService: DeviceService) {
+    constructor(
+        private windoc: Windoc,
+        private storeService: StoreService,
+        private deviceService: DeviceService,
+        private tooltipService: TooltipService) {
     }
 
     private add(event, index, count = 1) {
@@ -84,5 +90,18 @@ export class StoreComponent {
         }
 
         return "다음 판매 시까지 " + date + " 남음";
+    }
+
+    private toggleTooltip(event, title, desc, maxWidth) {
+        let pos = this.windoc.pageXY(event);
+        this.tooltipService.toggle({
+            id: "soldoutip",
+            title: title,
+            desc: desc,
+            maxWidth: maxWidth,
+            left: (pos.x - 80) + 'px',
+            top: (pos.y - 45) + 'px'
+        });
+        event.preventDefault();
     }
 }

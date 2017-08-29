@@ -1,0 +1,7 @@
+<div class="tip-content">
+    <dl>
+        <dt *ngIf="tooltipService.title != ''">{{tooltipService.title}}</dt>
+        <dd>{{tooltipService.desc}}</dd>
+    </dl>
+</div>
+<a class="tip-close" href="#" (click)="hide($event)"></a>

@@ -1,0 +1,56 @@
+:host {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    left: 100px;
+    transform: translate(-50%, -100%);
+    -moz-transform: translate(-50%, -100%);
+    -o-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    -webkit-transform: translate(-50%, -100%);
+    @media screen and (max-width: 500px) {
+        max-width: 100% !important;
+        left: 15px !important;
+        right: 15px !important;
+        transform: translate(0, -100%);
+        -moz-transform: translate(0, -100%);
+        -o-transform: translate(0, -100%);
+        -ms-transform: translate(0, -100%);
+        -webkit-transform: translate(0, -100%);
+    }
+}
+
+.tip-content {
+    display: block;
+    // background: #FFE793;
+    background: #FFE793;
+    & dl {
+        margin: 0;
+        padding: 17px 15px 17px 15px;
+        font-size: 0.813em;
+        line-height: 1.3;
+        border: 1px solid #353535;
+        & dt {
+            margin: 0 0 11px 0;
+            padding: 0;
+            font-weight: bold;
+            color: #353535;
+            letter-spacing: 0;
+        }
+        & dd {
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+    }
+}
+.tip-close {
+    overflow: hidden;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 17px;
+    height: 17px;
+    padding: 3px;
+    background: url(/assets/images/buttons.jpg) no-repeat -197px -57px;
+}

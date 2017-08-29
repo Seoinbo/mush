@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import { StoreService } from './store.service';
 
+import { Windoc } from '../services/windoc';
+import { TooltipService } from '../../components/tooltip/tooltip.service';
+
 @Component({
   selector: '.cart',
   templateUrl: './cart.component.html'
 })
 
 export class CartComponent {
-    constructor(private storeService: StoreService) {
+    constructor(
+        private windoc: Windoc,
+        private storeService: StoreService,
+        private tooltipService: TooltipService) {
     }
 
     private get products(): any {
@@ -64,5 +70,20 @@ export class CartComponent {
         if (type == 'npay') {
             alert("서비스 준비중 입니다");
         }
+    }
+
+    private toggleTooltip(event, title, desc, maxWidth) {
+        let pos = this.windoc.pageXY(event);
+        this.tooltipService.toggle({
+            id: "cartip",
+            position: "fixed",
+            zIndex: 103,
+            title: title,
+            desc: desc,
+            maxWidth: maxWidth,
+            top: (event.clientY - 13) + 'px',
+            left: pos.x  + 'px',
+        });
+        event.preventDefault();
     }
 }

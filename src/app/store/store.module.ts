@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { StoreComponent } from './store.component';
 import { StoreService } from './store.service';
 import { DeviceService } from '../services/device.service';
+import { TooltipService } from '../../components/tooltip/tooltip.service';
 
 import { NumberPipes } from '../pipes/numbers';
 
@@ -20,7 +21,8 @@ import { NumberPipes } from '../pipes/numbers';
   ],
   providers: [
       StoreService,
-      DeviceService
+      DeviceService,
+      TooltipService
   ]
 })
 export class StoreModule { }

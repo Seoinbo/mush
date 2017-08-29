@@ -9,7 +9,7 @@
             <dd><strong>{{discount | withComma}}</strong>&nbsp;원</dd>
         </dl>
         <dl>
-            <dt>배송비</dt>
+            <dt>배송비<a class="shipping-tip" href="#" (click)="toggleTooltip($event, null, '10만원 이상 구매시 무료택배', 250)">help</a></dt>
             <dd><strong>{{shipping | withComma}}</strong>&nbsp;원</dd>
         </dl>
         <dl class="total">

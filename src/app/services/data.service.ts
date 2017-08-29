@@ -184,7 +184,7 @@ export class DataService {
                 price: 100000,
                 soldout: 0,
                 readytime: 1508166000,
-                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 2,
                 title: "건조 꽃송이버섯 300g",
@@ -193,7 +193,7 @@ export class DataService {
                 price: 280000,
                 soldout: 0,
                 readytime: 1508166000,
-                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 3,
                 title: "청포도(샤인마스캇) 4kg",
@@ -202,7 +202,7 @@ export class DataService {
                 price: 35000,
                 soldout: 1,
                 readytime: 1502895600,
-                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다"
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }
         ],
         "shipping": {

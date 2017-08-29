@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { CartComponent } from './cart.component';
 import { StoreService } from './store.service';
+import { TooltipService } from '../../components/tooltip/tooltip.service';
 
 import { NumberPipes } from '../pipes/numbers';
 
@@ -18,7 +19,8 @@ import { NumberPipes } from '../pipes/numbers';
     CartComponent
   ],
   providers: [
-      StoreService
+      StoreService,
+      TooltipService
   ]
 })
 

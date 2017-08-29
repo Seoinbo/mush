@@ -40,7 +40,7 @@
                                 (mouseout)="inactiveCover(i)" href="#" (click)="add($event, i)"><i></i></a>
                     </ng-template>
                     <ng-template [ngIf]="product.soldout">
-                        <span class="soldout-msg">품절</span><a class="soldout-reason">help</a>
+                        <span class="soldout-msg">품절</span><a class="soldout-reason" href="#" (click)="toggleTooltip($event, '해당 상품은 품절되었습니다', product.reason, '350px')">help</a>
                     </ng-template>
                 </div>
             </div>
