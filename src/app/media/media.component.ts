@@ -149,8 +149,8 @@ export class MediaComponent {
         this.boxes.push({
             id: item.id,
             type: item.type,
-            images: item.images.split(","),
-            videos: item.videos.split(","),
+            image: item.image,
+            video: item.video,
             title: item.title,
             desc: item.desc,
             date: this.dateFormat(item.time)

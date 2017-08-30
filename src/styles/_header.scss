@@ -38,7 +38,7 @@ header {
             @media screen and (max-width: 980px) {
                 margin-right: 0 !important;
                 & ul li {
-                    margin-right: 15px !important;
+                    margin-right: 6px !important;
                     line-height: 47px;
                     font-size: 0.938em !important;
                 }
@@ -129,14 +129,17 @@ header {
                 @media screen and (max-width: 980px) {
                     font-size: 0.938em;
                     margin-right: 8px;
-                    line-height: 35px;
+                    line-height: 30px;
                     &:nth-child(1), &:nth-child(4) {
                         display: none;
                     }
                     &:nth-child(2)::after {
-                        content: "|";
+                        display: inline-block;
+                        height: 13px;
                         margin-left: 8px;
-                        font-size: 1.063em;
+                        // margin-top: 9px;
+                        border-right: 1px solid #c1c1c1;
+                        content: "";
                     }
                 }
                 &.selected {

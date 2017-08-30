@@ -1,6 +1,7 @@
 import { Component, HostListener, Inject, ViewChild } from '@angular/core';
 import { Windoc } from "./services/windoc";
 import { DeviceService } from './services/device.service';
+import { TooltipService } from '../components/tooltip/tooltip.service';
 import { MediaComponent } from './media/media.component';
 
 import * as $ from 'jquery';
@@ -27,7 +28,9 @@ export class AppComponent {
 
     protected document: Document;
 
-    constructor(private windoc: Windoc, private deviceService: DeviceService) {
+    constructor(private windoc: Windoc,
+        private deviceService: DeviceService,
+        private tooltipService: TooltipService) {
         this.document = this.windoc.document;
     }
 
@@ -74,12 +77,18 @@ export class AppComponent {
     }
 
     ngAfterViewInit() {
-        var controller = new ScrollMagic.Controller();
+        let that = this;
+        let controller = new ScrollMagic.Controller();
         // build scene
         new ScrollMagic.Scene({ triggerElement: "#store", duration: this.storeHeight })
             .setClassToggle(".cart", "visible")
             // .addIndicators({ name: "cart" })
-            .addTo(controller);
+            .addTo(controller)
+            .on("start end", function (e) {
+                if (that.tooltipService.id == "cartip") {
+                    that.tooltipService.hide();
+                }
+            });
     }
 
     private storeHeight() {

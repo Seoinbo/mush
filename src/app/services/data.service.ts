@@ -36,56 +36,56 @@ export class DataService {
                 type: "a",
                 title: "매일 얼마나 자랐는지 확인합니다",
                 desc: "매일 아침 버섯재배사에 갑니다. 재배사를 한 바퀴 돌고 나면 안심이 되거든요.",
-                videos: "rA1_TKtbqAE",
-                images: "http://stimg.emart.com/upload/poweroflocalfoods/20161209_0950011_060.jpg?tmstmp=1503046475743",
+                video: "rA1_TKtbqAE",
+                image: "http://stimg.emart.com/upload/poweroflocalfoods/20161209_0950011_060.jpg?tmstmp=1503046475743",
                 time: 1506809300 // 20171001
             }, {
                 id: 2,
                 type: "b",
                 title: "재배 3개월째",
                 desc: "제법 많이 컸습니다. 버섯은 환경이 제일 중요하기 때문에 매일 온도와 습도를 확인하고 있습니다.",
-                videos: "",
-                images: "./assets/images/thumb_jnilbo.jpg",
+                video: "",
+                image: "./assets/images/thumb_jnilbo.jpg",
                 time: 1504714580 // 201709204
             }, {
                 id: 3,
-                type: "c",
+                type: "b",
                 title: "패키지 디자인",
                 desc: "상품 패키지 샘플이 나왔습니다. 선물용으로도 손색없게 고급스러운 느낌을 내려고 노력했습니다.",
-                videos: "",
-                images: "http://cfile2.uf.tistory.com/image/271DD73656A36E1E31F3A0,http://cfile30.uf.tistory.com/image/250E514256A36E14171CA6",
+                video: "",
+                image: "http://cfile2.uf.tistory.com/image/271DD73656A36E1E31F3A0",
                 time: 1501517600 // 201706211
             }, {
                 id: 5,
                 type: "b",
                 title: "꽃송이 버섯 배지 도착",
                 desc: "오랜 고민 끝에 우리 농장에서 처음 재배할 버섯을 꽃송이버섯으로 정했습니다. 뛰어난 항암 효과로 널리 알려 졌지만 인공재배가 시작된 것은 요즘이어서 그동안 쉽게 구하기 힘들던 버섯이기도 합니다.",
-                videos: "",
-                images: "http://cfile7.uf.tistory.com/image/196CCF4150DCED8A11BE2B",
+                video: "",
+                image: "http://cfile7.uf.tistory.com/image/196CCF4150DCED8A11BE2B",
                 time: 1498017800 // 201706211
             }, {
                 id: 6,
                 type: "a",
                 title: "상주 두리산",
                 desc: "우리 농장은 경북 상주시 두리산자락에 있습니다. 산세가 험하고 수풀이 우거져 인적이 드문 외딴곳이지만, 공기가 맑고 토양이 우수해 식물이 자라기 좋은 환경입니다.",
-                videos: "",
-                images: "http://vilcap.com/wp-content/uploads/2016/09/Maggie-tower-view-nc1.jpg",
+                video: "",
+                image: "http://vilcap.com/wp-content/uploads/2016/09/Maggie-tower-view-nc1.jpg",
                 time: 1496535800
             }, {
                 id: 7,
                 type: "b",
                 title: "버섯 재배사 설치",
-                desc: "주된 작물이 포도였는데 버섯이 건강에 좋다 하여 앞으로 반절은 버섯 농사를 짓기로 했습니다. 아내와 둘이서 농사를 짓다 보니 더 일거리를 늘릴 순 없고, 일단 버섯 재배사 한동을  설치했습니다.",
-                videos: "",
-                images: "http://010-8991-7397.com/wp-content/uploads/2014/06/KakaoTalk_20160228_182532053.jpg",
+                desc: "주된 작물이 포도였는데 버섯이 건강에 좋다 하여 앞으로 반절은 버섯 농사를 짓기로 했습니다. 아내와 둘이서 농사를 짓다 보니 더 일거리를 늘릴 순 없고, 일단 버섯 재배사 한동을 설치했습니다.",
+                video: "",
+                image: "http://010-8991-7397.com/wp-content/uploads/2014/06/KakaoTalk_20160228_182532053.jpg",
                 time: 1495095440
             }, {
                 id: 8,
                 type: "a",
                 title: "농사만 35년",
-                desc: "안녕하세요. 경북 상주에서 35년 넘게 농사만 지어 온 착한 농부 서중교 입니다. 복숭아, 포도, 곶감 등 주로 과수 농사를 짓고 있으며 모두 내 자식들이 먹는다 생각하고 안전한 식품을 재배하기 위해 노력하고 있습니다. 지금까지 유통 마진 때문에 비싼 값에 구매하셨다면 농가에서 직접 판매해 가격이 착한 최상품을 지금 만나보세요.",
-                videos: "",
-                images: "http://stimg.emart.com/upload/poweroflocalfoods/20161208_0919055_040.jpg?tmstmp=1503045613021",
+                desc: "안녕하세요. 경북 상주에서 35년 넘게 농사만 지어 온 착한 농부 서중교 입니다. 복숭아, 포도, 곶감 등 주로 과수 농사를 짓고 있으며 모두 내 자식들이 먹는다 생각하고 안전한 식품을 재배하기 위해 노력하고 있습니다.",
+                video: "",
+                image: "http://stimg.emart.com/upload/poweroflocalfoods/20161208_0919055_040.jpg?tmstmp=1503045613021",
                 time: 1488294000 // 20170301
             }
         ],

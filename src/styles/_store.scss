@@ -107,16 +107,24 @@
                             text-align: left;
                         }
                         @media screen and (min-width: 501px) and (max-width: 1050px) {
-                            padding: 15px 10px 0 10px;
+                            padding: 15px 10px 5px 10px;
                         }
                     }
                     & .price {
+                        display: none;
                         font-size: 0.938em;
+                        @media screen and (max-width: 500px) {
+                            display: block;
+                        }
                     }
                     & .o-price {
+                        display: none;
                         font-size: 0.750em;
                         text-decoration: line-through;
                         line-height: 26px;
+                        @media screen and (max-width: 500px) {
+                            display: block;
+                        }
                     }
                     & .soldout-remain {
                         width: 100%;
@@ -132,6 +140,8 @@
                 height: 12px;
                 background: url("/assets/images/store_dash.jpg") repeat 0 0;
                 @media screen and (max-width: 1050px) {
+                    border-left: 1px solid #e1e1e1;
+                    border-right: 1px solid #e1e1e1;
                     & .edge-left, & .edge-right {
                         display: none !important;
                     }
@@ -207,7 +217,7 @@
                     }
                     & a.pm-buttons {
                         display: inline-block;
-                        width: 40%;
+                        width: 35%;
                         height: 35px;
                         @media screen and (max-width: 500px) {
                             text-align: center !important;

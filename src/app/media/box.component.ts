@@ -27,6 +27,7 @@ export class BoxComponent {
     @Input()
     args: any;
 
+    private boxWidth: number = 890;
     private boxHeight: number = 550;
 
     // via Youtube iframe API
@@ -57,9 +58,15 @@ export class BoxComponent {
         }
     }
 
+    ngAfterContentInit() {
+        if (this.args.type == "b") {
+            this.boxWidth = 440;
+        }
+    }
+
     setPlayer(p: YT.Player, i: number) {
         this.players[i] = p;
-        p.cuePlaylist(this.args.videos[i]);
+        p.cuePlaylist(this.args.videos);
         p.setLoop(true);
         p.mute();
     }

@@ -14,10 +14,8 @@
                 </div>
                 <div class="info">
                     <h3 class="title">{{product.title}}</h3>
-                    <ng-template [ngIf]="deviceService.isMobile">
-                        <span class="price">{{product.price|withComma}}원</span>
-                        <span *ngIf="product.price != product.oprice" class="o-price">({{product.oprice|withComma}}원)</span>
-                    </ng-template>
+                    <span class="price">{{product.price|withComma}}원</span>
+                    <span *ngIf="product.price != product.oprice" class="o-price">({{product.oprice|withComma}}원)</span>
                     <div *ngIf="product.soldout" class="soldout-remain">{{remains(i)}}</div>
                 </div>
             </div>

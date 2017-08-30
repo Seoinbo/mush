@@ -64,6 +64,28 @@ footer {
                     vertical-align: top;
                 }
             }
+            & .marks {
+                display: flex;
+                align-items: center;
+                margin-top: 25px;
+                padding: 0 3px;
+                & .icon {
+                    margin-right: 25px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    & .instagram {
+                        display: inline-block;
+                        overflow: hidden;
+                        width: 110px;
+                        height: 35px;
+                        background-position: -245px 0 !important;
+                        text-indent: 101%;
+                        white-space: nowrap;
+                        background: transparent url("/assets/images/instagram.png") no-repeat;
+                    }
+                }
+            }
         }
     }
 }

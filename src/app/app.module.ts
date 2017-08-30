@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
 import { Windoc } from "./services/windoc";
 import { DeviceService } from './services/device.service';
+import { TooltipService } from '../components/tooltip/tooltip.service';
 import { RoutingModule } from './router.module';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -38,7 +39,8 @@ import { TooltipModule } from '../components/tooltip/tooltip.module';
   ],
   providers: [
       Windoc,
-      DeviceService
+      DeviceService,
+      TooltipService
   ],
   bootstrap: [AppComponent]
 })
