@@ -1,8 +1,8 @@
 <div class="source">
     <youtube-player *ngIf="!deviceService.isMobile && args.video" [videoId]="args.video" [width]="boxWidth" [height]="boxHeight" [playerVars]="playerOptions" (ready)="setPlayer($event, 0)" (change)="onStateChange($event, 0)"></youtube-player>
 </div>
-<div class="cover over-event" (mouseenter)="mouseOver(0)" (mouseleave)="mouseOut()" [class.focus]="coverViewStates[0] == 'active'">
-    <div class="image" [@fade]="coverImageViewStates[0]" [style.background-image]="'url('+args.image+')'"></div>
+<div class="cover over-event" (mouseenter)="mouseOver()" (mouseleave)="mouseOut()" [class.focus]="coverViewState == 'active'">
+    <div class="image" [@fade]="coverImageViewState" [style.background-image]="'url('+args.image+')'"></div>
     <div class="bg"></div>
     <div class="typo">
         <h2>{{args.title}}</h2>

@@ -32,6 +32,7 @@ export class BoxComponent {
 
     // via Youtube iframe API
     protected players: YT.Player[] = [];
+    protected player: YT.Player;
     private playerOptions: any = {
         controls: 0,
         fs: 0,
@@ -41,11 +42,11 @@ export class BoxComponent {
         showinfo: 0,
         autoplay: 0
     }
-    private playerReady: boolean[] = [false, false];
+    private playerReady: boolean = false;
 
     // for animations
-    private coverViewStates: string[] = ["inactive", "inactive"];
-    private coverImageViewStates: string[] = ["active", "active"];
+    private coverViewState: string = "inactive";
+    private coverImageViewState: string = "active";
 
     // Timers
     private playTimer;
@@ -64,16 +65,16 @@ export class BoxComponent {
         }
     }
 
-    setPlayer(p: YT.Player, i: number) {
-        this.players[i] = p;
+    setPlayer(p: YT.Player) {
         p.cuePlaylist(this.args.videos);
         p.setLoop(true);
         p.mute();
+        this.player = p;
     }
 
-    onStateChange(event, i: number) {
+    onStateChange(event) {
         if (event.data == -1) {
-            this.playerReady[i] = true;
+            this.playerReady = true;
         }
     }
 
@@ -88,72 +89,69 @@ export class BoxComponent {
     play() {
         // Stop duplicated timer
         clearTimeout(this.stopTimer);
+        if (!this.player) {
+            return;
+        }
 
-        let that = this;
-        this.players.forEach( function(player, i) {
-            if (that.playerReady[i] == false) {
-                that.playTimer = setTimeout( function() {
-                    player.playVideo();
-                    that.playerReady[i] = true;
-                    that.coverHideTimer = setTimeout( function() {
-                        that.hideCoverImage();
-                    }, 600);
-                }, 800);
-            } else {
-                player.playVideo();
+        var that = this;
+        if (this.playerReady == false) {
+            this.playTimer = setTimeout( function() {
+                that.player.playVideo();
+                that.playerReady = true;
                 that.coverHideTimer = setTimeout( function() {
                     that.hideCoverImage();
                 }, 600);
-            }
-        });
+            }, 800);
+        } else {
+            this.player.playVideo();
+            this.coverHideTimer = setTimeout( function() {
+                that.hideCoverImage();
+            }, 600);
+        }
     }
 
     pause() {
-        this.players.forEach( function(player) {
-            player.pauseVideo();
-        });
+        if (!this.player) {
+            return;
+        }
+        this.player.pauseVideo();
     }
 
     stop() {
         // Stop duplicated timer
         clearTimeout(this.playTimer);
         clearTimeout(this.coverHideTimer);
+        if (!this.player) {
+            return;
+        }
 
         let that = this;
-        this.players.forEach( function(player) {
-            that.showCoverImage();
-            that.stopTimer = setTimeout( function () {
-                player.stopVideo();
-            }, 650);
-        });
+        this.showCoverImage();
+        this.stopTimer = setTimeout( function () {
+            that.player.stopVideo();
+        }, 650);
     }
 
-    mouseOver(i) {
+    mouseOver() {
         if (this.deviceService.isMobile) {
             return false;
         }
-        this.coverViewStates[i] = "active";
+        this.coverViewState = "active";
     }
 
     mouseOut() {
-        for (let i = 0; i < 2; i++) {
-            this.coverViewStates[i] = "inactive";
-        }
+        this.coverViewState = "inactive";
     }
 
     hideCoverImage() {
-        for (let i = 0; i < 2; i++) {
-            if (this.players[i]) {
-                this.coverImageViewStates[i] = "inactive";
-            }
+        if (this.player) {
+            this.coverImageViewState = "inactive";
         }
     }
 
     showCoverImage() {
-        for (let i = 0; i < 2; i++) {
-            if (this.players[i]) {
-                this.coverImageViewStates[i] = "active";
-            }
+        if (this.player) {
+            this.coverImageViewState = "active";
         }
     }
 

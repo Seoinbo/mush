@@ -232,6 +232,37 @@
                     }
                 }
             }
+            & .next-instagram {
+                position: relative;
+                display: inline-block;
+                width: 380px;
+                height: 550px;
+                & .more-btn {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    & .icon-instagram {
+                        display: block;
+                        overflow: hidden;
+                        width: 175px;
+                        height: 52px;
+                        background-position: 0 0 !important;
+                        text-indent: 101%;
+                        white-space: nowrap;
+                        background: transparent url("/assets/images/instagram.png") no-repeat;
+                    }
+                    & .more-photos {
+                        display: block;
+                        margin-top: 8px;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
 
         }
         & .nav {
