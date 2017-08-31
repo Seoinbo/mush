@@ -40,3 +40,12 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# custom
+.idea
+*.swp
+node_modules
+vendor
+vendors
+logs
+*.log

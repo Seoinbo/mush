@@ -1,0 +1,11 @@
+{
+    "require": {
+        "slim/slim": "^3.8",
+        "zircote/swagger-php": "^2.0",
+        "monolog/monolog": "^1.21",
+        "ramsey/uuid": "^3.5",
+        "jenssegers/date": "^3.2",
+        "vlucas/valitron": "^1.2",
+        "nikic/fast-route": "^1.0"
+    }
+}
