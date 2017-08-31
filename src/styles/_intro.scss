@@ -1,56 +1,71 @@
 .intro {
     & .boundary {
-        max-width: 100% !important;
-        margin: 0 !important;
-    }
-    & .bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: url("https://www.google.com/chromecast/static/images/speakers/audio-what-is-chromecast.jpg");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        top: 0;
-        left: 0;
-        @media screen and (max-width: 980px) {
-            background: none;
-        }
+        max-width: 1680px !important;
+        display: flex;
+        align-items: center;
     }
     & .typo {
-        position: absolute;
-        max-width: 555px;
-        width: 100%;
-        top: 0;
-        left: 0;
+        position: relative;
+        display: inline-block;
+        width: 50%;
+    }
+    & .image {
+        position: relative;
+        display: inline-block;
+        width: 50%;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // @media screen and (max-width: 980px) {
+        //     background: none;
+        // }
     }
     & .sparassis-crispa {
         height: 700px;
         @media screen and (max-width: 980px) {
             height: auto;
         }
+        & .image {
+            width: 55%;
+            margin-right: 120px;
+            height: 460px;
+            background-image: url("/assets/images/intro.jpg");
+            @media screen and (max-width: 800px) {
+                display: none;
+            }
+            @media screen and (min-width: 801px) and (max-width: 1050px) {
+                width: 40%;
+                margin-right: 45px;
+            }
+            @media screen and (min-width: 1051px) and (max-width: 1440px) {
+                margin-right: 80px;
+            }
+        }
         & .typo {
-            margin-top: 150px;
-            padding: 0 50px;
-            @media screen and (max-width: 980px) {
-                position: relative;
+            width: 35%;
+            margin-right: 120px;
+            margin-left: 150px;
+            @media screen and (max-width: 500px) {
+                width: 100%;
                 margin-top: 0;
-                margin-left: 0;
+                margin-right: 30px;
+                margin-left: 30px;
             }
-            @media screen and (min-width: 981px) and (max-width: 1280px) {
-                margin-left: 90px;
+            @media screen and (min-width: 501px) and (max-width: 800px) {
+                width: 100%;
+                margin-top: 0;
+                margin-right: 45px;
+                margin-left: 45px;
             }
-
-            @media screen and (min-width: 1281px) and (max-width: 1440px) {
-                margin-left: 140px;
+            @media screen and (min-width: 801px) and (max-width: 1050px) {
+                width: 60%;
+                margin-top: 0;
+                margin-right: 45px;
+                margin-left: 45px;
             }
-
-            @media screen and (min-width: 1441px) and (max-width: 1920px) {
-                margin-left: 280px;
-            }
-
-            @media screen and (min-width: 1921px) {
-                margin-left: 420px;
+            @media screen and (min-width: 1051px) and (max-width: 1440px) {
+                margin-right: 80px;
+                margin-left: 80px;
             }
             & h2 {
                 font-size: 2.000em;
@@ -59,9 +74,9 @@
                 word-break: keep-all;
             }
             & p {
-                max-width: 650px;
+                // max-width: 650px;
                 text-align: justify;
-                margin-top: 25px;
+                margin: 25px 0 0 0;
                 font-size: 1.125em;
                 line-height: 1.5;
             }

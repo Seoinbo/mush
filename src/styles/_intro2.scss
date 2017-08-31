@@ -1,0 +1,103 @@
+.intro {
+    & .boundary {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+    & .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://www.google.com/chromecast/static/images/speakers/audio-what-is-chromecast.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        @media screen and (max-width: 980px) {
+            background: none;
+        }
+    }
+    & .typo {
+        position: absolute;
+        max-width: 555px;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    & .sparassis-crispa {
+        height: 700px;
+        @media screen and (max-width: 980px) {
+            height: auto;
+        }
+        & .typo {
+            margin-top: 150px;
+            padding: 0 50px;
+            @media screen and (max-width: 980px) {
+                position: relative;
+                margin-top: 0;
+                margin-left: 0;
+            }
+            @media screen and (min-width: 981px) and (max-width: 1280px) {
+                margin-left: 90px;
+            }
+
+            @media screen and (min-width: 1281px) and (max-width: 1440px) {
+                margin-left: 140px;
+            }
+
+            @media screen and (min-width: 1441px) and (max-width: 1920px) {
+                margin-left: 280px;
+            }
+
+            @media screen and (min-width: 1921px) {
+                margin-left: 420px;
+            }
+            & h2 {
+                font-size: 2.000em;
+                line-height: 1.5;
+                text-align: left;
+                word-break: keep-all;
+            }
+            & p {
+                max-width: 650px;
+                text-align: justify;
+                margin-top: 25px;
+                font-size: 1.125em;
+                line-height: 1.5;
+            }
+            & .source-link {
+                display: block;
+                margin-top: 50px;
+                @media screen and (max-width: 500px) {
+                    display: none;
+                }
+                & .thumb {
+                    display: inline-block;
+                    width: 168px;
+                    height: 94px;
+                    background: url("/assets/images/thumb_mybody.jpg") no-repeat center center/cover;
+                    // background: #999;
+                }
+                & dl {
+                    display: inline-block;
+                    margin: 0 0 0 15px;
+                    & dt {
+                        color: #000;
+                    }
+                    & dd {
+                        margin-top: 5px;
+                        font-size: 0.875em;
+                        &.link-btn {
+                            margin-top: 20px;
+                            padding: 0;
+                            width: 105px;
+                            color: #00afff;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}
