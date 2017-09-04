@@ -16,7 +16,7 @@ class HttpCommonHeader
 
     public function __construct($ci) {
         $this->ci = $ci;
-        $this->settings = $ci['settings']['httpCommonHeader'];
+        // $this->settings = $ci['settings']['httpCommonHeader'];
     }
 
     public function __invoke(Request $request, Response $response, $next) {

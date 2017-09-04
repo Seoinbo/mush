@@ -19,8 +19,8 @@ class Instagram extends Controller
      * @throws ServerException
      */
     public function recent(Request $request, Response $response) {
-        // $response->withJson($data);
         $recnetData = $this->recentData();
+        $response = $response->withJson($recnetData);
         return $response;
     }
 
@@ -49,7 +49,6 @@ class Instagram extends Controller
             );
         }
         $data = $res->parseJSON();
-
         return $data;
     }
 }

@@ -16,8 +16,9 @@ class Test extends Controller
      * @throws ServerException
      */
     public function test(Request $request, Response $response) {
-        $response->withJson(["text"=>"hello"]);
-        echo "aaa";
+        $response = $response->withHeader('Content-Type','application/json');
+        $data = array('name' => 'Rob', 'age' => 40);
+        $response = $response->withJson($data, 200);
         return $response;
     }
 }
