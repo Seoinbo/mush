@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
 import { Windoc } from "./services/windoc";
 import { DeviceService } from './services/device.service';
@@ -25,6 +26,7 @@ import { TooltipModule } from '../components/tooltip/tooltip.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
     Ng2DeviceDetectorModule.forRoot(),
     RoutingModule,
     HeaderModule,

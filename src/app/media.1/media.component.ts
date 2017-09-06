@@ -3,7 +3,6 @@ import { BoxComponent } from './box.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { DeviceService } from '../services/device.service';
 import { DataService } from '../database/data.service';
-import { MediaObj } from './mediaobj';
 
 declare const moment: any;
 declare const $: any;
@@ -33,10 +32,10 @@ export class MediaComponent {
     protected isMobile = false;
 
     private dbOffset: number = 0;
-    private dbLimit: number = 10;
+    private dbLimit: number = 4;
     private preloadCount: number = 3;
 
-    protected boxes: MediaObj[] = [];
+    protected boxes: any[] = [];
     protected selected: any;
     private boxCount: number = 0;
     private picTitle: string = "";
@@ -53,7 +52,19 @@ export class MediaComponent {
         this.isMobile = deviceService.isMobile;
 
         this.loadDatabase();
-        // this.changeTitle(0);
+        this.changeTitle(0);
+
+        // 배경 텍스트의 크기 타입 설정
+        if (this.boxes[0].type == 'a') {
+            this.mainPicType = 'wideType';
+        } else {
+            this.mainPicType = 'halfType';
+        }
+
+        // 다음 버튼 초기 설정
+        if (this.boxes.length > 1) {
+            this.nextButtonViewState = "active";
+        }
     }
 
     ngAfterViewInit() {
@@ -103,13 +114,13 @@ export class MediaComponent {
 
         }).on("afterChange", function (event, slick, currentSlide) {
             // Load more boxes.
-            // if (currentSlide + 1 + that.preloadCount >= that.boxCount) {
-            //     that.loadDatabase(2);
-            //     setTimeout(function () {
-            //         slick.reinit();
-            //     }, 250);
-            // }
-            // that.changeTitle(currentSlide);
+            if (currentSlide + 1 + that.preloadCount >= that.boxCount) {
+                that.loadDatabase(2);
+                setTimeout(function () {
+                    slick.reinit();
+                }, 250);
+            }
+            that.changeTitle(currentSlide);
         });
     }
 
@@ -128,40 +139,39 @@ export class MediaComponent {
     }
 
     loadDatabase(limit: number = this.dbLimit) {
-        this.dataService.media(this.dbOffset, limit)
-            .then(response => {
-                let len = response.length;
-                for (let item of response) {
-                    this.addItem(new MediaObj(item));
-                }
-
-                // 다음 버튼 초기 설정
-                if (len > 1) {
-                    this.nextButtonViewState = "active";
-                }
-            });
-            // .catch()
+        let data = this.dataService.get("media", this.dbOffset, limit);
+        for (let row of data) {
+            this.addItem(row);
+        }
     }
 
-    addItem(item: MediaObj) {
-        this.boxes.push(item);
+    addItem(item) {
+        this.boxes.push({
+            id: item.id,
+            type: item.type,
+            image: item.image,
+            video: item.video,
+            title: item.title,
+            desc: item.desc,
+            date: this.dateFormat(item.time)
+        });
         this.boxCount++;
         this.dbOffset++;
     }
 
-    // changeTitle(i) {
-    //     this.selected = this.boxes[i];
-    //     if (i <= 0) {
-    //         this.picTitle = this.boxes[i+1].title;
-    //         this.picDate = this.boxes[i+1].date;
-    //     } else {
-    //         if (this.topPicinfoViewState == 'inactive') {
-    //             return;
-    //         }
-    //         this.picTitle = this.selected.title;
-    //         this.picDate = this.selected.date;
-    //     }
-    // }
+    changeTitle(i) {
+        this.selected = this.boxes[i];
+        if (i <= 0) {
+            this.picTitle = this.boxes[i+1].title;
+            this.picDate = this.boxes[i+1].date;
+        } else {
+            if (this.topPicinfoViewState == 'inactive') {
+                return;
+            }
+            this.picTitle = this.selected.title;
+            this.picDate = this.selected.date;
+        }
+    }
 
     focus(index: number): boolean {
         this.boxComponents.forEach( function (box, i, arr) {

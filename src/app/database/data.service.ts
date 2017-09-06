@@ -1,7 +1,18 @@
 import { Injectable  } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+import { MediaObj } from '../media/mediaobj';
 
 @Injectable()
 export class DataService {
+    private baseurl:string = "http://doorisan.com/api.html/";
+    private paths: any = {
+        "media": "instagram/recent"
+    };
+
+    constructor (private http: Http) {
+    }
+
     _data: any = {
         "menu": [
             {
@@ -41,7 +52,7 @@ export class DataService {
                 time: 1506809300 // 20171001
             }, {
                 id: 2,
-                type: "b",
+                type: "a",
                 title: "재배 3개월째",
                 desc: "제법 많이 컸습니다. 버섯은 환경이 제일 중요하기 때문에 매일 온도와 습도를 확인하고 있습니다.",
                 video: "",
@@ -49,7 +60,7 @@ export class DataService {
                 time: 1504714580 // 201709204
             }, {
                 id: 3,
-                type: "b",
+                type: "a",
                 title: "패키지 디자인",
                 desc: "상품 패키지 샘플이 나왔습니다. 선물용으로도 손색없게 고급스러운 느낌을 내려고 노력했습니다.",
                 video: "",
@@ -57,7 +68,7 @@ export class DataService {
                 time: 1501517600 // 201706211
             }, {
                 id: 5,
-                type: "b",
+                type: "a",
                 title: "꽃송이 버섯 배지 도착",
                 desc: "오랜 고민 끝에 우리 농장에서 처음 재배할 버섯을 꽃송이버섯으로 정했습니다. 뛰어난 항암 효과로 널리 알려 졌지만 인공재배가 시작된 것은 요즘이어서 그동안 쉽게 구하기 힘들던 버섯이기도 합니다.",
                 video: "",
@@ -73,7 +84,7 @@ export class DataService {
                 time: 1496535800
             }, {
                 id: 7,
-                type: "b",
+                type: "a",
                 title: "버섯 재배사 설치",
                 desc: "주된 작물이 포도였는데 버섯이 건강에 좋다 하여 앞으로 반절은 버섯 농사를 짓기로 했습니다. 아내와 둘이서 농사를 짓다 보니 더 일거리를 늘릴 순 없고, 일단 버섯 재배사 한동을 설치했습니다.",
                 video: "",
@@ -215,6 +226,16 @@ export class DataService {
         if (limit < 0) {
             limit = 9999;
         }
+
+        // if (!this._data[type]) {
+            // this._get(this.getURL("media"), offset, limit).then((data) => {
+            //     console.log(data);
+            // },
+            // (err) => {
+            //     console.log(err);
+            // });
+        // }
+
         if (!(this._data[type] instanceof Array)) {
             return this._data[type];
         }
@@ -232,6 +253,30 @@ export class DataService {
 
     count(type: string) : number {
         return this._data[type].length;
+    }
+
+    public media(offset:number = 0, limit: number = -1): Promise<MediaObj[]> {
+        let baseurl = this.getURL("media");
+        return this.http.get(baseurl + "?offset=" + offset + "&limit" + limit)
+            .toPromise()
+            .then(response => response.json().data)
+            .catch(this.handleError);
+    }
+
+    // Get data from database.
+    public _get(url: string, offset:number = 0, limit: number = -1): Promise<any> {
+        return this.http.get(url + "?offset=" + offset + "&limit" + limit)
+            .toPromise()
+            .then(response => response)
+            .catch(this.handleError);
+    }
+
+    private handleError(error: any): Promise<any> {
+        return Promise.reject(error.message || error);
+    }
+
+    private getURL(type: string): string {
+        return this.baseurl + this.paths[type];
     }
 }
 

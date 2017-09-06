@@ -2,14 +2,12 @@ import { Component, Input, HostBinding } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { DeviceService } from '../services/device.service';
 import { Windoc } from '../services/windoc';
-import { MediaObj } from './mediaobj';
 
 @Component({
     selector: 'div.box',
     templateUrl: './box.component.html',
     host: {
-        '[style.width]': 'mediaObj.width + "px"',
-        '[style.height]': 'mediaObj.width + "px"'
+        '[style.height]': 'boxHeight + "px"'
     },
     animations: [
         trigger('fade', [
@@ -27,7 +25,7 @@ import { MediaObj } from './mediaobj';
 
 export class BoxComponent {
     @Input()
-    mediaObj: MediaObj;
+    args: any;
 
     private boxWidth: number = 890;
     private boxHeight: number = 550;
@@ -62,16 +60,16 @@ export class BoxComponent {
     }
 
     ngAfterContentInit() {
-        // if (this.mediaObj.type == "b") {
-        //     this.boxWidth = 440;
-        // }
+        if (this.args.type == "b") {
+            this.boxWidth = 440;
+        }
     }
 
     setPlayer(p: YT.Player) {
-        // p.cuePlaylist(this.mediaObj.videos);
-        // p.setLoop(true);
-        // p.mute();
-        // this.player = p;
+        p.cuePlaylist(this.args.videos);
+        p.setLoop(true);
+        p.mute();
+        this.player = p;
     }
 
     onStateChange(event) {
