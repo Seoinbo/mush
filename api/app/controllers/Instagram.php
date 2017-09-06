@@ -43,6 +43,11 @@ class Instagram extends Controller
                 $tmp["images"] = $carouselItem['images'];
                 $tmp["videos"] = isset($carouselItem['videos']) ? $carouselItem['videos'] : [];;
             }
+            // 텍스트의 테그 모두 제거, 홈페이지에서는 테그가 필요 없기 때문.
+            $tmp["text"] = preg_replace("/\\n#.*/", "", $tmp["text"]);
+            $tmp["text"] = preg_replace("/^#.*/", "", $tmp["text"]);
+
+
             $retv['count'] = count($tmp);
             $retv['data'][] = $tmp;
         }

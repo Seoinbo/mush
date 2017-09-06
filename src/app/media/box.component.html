@@ -5,8 +5,9 @@
     <div class="image" [@fade]="coverImageViewState" [style.background-image]="'url('+mediaObj.standardImage.url+')'"></div>
     <div class="bg"></div>
     <div class="typo">
-        <h2>{{mediaObj.text}}</h2>
-        <p>{{mediaObj.text}}</p>
-        <p class="date">{{mediaObj.ctime}}</p>
+        <div class="image-info">
+            <p>{{mediaObj.text}}</p>
+            <p class="tags"><span *ngFor="let tag of mediaObj.tags;">{{tag}}</span><span>{{mediaObj.ctime|dateFormat}}</span></p>
+        </div>
     </div>
 </div>

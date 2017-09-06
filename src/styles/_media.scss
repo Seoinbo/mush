@@ -3,27 +3,23 @@
     display: block;
     padding: 0 !important;
     margin: 0;
-    & .picinfo.top {
-        text-align: center;
-        & h2 {
-            margin-bottom: 0;
-            font-size: 1.500em;
-        }
-        & p {
-            margin: 5px 0 0 0;
-            font-size: 0.813em;
-        }
-        &.hidden {
-            opacity: 0;
-        }
-    }
     & .picstream {
         position: relative;
         width: 100%;
-        // height: 550px;
+        height: 530px;
         overflow: hidden;
         @media screen and (max-width: 500px) {
             background: #ddd;
+        }
+        & .image-loading {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #eee;
+            text-align: center;
+            padding-top: 250px;
         }
         & .carousel-bg {
             position: absolute;
@@ -78,6 +74,10 @@
                         width: 100%;
                         height: 100%;
                         background: transparent no-repeat center center;
+                        background-size: 100% 100%;
+                        @media screen and (max-width: 980px) {
+                            background: transparent no-repeat center center/cover;
+                        }
                         // transform: scale(1.05, 1.05);
                         // @include transition(all .45s ease);
                     }
@@ -105,44 +105,52 @@
                     }
                     & .typo {
                         position: absolute;
+                        display: flex;
+                        align-items: center;
                         left: 0;
                         bottom: 0;
                         color: #fff;
                         width: 100%;
-                        padding: 55px 45px;
+                        height: 100%;
+                        padding: 55px 20%;
                         opacity: 0;
+                        text-align: center;
+                        word-break: keep-all;
                         @include transition(opacity .6s ease);
                         @media screen and (max-width: 500px) {
                             padding: 0 35px 75px 35px;
                         }
-                        & h2 {
-                            margin: 0;
-                            font-family: 'Noto Sans KR', sans-serif;
-                            font-size: 1.750em;
-                            font-weight: 300;
-                            line-height: 1.3;
-                            color: #fff;
-                        }
-                        & p {
-                            text-align: justify;
-                            margin: 8px 0 0 0;
-                            font-size: 1.063em;
-                            font-weight: 300;
-                            line-height: 1.3;
-                            opacity: .9;
-                        }
-                        & .date {
-                            font-size: 0.938em;
-                            display: inline-block;
-                            margin-top: 8px;
+                        & .image-info {
+                            width: 100%;
+                            & p {
+                                margin: 15px 0 0 0;
+                                font-size: 1.188em;
+                                font-weight: 300;
+                                line-height: 1.3;
+                            }
+                            & .tags {
+                                margin-top: 15px;
+                                font-size: 0.938em;
+                                opacity: .7;
+                                & span::after {
+                                    content: " · ";
+                                }
+                                & span:last-child::after {
+                                    display: none;
+                                }
+                            }
+                            & .date {
+                                font-size: 0.938em;
+                                display: inline-block;
+                                margin-top: 8px;
+                                opacity: .7;
+                            }
                         }
                     }
                 }
                 &.type-a {
                     max-width: $widePicWidth;
                     & .typo {
-                        max-width: 480px;
-                        left: 0;
                         @media screen and (max-width: 500px) {
                             max-width: 100%;
                         }
@@ -164,20 +172,12 @@
                         height: 50%;
                     }
                 }
-                &:first-child {
-                    & .typo {
-                        display: none;
-                        @media screen and (max-width: 1650px) {
-                            display: block;
-                        }
-                    }
-                }
             }
             & .next-instagram {
                 position: relative;
                 display: inline-block;
                 width: 380px;
-                height: 550px;
+                height: 530px;
                 & .more-btn {
                     display: flex;
                     flex-direction: column;

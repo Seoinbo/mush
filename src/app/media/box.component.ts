@@ -9,7 +9,7 @@ import { MediaObj } from './mediaobj';
     templateUrl: './box.component.html',
     host: {
         '[style.width]': 'mediaObj.width + "px"',
-        '[style.height]': 'mediaObj.width + "px"'
+        '[style.height]': 'mediaObj.height + "px"'
     },
     animations: [
         trigger('fade', [
@@ -29,8 +29,8 @@ export class BoxComponent {
     @Input()
     mediaObj: MediaObj;
 
-    private boxWidth: number = 890;
-    private boxHeight: number = 550;
+    private boxWidth: number = 857;
+    private boxHeight: number = 530;
 
     // via Youtube iframe API
     protected players: YT.Player[] = [];
@@ -86,6 +86,7 @@ export class BoxComponent {
 
     focusOut () {
         this.stop();
+        this.mouseOut();
     }
 
     play() {

@@ -34,29 +34,27 @@ export class MediaComponent {
 
     private dbOffset: number = 0;
     private dbLimit: number = 10;
-    private preloadCount: number = 3;
 
     protected boxes: MediaObj[] = [];
-    protected selected: any;
     private boxCount: number = 0;
-    private picTitle: string = "";
-    private picDate: string = "";
-    private mainPicType: string = "wideType";
+    private loadingComplete: boolean = false; // 인스타그램 이미지 로딩 완료 여부
 
     // for animations
-    private topPicinfoViewState: string = 'inactive';
-    private mainPicinfoViewState: string = 'active';
     private prevButtonViewState: string = 'inactive';
     private nextButtonViewState: string = 'inactive';
 
     constructor(private dataService: DataService, private deviceService: DeviceService) {
         this.isMobile = deviceService.isMobile;
 
-        this.loadDatabase();
+        
         // this.changeTitle(0);
     }
 
     ngAfterViewInit() {
+        this.loadDatabase();
+    }
+
+    private viewInit() {
         let that = this;
 
         // Initiate carousel.
@@ -66,10 +64,15 @@ export class MediaComponent {
             this.onChangeDeviceType('desktop');
         }
 
+        // 다음 버튼 초기 설정
+        if (this.boxCount > 1) {
+            this.nextButtonViewState = "active";
+        }
+
         // Focus first slide.
         setTimeout( function() {
             that.focus(0);
-        }, 2000);
+        }, 500);
     }
 
     initSlick(options) {
@@ -82,15 +85,6 @@ export class MediaComponent {
             $carousel.slick("unslick");
         }
         $carousel.slick(options).on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-            // Toggle visiblity for the picinfo top.
-            if (nextSlide <= 0 || nextSlide >= that.boxCount -1) {
-                that.topPicinfoViewState = 'inactive';
-                that.mainPicinfoViewState = 'active';
-            } else {
-                that.topPicinfoViewState = 'active';
-                that.mainPicinfoViewState = 'inactive';
-            }
-
             // Toggle visiblity for the next and prev buttons.
             if (nextSlide <= 0) {
                 that.prevButtonViewState = "inactive";
@@ -102,14 +96,6 @@ export class MediaComponent {
             }
 
         }).on("afterChange", function (event, slick, currentSlide) {
-            // Load more boxes.
-            // if (currentSlide + 1 + that.preloadCount >= that.boxCount) {
-            //     that.loadDatabase(2);
-            //     setTimeout(function () {
-            //         slick.reinit();
-            //     }, 250);
-            // }
-            // that.changeTitle(currentSlide);
         });
     }
 
@@ -122,7 +108,7 @@ export class MediaComponent {
 
     slickDesktop() {
         this.initSlick({
-            centerMode: true,
+            centerMode: false,
             variableWidth: true
         });
     }
@@ -135,10 +121,15 @@ export class MediaComponent {
                     this.addItem(new MediaObj(item));
                 }
 
-                // 다음 버튼 초기 설정
-                if (len > 1) {
-                    this.nextButtonViewState = "active";
-                }
+                // Init view
+                let that = this;
+                setTimeout( function() {
+                    // 로딩 완료
+                    that.loadingComplete = true;
+                    that.viewInit();
+                }, 50);
+
+                
             });
             // .catch()
     }
@@ -148,20 +139,6 @@ export class MediaComponent {
         this.boxCount++;
         this.dbOffset++;
     }
-
-    // changeTitle(i) {
-    //     this.selected = this.boxes[i];
-    //     if (i <= 0) {
-    //         this.picTitle = this.boxes[i+1].title;
-    //         this.picDate = this.boxes[i+1].date;
-    //     } else {
-    //         if (this.topPicinfoViewState == 'inactive') {
-    //             return;
-    //         }
-    //         this.picTitle = this.selected.title;
-    //         this.picDate = this.selected.date;
-    //     }
-    // }
 
     focus(index: number): boolean {
         this.boxComponents.forEach( function (box, i, arr) {

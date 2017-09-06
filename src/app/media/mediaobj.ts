@@ -17,7 +17,7 @@ export class MediaObj extends Record {
     }
 
     public get height(): number {
-        return 550;
+        return 530;
     }
 
     public get width(): number {
