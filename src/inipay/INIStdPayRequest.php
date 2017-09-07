@@ -43,7 +43,7 @@ $params = array(
 $sign = $SignatureUtil->makeSignature($params, "sha256");
 
 /* 기타 */
-$siteDomain = "http://doorisan.com/inipay_sample"; //가맹점 도메인 입력
+$siteDomain = "http://doorisan.com/inipay"; //가맹점 도메인 입력
 // 페이지 URL에서 고정된 부분을 적는다.
 // Ex) returnURL이 http://localhost:8082/demo/INIpayStdSample/INIStdPayReturn.jsp 라면
 //                 http://localhost:8082/demo/INIpayStdSample 까지만 기입한다.

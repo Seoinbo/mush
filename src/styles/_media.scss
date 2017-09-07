@@ -132,8 +132,11 @@
                                 margin-top: 15px;
                                 font-size: 0.938em;
                                 opacity: .7;
-                                & span::after {
-                                    content: " · ";
+                                // & span::after {
+                                //     content: " · ";
+                                // }
+                                & span::before {
+                                    content: " #";
                                 }
                                 & span:last-child::after {
                                     display: none;

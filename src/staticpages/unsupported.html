@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Unsupported browser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .not-supported-browser {
+        padding: 15px 0;
+        color: #211e14;
+        background-image: linear-gradient(#feefae, #fae692);
+        border-bottom: 1px solid #b3a569;
+    }
+    .wrap {
+        margin: 0 35px;
+        background: url(../assets/images/ie-notice.png) no-repeat 0 5px;
+    }
+    .wrap h5 {
+        padding-left: 48px;
+        margin: 5px 0 2px;
+        font-size: 13px;
+        font-weight: normal;
+    }
+    .wrap h5 p {
+        margin: 0;
+    }
+    .wrap h5 p a {
+        color: #0366d6;
+    }
+    .wrap h5 p a:hover {
+        text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <div id="not-supported-browser" class="not-supported-browser">
+        <div class="wrap clearfix">
+            <form accept-charset="UTF-8" action="/site/dismiss_unsupported_browser" method="post">
+                <div style="margin:0;padding:0;display:inline">
+                    <input name="utf8" type="hidden" value="✓">
+                    <input name="authenticity_token" type="hidden" value="NSdTeCnnkzmKTiT0Q/gasr2RRF4zkNQW4BjiAClpY6g65ZioQJjWUOG5GKeDrF8+HCrOJJfHjxiqVerqZxx4Mw==">
+                </div>
+                <button type="button" class="btn btn-ignore" onclick="hideNotSupportedNotice();">무시</button>
+            </form>
+            <h5>지금 사용 중인 브라우저는 보안에 취약하여 더이상 지원하지 않습니다. 화면이 제대로 보이지 않으면 다른 브라우저로 업그레이드하세요.<h5>
+            <p><a target="_blank" href="http://swing-browser.com/">스윙 브라우저</a> / <a target="_blank" href="https://chrome.google.com">구글 크롬</a> / <a target="_blank" href="http://whale.naver.com/download">네이버 웨일</a></p>
+        </div>
+    </div>
+</body>
+</html>

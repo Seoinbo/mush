@@ -23,9 +23,29 @@ class Instagram extends Controller
         if (!is_array($recnetData)) {
             return $response;
         }
+
+        $fixlist = [
+            ["dest" => 0, "id" => "1597785607789360650_5959045462"],
+            ["dest" => 2, "id" => "1597197042508548748_5959045462"]
+        ];
         $retv = [];
         $tmp = [];
-        foreach ($recnetData['data'] as $item) {
+
+        if (is_array($fixlist)) {
+            foreach ($fixlist as $fixdItem) {
+                $item = $this->mediaData($fixdItem['id']);
+                $retv['data'][$fixdItem['dest']] = $item['data'];
+            }
+        }
+
+        $i = 0;
+        $len = count($recnetData['data']);
+        for ($j = 0; $j < $len;) {
+            if (!empty($retv['data'][$i])) {
+                $i++;
+                continue;
+            }
+            $item = $recnetData['data'][$i];
             $tmp["id"] = $item['id'];
             $tmp["type"] = $item['type'];
             $tmp["ctime"] = $item['created_time'];
@@ -47,24 +67,21 @@ class Instagram extends Controller
             $tmp["text"] = preg_replace("/\\n#.*/", "", $tmp["text"]);
             $tmp["text"] = preg_replace("/^#.*/", "", $tmp["text"]);
 
-
-            $retv['count'] = count($tmp);
-            $retv['data'][] = $tmp;
+            $retv['data'][$i] = $tmp;
+            $i++;
+            $j++;
         }
+        $retv['count'] = $i;
 
         $response = $response->withJson($retv);
         return $response;
     }
 
-    private function recentData() {
-        $token = $this->ci['settings']['instagram']['accessToken'];
+    private function getData($url, $params) {
         $host = $this->ci['settings']['curl']['instagram'];
         $curl = new Curl();
         $curl->select($host);
-        $res = $curl->get("/v1/users/self/media/recent/", [
-            'access_token' => $token,
-            'count' => 10
-        ]);
+        $res = $curl->get($url, $params);
         if ($curl->error()) {
             throw new ServerException(
                 "Failed to get instagram access-token.",
@@ -77,5 +94,21 @@ class Instagram extends Controller
         }
         $data = $res->parseJSON();
         return $data;
+    }
+
+    private function recentData() {
+        $token = $this->ci['settings']['instagram']['accessToken'];
+        return $this->getData("/v1/users/self/media/recent/", [
+            'access_token' => $token,
+            'count' => 10
+        ]);
+    }
+
+    // 하나의 인스타그램 미디어(사진, 동영상)을 가져옴
+    private function mediaData($mediaId) {
+        $token = $this->ci['settings']['instagram']['accessToken'];
+        return $this->getData("/v1/media/$mediaId", [
+            'access_token' => $token
+        ]);
     }
 }

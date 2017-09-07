@@ -1,14 +1,58 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>두리산</title>
-  <base href="/">
+    <meta charset="utf-8">
+    <title>DOORISAN FARM</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script>
+    /*
+    * Author: Rob Reid
+    * CreateDate: 20-Mar-09
+    * Description: Little helper function to return details about IE 8 and its various compatibility settings either use as it is
+    * or incorporate into a browser object. Remember browser sniffing is not the best way to detect user-settings as spoofing is
+    * very common so use with caution.
+    */
+    function IEVersion(){
+        var _n=navigator,_w=window,_d=document;
+        var version="NA";
+        var na=_n.userAgent;
+        var ieDocMode="NA";
+        var ie8BrowserMode="NA";
+        if(/msie/i.test(na) && (!_w.opera)){
+            if(_w.attachEvent && _w.ActiveXObject){
+                version = (na.match( /.+ie\s([\d.]+)/i ) || [])[1];
+                if(parseInt(version)==7){
+                    if(_d.documentMode){
+                        version = 8; //reset? change if you need to
+                        if(/trident\/\d/i.test(na)){
+                            ie8BrowserMode = "Compat Mode";
+                        }else{
+                            ie8BrowserMode = "IE 7 Mode";
+                        }
+                    }
+                }else if(parseInt(version)==8){
+                    if(_d.documentMode){ ie8BrowserMode = "IE 8 Mode";}
+                }
+                ieDocMode = (_d.documentMode) ? _d.documentMode : (_d.compatMode && _d.compatMode=="CSS1Compat") ? 7 : 5;//default to quirks mode IE5
+            }
+        }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+        return {
+            "UserAgent" : na,
+            "Version" : version,
+            "BrowserMode" : ie8BrowserMode,
+            "DocMode": ieDocMode
+        }
+    }
+    var ieVersion = IEVersion();
+    if (ieVersion == '7.0' || ieVersion == '8.0' || ieVersion == '9.0') {
+        location.href = "/staticpages/unsupported.html";
+    }
+    </script>
 </head>
 <body>
-  <app-root></app-root>
+    <app-root></app-root>
 </body>
 </html>
