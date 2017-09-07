@@ -78,7 +78,7 @@ export class MediaComponent {
     initSlick(options) {
         let that = this;
         let $carousel = $(".carousel");
-        options.infinite = false;
+        options.infinite = true;
         options.prevArrow = ".media .nav .buttons .prev";
         options.nextArrow = ".media .nav .buttons .next";
         if ($carousel.hasClass("slick-initialized")) {
@@ -108,7 +108,7 @@ export class MediaComponent {
 
     slickDesktop() {
         this.initSlick({
-            centerMode: false,
+            centerMode: true,
             variableWidth: true
         });
     }
@@ -128,8 +128,6 @@ export class MediaComponent {
                     that.loadingComplete = true;
                     that.viewInit();
                 }, 50);
-
-                
             });
             // .catch()
     }

@@ -66,4 +66,16 @@ class Helper
             return $ko[$code];
         }
     }
+
+    public static function arrayInsert(&$array, $value, $index) {
+        $len = count($array);
+        $tmp = [];
+        for ($i = 0; $i < $len; $i++) {
+            if ($i == $index) {
+                array_push($tmp, $value);
+            }
+            array_push($tmp, $array[$i]);
+        }
+        return $tmp;
+    }
 }

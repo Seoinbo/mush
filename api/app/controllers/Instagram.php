@@ -23,58 +23,69 @@ class Instagram extends Controller
         if (!is_array($recnetData)) {
             return $response;
         }
+        $data = $recnetData['data'];
 
-        $fixlist = [
-            ["dest" => 0, "id" => "1597785607789360650_5959045462"],
-            ["dest" => 2, "id" => "1597197042508548748_5959045462"]
+        $fixdList = [
+            ["index" => 2, "id" => "1597197042508548748_5959045462"]
         ];
-        $retv = [];
-        $tmp = [];
-
-        if (is_array($fixlist)) {
-            foreach ($fixlist as $fixdItem) {
+        if (is_array($fixdList)) {
+            foreach ($fixdList as $fixdItem) {
                 $item = $this->mediaData($fixdItem['id']);
-                $retv['data'][$fixdItem['dest']] = $item['data'];
+                $data = $this->insertArrayByIdx($data, $item['data'], $fixdItem['index']);
             }
         }
 
-        $i = 0;
-        $len = count($recnetData['data']);
-        for ($j = 0; $j < $len;) {
-            if (!empty($retv['data'][$i])) {
-                $i++;
-                continue;
-            }
-            $item = $recnetData['data'][$i];
-            $tmp["id"] = $item['id'];
-            $tmp["type"] = $item['type'];
-            $tmp["ctime"] = $item['created_time'];
-            $tmp["text"] = $item['caption']['text'];
-            $tmp["tags"] = $item['tags'];
-            $tmp["images"] = $item['images'];
-            $tmp["videos"] = isset($item['videos']) ? $item['videos'] : [];
-            $tmp["like"] = $item['likes']['count'];
-            $tmp["comment"] = $item['comments']['count'];
-            $tmp["location"] = $item['location']['name'];
-            // 하나의 게시물에 여러장의 이미지가 있는 형태이면 첫 번째만 가져간다.
-            if ($item['type'] == "carousel") {
-                $carouselItem = $item['carousel_media'][0];
-                $tmp["type"] = $carouselItem['type'];
-                $tmp["images"] = $carouselItem['images'];
-                $tmp["videos"] = isset($carouselItem['videos']) ? $carouselItem['videos'] : [];;
-            }
-            // 텍스트의 테그 모두 제거, 홈페이지에서는 테그가 필요 없기 때문.
-            $tmp["text"] = preg_replace("/\\n#.*/", "", $tmp["text"]);
-            $tmp["text"] = preg_replace("/^#.*/", "", $tmp["text"]);
-
-            $retv['data'][$i] = $tmp;
-            $i++;
-            $j++;
+        $tmp = [];
+        $retv = [];
+        foreach($data as $item) {
+            $tmp = $this->normalize($item);
+            $retv['data'][] = $tmp;
         }
-        $retv['count'] = $i;
+        $retv['count'] = count($data);
 
         $response = $response->withJson($retv);
         return $response;
+    }
+
+    // 내가 원하는 사진을 원하는 위치로 이동
+    private function insertArrayByIdx(&$array, $value, $index) {
+        $len = count($array);
+        $tmp = [];
+        for ($i = 0; $i < $len; $i++) {
+            if ($i == $index) {
+                array_push($tmp, $value);
+            }
+            if ($array[$i]['id'] == $value['id']) {
+                continue;
+            }
+            array_push($tmp, $array[$i]);
+        }
+        return $tmp;
+    }
+
+    private function normalize($src) {
+        $dest = [];
+        $dest["id"] = $src['id'];
+        $dest["type"] = $src['type'];
+        $dest["ctime"] = $src['created_time'];
+        $dest["text"] = $src['caption']['text'];
+        $dest["tags"] = $src['tags'];
+        $dest["images"] = $src['images'];
+        $dest["videos"] = isset($src['videos']) ? $src['videos'] : [];
+        $dest["like"] = $src['likes']['count'];
+        $dest["comment"] = $src['comments']['count'];
+        $dest["location"] = $src['location']['name'];
+        // 하나의 게시물에 여러장의 이미지가 있는 형태이면 첫 번째만 가져간다.
+        if ($src['type'] == "carousel") {
+            $carouselItem = $src['carousel_media'][0];
+            $dest["type"] = $carouselItem['type'];
+            $dest["images"] = $carouselItem['images'];
+            $dest["videos"] = isset($carouselItem['videos']) ? $carouselItem['videos'] : [];;
+        }
+        // 텍스트의 테그 모두 제거, 홈페이지에서는 테그가 필요 없기 때문.
+        $dest["text"] = preg_replace("/\\n#.*/", "", $dest["text"]);
+        $dest["text"] = preg_replace("/^#.*/", "", $dest["text"]);
+        return $dest;
     }
 
     private function getData($url, $params) {
