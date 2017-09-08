@@ -46,19 +46,19 @@ class Cache
      * @param ...$postfixes
      * @return string ex) "userinfo_3420_postfix1_and_more"
      */
-    public function generateKey($keyword, ...$postfixes) {
-        $key = $keyword;
-        if (is_numeric($this->host)) {
-            $key .= self::SEP . $this->host;
-        }
-        if (is_array($postfixes)) {
-            foreach($postfixes as $postfix) {
-                $postfix = str_replace(' ', '', $postfix);
-                $key .= self::SEP . $postfix;
-            }
-        }
-        return $key;
-    }
+    // public function generateKey($keyword, ...$postfixes) {
+    //     $key = $keyword;
+    //     if (is_numeric($this->host)) {
+    //         $key .= self::SEP . $this->host;
+    //     }
+    //     if (is_array($postfixes)) {
+    //         foreach($postfixes as $postfix) {
+    //             $postfix = str_replace(' ', '', $postfix);
+    //             $key .= self::SEP . $postfix;
+    //         }
+    //     }
+    //     return $key;
+    // }
 
     public function get($k) {
         if (!$this->enabled) {

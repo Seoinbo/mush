@@ -43,8 +43,8 @@ $container['kvp'] = function () {
 };
 
 // File cache
-$container['fileCache'] = function () {
-    return new \Doorisan\Cache\File();
+$container['fileCache'] = function ($c) {
+    return new \Doorisan\Cache\File(['cache_dir'=>$c['settings']['cache']['filePath']]);
 };
 
 

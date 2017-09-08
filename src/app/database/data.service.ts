@@ -184,6 +184,14 @@ export class DataService {
                 srctit: "두산백과사전",
                 image: "http://cfile29.uf.tistory.com/image/2365084D550F66D80F97B6",
                 link: "http://terms.naver.com/entry.nhn?docId=1256075&cid=40942&categoryId=32098"
+            // }, {
+            //     id: 5,
+            //     type: "news",
+            //     title: "약용버섯 이야기: 꽃송이버섯",
+            //     desc: "꽃송이버섯에 대한 과학적 분류체계가 정리되어 있는데도 현존하는 미국 버섯도감들은 물론 학문적인 문헌에 조차 꽃송이버섯류(Sparassis spp.)에 대한 학명기재가 많은 혼동을 일으키고 있다. 최근 DNA 검사결과에 따라 꽃송이버섯은 대체로 7종이 분류되었고, 한 종류가 아직 설명되지 않고 있다 한다. 그 7종류 가운데 북미에는 3종류의 꽃송이버섯이 돋고 있고, 한국에서는 오직 한 종류만 기록되어 있다.",
+            //     srctit: "자연을 닮은 사람들",
+            //     image: "http://www.jadam.kr/news/photo/201605/8927_15416_336.jpg",
+            //     link: "http://www.jadam.kr/news/articleView.html?idxno=8927"
             }
         ],
         "products": [
