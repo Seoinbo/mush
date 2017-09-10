@@ -12,6 +12,8 @@ use \Doorisan\Host;
 
 class Instagram extends Controller
 {
+    public static $CACHE_KEY_RECENT = "media::recent";
+
     /**
      * @param Request $request
      * @param Response $response
@@ -19,6 +21,14 @@ class Instagram extends Controller
      * @throws ServerException
      */
     public function recent(Request $request, Response $response) {
+        // Loading cached data.
+        $cachedData = $this->ci->ccache->get(self::$CACHE_KEY_RECENT);
+        if (!empty($cachedData)) {
+            // Write json-data to body.
+            $response = $response->write($cachedData);
+            return $response;
+        }
+        // Loading noncached data.
         $recnetData = $this->recentData();
         if (!is_array($recnetData)) {
             return $response;
@@ -42,8 +52,13 @@ class Instagram extends Controller
             $retv['data'][] = $tmp;
         }
         $retv['count'] = count($data);
+        $retvWithJson = json_encode($retv);
 
-        $response = $response->withJson($retv);
+        // Caching data.
+        $this->ci->ccache->set(self::$CACHE_KEY_RECENT, $retvWithJson, 21600); // expired => 6hour
+
+        // Write json-data to body.
+        $response = $response->write($retvWithJson);
         return $response;
     }
 

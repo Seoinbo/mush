@@ -8,7 +8,7 @@
 // $app->add($container->get('mwAuth'));
 
 // Register http-header middleware.
-// $app->add($container->get('mwHttpCommonHeader'));
+$app->add($container->get('mwHttpCommonHeader'));
 
 // Register access-logger middleware.
 // $app->add($container->get('mwAccessLogger'));

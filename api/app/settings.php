@@ -27,7 +27,8 @@ return [
             ]
         ],
         'cache' => [
-            'enabled' => true
+            'enabled' => true,
+            'filePath' => __DIR__ . '/../tmp/'
         ],
         'memcached' => [
             'igbinary' => true // PHP serialize library
