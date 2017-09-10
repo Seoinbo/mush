@@ -1,8 +1,15 @@
 .intro {
     & .boundary {
-        max-width: 1680px !important;
-        display: flex;
-        align-items: center;
+        // max-width: 1680px !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+    & .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
     }
     & .typo {
         position: relative;
@@ -21,16 +28,24 @@
         // }
     }
     & .sparassis-crispa {
-        height: 700px;
+        display: flex;
+        align-items: center;
+        height: 500px;
+        & .bg {
+            background: transparent url("/assets/images/farm-illust-bg.png") no-repeat right bottom;
+            @media screen and (max-width: 980px) {
+                background: none;
+            }
+        }
         @media screen and (max-width: 980px) {
             height: auto;
         }
         & .image {
-            width: 55%;
+            width: 580px;
             margin-right: 120px;
-            height: 460px;
-            background-image: url("/assets/images/intro.jpg");
-            @media screen and (max-width: 800px) {
+            height: 340px;
+            background-image: url("/assets/images/mush-01.jpg");
+            @media screen and (max-width: 800px) {  
                 display: none;
             }
             @media screen and (min-width: 801px) and (max-width: 1050px) {
@@ -42,7 +57,7 @@
             }
         }
         & .typo {
-            width: 35%;
+            width: 450px;
             margin-right: 120px;
             margin-left: 150px;
             @media screen and (max-width: 500px) {
@@ -68,7 +83,7 @@
                 margin-left: 80px;
             }
             & h2 {
-                font-size: 2.000em;
+                font-size: 1.750em;
                 line-height: 1.5;
                 text-align: left;
                 word-break: keep-all;
@@ -76,13 +91,13 @@
             & p {
                 // max-width: 650px;
                 text-align: justify;
-                margin: 25px 0 0 0;
-                font-size: 1.125em;
+                margin: 20px 0 0 0;
+                font-size: 1em;
                 line-height: 1.5;
             }
             & .source-link {
                 display: block;
-                margin-top: 50px;
+                margin-top: 25px;
                 @media screen and (max-width: 500px) {
                     display: none;
                 }
@@ -115,4 +130,118 @@
         }
     }
 
+    & .grape {
+        height: 500px;
+        & .bg {
+            background: transparent url("/assets/images/grape-01.jpg") repeat-x center bottom;
+        }
+        & .typo {
+            float: right;
+            width: auto;
+            margin-top: 140px;
+            margin-right: 15%;
+            border: 2px solid #fff;
+            padding: 45px 40px;
+            text-align: center;
+            & h2 {
+                margin-top: 8px;
+                font-size: 2.313em;
+                font-weight: bold;
+                color: #fff;
+            }
+            & p {
+                line-height: 1;
+                letter-spacing: -2px;
+                font-size: 1.875em;
+                font-weight: bolder;
+                color: #fff;
+            }
+        }
+    }
+
+    & .instagram-link {
+        height: 120px;
+        background: #48a12d;
+        color: #fff;
+        & .wrap {
+            width: 550px;
+            padding-top: 32px;
+            margin: 0 auto;
+            & .txt {
+                display: inline-block;
+                margin-right: 65px;
+                font-size: 22px;
+                line-height: 1.2;
+                letter-spacing: -1px;
+                & .first-line {
+                    display: block;
+                    &::before {
+                        content: '"';
+                        font-weight: bold;
+                    }
+    
+                }
+                & .sec-line {
+                    display: block;
+                    text-indent: 66px;
+                    &::after {
+                        content: '"';
+                        font-weight: bold;
+                    }
+                }
+            }
+            & .go-instagram {
+                display: inline-block;
+                width: 300px;
+                height: 55px;
+                border: 1px solid #fff;
+                padding: 13px 0 0 23px;
+                & i {
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 250px;
+                    height: 32px;
+                    background-position: 0 -51px !important;
+                    text-indent: 101%;
+                    white-space: nowrap;
+                    background: transparent url("/assets/images/ico-grp.png") no-repeat;
+                }
+            }
+        }
+    }
+
+    & .wasong {
+        height: 500px;
+        & .bg {
+            background: transparent url("/assets/images/wasong-01.jpg") repeat-x center bottom;
+        }
+        & .typo {
+            float: left;
+            width: 320px;
+            margin-top: 130px;
+            margin-left: 15%;
+            border: 2px solid #fff;
+            padding: 40px 40px 45px 40px;
+            text-align: justify;
+            & h2 {
+                line-height: 1;
+                font-size: 2.313em;
+                font-weight: bold;
+                color: #fff;
+                vertical-align: text-bottom;
+                & .alt-lang {
+                    margin-left: 3px;
+                    font-weight: normal;
+                }
+            }
+            & p {
+                margin-top: 23px;
+                line-height: 1.4;
+                font-size: 1.063em;
+                color: #fff;
+                opacity: .9;
+            }
+        }
+    }
+    
 }
