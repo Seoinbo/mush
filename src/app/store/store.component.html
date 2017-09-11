@@ -4,6 +4,49 @@
         <p>농가에서 직접 판매해 유통<br>마진 없는 착한 가격</p>
     </div>
     <div class="product-box">
+        <div *ngFor="let product of products; let i = index" class="product">
+            <div class="top" (click)="add($event, i)" (mouseover)="activeCover(i, '장바구니 담기')" (mouseout)="inactiveCover(i)">
+                <div class="thumb" [style.background-image]="'url('+product.image+')'">
+                    <!-- <div class="cover" [class.visible]="coverVisible[i]">
+                        <div class="bg"></div>
+                        <span class="text">{{coverText[i]}}</span>
+                    </div> -->
+                </div>
+                <div class="info">
+                    <h3 class="title">{{product.title}}</h3>
+                    <span class="price">{{product.price|withComma}}원</span>
+                    <span *ngIf="product.price != product.oprice" class="o-price">({{product.oprice|withComma}}원)</span>
+                    <!-- <div *ngIf="product.soldout" class="soldout-remain">{{remains(i)}}</div> -->
+                </div>
+            </div>
+            <!-- <div class="separator">
+                <span class="edge-left"></span>
+                <span class="edge-right"></span>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <h4>가격</h4>
+                    <span class="price"><strong>{{product.price|withComma}}</strong> 원</span>
+                    <span *ngIf="product.price != product.oprice" class="o-price">{{product.oprice|withComma}} 원</span>
+                </div>
+                <div class="right">
+                    <ng-template [ngIf]="!product.soldout">
+                        <h4>수량</h4>
+                        <a class="pm-buttons minus" (mouseover)="activeCover(i, '장바구니 빼기')" (mouseout)="inactiveCover(i)" href="#" (click)="remove($event, i)"><i></i></a>
+                        <span
+                            class="quantity" [attr.data-quantity]="product.quantity">{{product.quantity|withComma}}</span><a class="pm-buttons plus" (mouseover)="activeCover(i, '장바구니 담기')"
+                                (mouseout)="inactiveCover(i)" href="#" (click)="add($event, i)"><i></i></a>
+                    </ng-template>
+                    <ng-template [ngIf]="product.soldout">
+                        <span class="soldout-msg">품절</span><a class="soldout-reason" href="#" (click)="toggleTooltip($event, '해당 상품은 품절되었습니다', product.reason, '350px')">help</a>
+                    </ng-template>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <a class="go-store" href="https://www.instagram.com/doorisan_farmer/" target="_blank"><i>스토어 바로가기</i></a>
+
+    <!-- <div class="product-box">
         <div *ngFor="let product of products; let i = index" class="product" [class.soldout]="product.soldout">
             <div class="top" (click)="add($event, i)" (mouseover)="activeCover(i, '장바구니 담기')" (mouseout)="inactiveCover(i)">
                 <div class="thumb" [style.background-image]="'url('+product.image+')'">
@@ -43,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div
     <div class="notice">
         <div class="left">
             <h4>배송 안내</h4>
@@ -87,5 +130,5 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> -->
 </div>

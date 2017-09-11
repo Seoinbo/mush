@@ -197,28 +197,37 @@ export class DataService {
         "products": [
             {
                 id: 1,
-                title: "건조 꽃송이버섯 100g",
+                title: "건조 꽃송이버섯 50g",
                 image: "./assets/images/store_product1.jpg",
-                oprice: 0,
-                price: 100000,
+                oprice: 48000,
+                price: 43200,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 2,
-                title: "건조 꽃송이버섯 300g",
+                title: "건조 꽃송이버섯 선물세트 100g",
                 image: "./assets/images/store_product2.jpg",
-                oprice: 300000,
-                price: 280000,
+                oprice: 100000,
+                price: 90000,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 3,
-                title: "청포도(샤인마스캇) 4kg",
+                title: "청포도 샤인머스켓 4kg",
                 image: "./assets/images/store_product3.png",
                 oprice: 0,
                 price: 35000,
+                soldout: 1,
+                readytime: 1502895600,
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
+            }, {
+                id: 4,
+                title: "와송 1kg",
+                image: "./assets/images/store_product3.png",
+                oprice: 0,
+                price: 20000,
                 soldout: 1,
                 readytime: 1502895600,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."

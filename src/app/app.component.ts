@@ -78,17 +78,17 @@ export class AppComponent {
 
     ngAfterViewInit() {
         let that = this;
-        let controller = new ScrollMagic.Controller();
-        // build scene
-        new ScrollMagic.Scene({ triggerElement: "#store", duration: this.storeHeight })
-            .setClassToggle(".cart", "visible")
-            // .addIndicators({ name: "cart" })
-            .addTo(controller)
-            .on("start end", function (e) {
-                if (that.tooltipService.id == "cartip") {
-                    that.tooltipService.hide();
-                }
-            });
+        // let controller = new ScrollMagic.Controller();
+        // // build scene
+        // new ScrollMagic.Scene({ triggerElement: "#store", duration: this.storeHeight })
+        //     .setClassToggle(".cart", "visible")
+        //     // .addIndicators({ name: "cart" })
+        //     .addTo(controller)
+        //     .on("start end", function (e) {
+        //         if (that.tooltipService.id == "cartip") {
+        //             that.tooltipService.hide();
+        //         }
+        //     });
     }
 
     private storeHeight() {
