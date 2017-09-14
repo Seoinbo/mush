@@ -163,11 +163,11 @@ export class DataService {
             }, {
                 id: 2,
                 type: "news",
-                title: "신비의 꽃송이버섯 전남 첫 인공재배 성공",
-                desc: "전남도산림자원연구소가 국내 최초로 꽃송이버섯 인공재배에 성공, 농가에 재배기술을 이전한데 이어 국내 소비 촉진과 해외 수출 등 산업화 방안을 적극 모색하고 있다. 17일 전남도산림자원연구소에 따르면 꽃송이버섯은 꽃양배추모양을 띠고 씹는 감촉과 향이 독특해 애호가들 사이에선 '신비의 버섯'으로 불린다. 특히 최근 연구 결과 건조한 꽃송이버섯에서 100g당 43.6%의 베타글루칸이 함유돼 있어 인체의 면역력을 높이고 암, 고혈압, 당뇨 등에도 탁월하다고 밝혀 국내에서는 물론 일본, 중국 등 해외에서도 인기가 높다.",
-                srctit: "전남일보",
-                image: "./assets/images/thumb_jnilbo.jpg",
-                link: "http://www.jnilbo.com/read.php3?aid=1476716400508410002"
+                title: "포도시장 새바람 샤인머스켓",
+                desc: "샤인머스켓은 일본에서 특히 인기 있는 품종으로 일본과수시험장에서 스튜벤, 마스캇오브알렉산드리아, 백남을 교배해서 만든 품종이다. 20브릭스(Brix)이상의 당도가 나오며 씨 없이 껍질째 먹는 포도로, 식감이 좋고 망고향이 나는 것이 특징이며 소비자의 기호도도 매우 높게 나타나고 있다. 특히, 내수에만 치중하던 판매망을 다변화해 일본, 홍콩, 싱가폴, 캐나다 등 10여개국으로까지 수출하고 있다.",
+                srctit: "경북매일",
+                image: "http://t1.daumcdn.net/kakaofarmer/images/2017-08-31/0ccf729703144e30aa50fe333621ac4a.jpg",
+                link: "http://www.kbmaeil.com/news/articleView.html?idxno=414747"
             }, {
                 id: 3,
                 type: "book",
@@ -184,14 +184,38 @@ export class DataService {
                 srctit: "두산백과사전",
                 image: "http://cfile29.uf.tistory.com/image/2365084D550F66D80F97B6",
                 link: "http://terms.naver.com/entry.nhn?docId=1256075&cid=40942&categoryId=32098"
-            // }, {
-            //     id: 5,
-            //     type: "news",
-            //     title: "약용버섯 이야기: 꽃송이버섯",
-            //     desc: "꽃송이버섯에 대한 과학적 분류체계가 정리되어 있는데도 현존하는 미국 버섯도감들은 물론 학문적인 문헌에 조차 꽃송이버섯류(Sparassis spp.)에 대한 학명기재가 많은 혼동을 일으키고 있다. 최근 DNA 검사결과에 따라 꽃송이버섯은 대체로 7종이 분류되었고, 한 종류가 아직 설명되지 않고 있다 한다. 그 7종류 가운데 북미에는 3종류의 꽃송이버섯이 돋고 있고, 한국에서는 오직 한 종류만 기록되어 있다.",
-            //     srctit: "자연을 닮은 사람들",
-            //     image: "http://www.jadam.kr/news/photo/201605/8927_15416_336.jpg",
-            //     link: "http://www.jadam.kr/news/articleView.html?idxno=8927"
+            }, {
+                id: 5,
+                type: "news",
+                title: "신비의 꽃송이버섯 전남 첫 인공재배 성공",
+                desc: "전남도산림자원연구소가 국내 최초로 꽃송이버섯 인공재배에 성공, 농가에 재배기술을 이전한데 이어 국내 소비 촉진과 해외 수출 등 산업화 방안을 적극 모색하고 있다. 17일 전남도산림자원연구소에 따르면 꽃송이버섯은 꽃양배추모양을 띠고 씹는 감촉과 향이 독특해 애호가들 사이에선 '신비의 버섯'으로 불린다. 특히 최근 연구 결과 건조한 꽃송이버섯에서 100g당 43.6%의 베타글루칸이 함유돼 있어 인체의 면역력을 높이고 암, 고혈압, 당뇨 등에도 탁월하다고 밝혀 국내에서는 물론 일본, 중국 등 해외에서도 인기가 높다.",
+                srctit: "전남일보",
+                image: "./assets/images/thumb_jnilbo.jpg",
+                link: "http://www.jnilbo.com/read.php3?aid=1476716400508410002"
+            }, {
+                id: 6,
+                type: "blog",
+                title: "면역인자를 생성하는 와송",
+                desc: "와송의 핵심 성분인 사이토카인은 면역, 감염병, 조혈기능, 조직회복, 세포의 발전 및 성장에 중요한 기능을 하며 항원에 대해 항체의 생성을 유도하고 외부의 침입에 대해서 인체의 방어체계를 제어하고 자극하는 효능을 가지고 있습니다. 즉 항원 분자에 대해서 중성화 작용을 하고 그들에 대항하는 면역인자를 생성하는데요.",
+                srctit: "네이버 포스트 - 약초박사 유리씨",
+                image: "http://post.phinf.naver.net/MjAxNzA4MTNfMTc1/MDAxNTAyNjMxOTk1MjMx.NYVFK_w5Y6UcVKo6HXYHJYiiiP5kmcuKQypReo_8Wp4g.qGih9nXsLUFEeh6L0Qu81hF7DQH4P9zNrDDvvWzPNbwg.JPEG/%EC%82%AC%EC%A7%841.jpg?type=w1200",
+                link: "http://m.post.naver.com/viewer/postView.nhn?volumeNo=9103042&memberNo=38120456&searchKeyword=%EC%99%80%EC%86%A1&searchRank=2"
+            }, {
+                id: 7,
+                type: "news",
+                title: "약용버섯 이야기: 꽃송이버섯",
+                desc: "꽃송이버섯에 대한 과학적 분류체계가 정리되어 있는데도 현존하는 미국 버섯도감들은 물론 학문적인 문헌에 조차 꽃송이버섯류(Sparassis spp.)에 대한 학명기재가 많은 혼동을 일으키고 있다. 최근 DNA 검사결과에 따라 꽃송이버섯은 대체로 7종이 분류되었고, 한 종류가 아직 설명되지 않고 있다 한다. 그 7종류 가운데 북미에는 3종류의 꽃송이버섯이 돋고 있고, 한국에서는 오직 한 종류만 기록되어 있다.",
+                srctit: "자연을 닮은 사람들",
+                image: "http://www.jadam.kr/news/photo/201605/8927_15416_336.jpg",
+                link: "http://www.jadam.kr/news/articleView.html?idxno=8927"
+            }, {
+                id: 8,
+                type: "blog",
+                title: "노력해도 쉽게 빠지지 않는 내장지방! 꽃송이버섯이면 OK?",
+                desc: "꽃송이버섯은 고산지대에 많으며 낙엽송 밑에서 주로 자생된다고 합니다. 마치 산호초를 연상시키는 물결 모양의 작은 꽃송이가 여러 개 모인 것처럼 보여 꽃송이버섯이라고 부른다고 합니다. 베타글루칸 함량을 보면 꽃송이버섯은 효능이 뛰어나다고 소문난 영지버섯을 비롯한 다른 버섯 보다 2배 이상의 베타글루칸이 들어있다고 합니다.",
+                srctit: "네이버 포스트 - MBN",
+                image: "http://post.phinf.naver.net/20160411_198/1460361258618Uzjug_JPEG/Image8.jpg?type=w1200",
+                link: "http://m.post.naver.com/viewer/postView.nhn?volumeNo=4029670&memberNo=11595512&searchKeyword=%EA%BD%83%EC%86%A1%EC%9D%B4%EB%B2%84%EC%84%AF&searchRank=4"
             }
         ],
         "products": [
