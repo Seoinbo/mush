@@ -236,9 +236,10 @@
                 & a {
                     display: inline-block;
                     margin-top: 215px;
-                    width: 50px;
+                    width: 60px;
                     height: 85px;
                     background: rgba(0, 0, 0, 0.6);
+                    opacity: .6;
                     font-size: 1.313em;
                     font-weight: 100;
                     color: #fff;
@@ -246,7 +247,6 @@
                         display: inline-block;
                         width: 24px;
                         height: 45px;
-                        
                         overflow: hidden;
                         text-indent: 101%;
                         background: url(/assets/images/ico-grp.png) no-repeat;
@@ -255,13 +255,13 @@
                 & .next {
                     float: right;
                     & i {
-                        margin: 20px 14px;
+                        margin: 20px 19px;
                         background-position: 0 0;
                     }
                 }
                 & .prev {
                     & i {
-                        margin: 20px 12px;
+                        margin: 20px 17px;
                         background-position: -24px 0;
                     }
                 }

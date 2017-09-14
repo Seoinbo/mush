@@ -2,6 +2,7 @@
     & .boundary {
         // max-width: 1680px !important;
         max-width: none !important;
+        max-height: 800px;
         padding: 0 !important;
     }
     & .bg {
@@ -28,7 +29,6 @@
         // }
     }
     & .sparassis-crispa {
-        height: 500px;
         & .bg {
             background: transparent url("/assets/images/farm-illust-bg.png") no-repeat right bottom;
             @media screen and (max-width: 980px) {
@@ -140,7 +140,7 @@
     & .grape {
         height: 500px;
         & .bg {
-            background: transparent url("/assets/images/grape-01.jpg") repeat-x center bottom;
+            background: transparent url("/assets/images/grape-01.jpg") repeat-x center center/cover;
         }
         & .typo {
             float: right;
@@ -220,7 +220,7 @@
     & .wasong {
         height: 500px;
         & .bg {
-            background: transparent url("/assets/images/wasong-01.jpg") repeat-x center bottom;
+            background: transparent url("/assets/images/wasong-01.jpg") repeat-x center center/cover;
         }
         & .typo {
             float: left;

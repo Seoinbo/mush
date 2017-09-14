@@ -1,18 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { IntroComponent } from './Intro.component';
+import { Windoc } from "../services/windoc";
+import { IntroComponent } from './intro.component';
 
 @NgModule({
   declarations: [
-    IntroComponent,
+      IntroComponent,
   ],
   imports: [
-    BrowserModule
+      BrowserModule
   ],
   exports: [
-    IntroComponent
+      IntroComponent
   ],
-  providers: []
+  providers: [
+      Windoc
+  ]
 })
 export class IntroModule { }

@@ -3,6 +3,7 @@ import { Windoc } from "./services/windoc";
 import { DeviceService } from './services/device.service';
 import { TooltipService } from '../components/tooltip/tooltip.service';
 import { MediaComponent } from './media/media.component';
+import { IntroComponent } from './intro/intro.component';
 
 import * as $ from 'jquery';
 declare const ScrollMagic: any
@@ -18,6 +19,8 @@ declare const ScrollMagic: any
 export class AppComponent {
     @ViewChild(MediaComponent)
     protected mediaComponent: MediaComponent;
+    @ViewChild(IntroComponent)
+    protected introComponent: IntroComponent;
 
     private screenType: string = "desktop";
     title = 'Doorisan';
@@ -65,6 +68,7 @@ export class AppComponent {
     onResize(event) {
         let type;
         let windowWidth = event.target.innerWidth;
+        let windowHeight = event.target.innerHeight;
         if (windowWidth > 980) {
             type = "desktop";
         } else {
@@ -74,6 +78,9 @@ export class AppComponent {
             this.mediaComponent.onChangeDeviceType(type);
             this.screenType = type;
         }
+
+        // 인트로 이미지 높이 변경
+        this.introComponent.onChangeHeight(windowHeight);
     }
 
     ngAfterViewInit() {
