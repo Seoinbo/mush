@@ -154,12 +154,12 @@ export class DataService {
         "scrap": [
             {
                 id: 1,
-                type: "dic",
-                title: "꽃송이버섯",
-                desc: "버섯의 자실체는 백색이나 밤색으로 물결치는 꽃잎이 다수 모인 것 같은 모양이다. 전체의 지름은 10~30cm이고, 하얀 양배추를 닮아 아름답다. 근부는 덩이 모양인 공통의 자루로 되어 있고 자실층은 꽃잎 모양의 얇은 조각이 아래쪽에 발달한다. 꽃잎같은 조각의 두께는 0.1cm 정도이다. 살은 연하지만 치아를 자른 것 같은 모양이다. 버섯의 표면과 뒷면의 구별이 있다.",
-                srctit: "네이버 지식백과 한국의 버섯",
-                image: "./assets/images/thumb_sparassis_radicata_naver.jpg",
-                link: "http://terms.naver.com/entry.nhn?docId=770115&cid=46689&categoryId=46689"
+                type: "news",
+                title: "꽃송이버섯 항암효과 진실 풀렸다",
+                desc: "꽃송이버섯(일본명 하나비라다케)에 들어있는 MH-3(베타1-3 글루칸)의 항암효과 기전이 밝혀졌다. 최근 일본 도야마에서 열린 일본약학회에서 도쿄약과대학 오노 나오히토 교수팀은 MH-3 수용체인 ‘덱틴 1’의 존재를 발견함에 따라 MH-3가 암환자의 몸에 흡수돼 면역력을 높이는 과정을 증명했다. 이 연구는 지난 1월 네이처 면역학지 표지에 실렸다.",
+                srctit: "파이낸셜뉴스",
+                image: "./assets/images/thumb_jnilbo.jpg",
+                link: "http://www.fnnews.com/news/200704021947587737"
             }, {
                 id: 2,
                 type: "news",
@@ -178,6 +178,14 @@ export class DataService {
                 link: "http://book.naver.com/bookdb/book_detail.nhn?bid=7443914"
             }, {
                 id: 4,
+                type: "dic",
+                title: "꽃송이버섯",
+                desc: "버섯의 자실체는 백색이나 밤색으로 물결치는 꽃잎이 다수 모인 것 같은 모양이다. 전체의 지름은 10~30cm이고, 하얀 양배추를 닮아 아름답다. 근부는 덩이 모양인 공통의 자루로 되어 있고 자실층은 꽃잎 모양의 얇은 조각이 아래쪽에 발달한다. 꽃잎같은 조각의 두께는 0.1cm 정도이다. 살은 연하지만 치아를 자른 것 같은 모양이다. 버섯의 표면과 뒷면의 구별이 있다.",
+                srctit: "네이버 지식백과 한국의 버섯",
+                image: "./assets/images/thumb_sparassis_radicata_naver.jpg",
+                link: "http://terms.naver.com/entry.nhn?docId=770115&cid=46689&categoryId=46689"
+            }, {
+                id: 5,
                 type: "news",
                 title: "베타글루칸(β-glucan)이란?",
                 desc: "다당류의 일종으로 면역증강작용을 가지고 있으며 효모의 세포벽, 버섯류, 곡류 등에 존재하고 있다. 인간 정상 세포의 면역기능을 활성화시켜 암세포의 증식과 재발을 억제하고 혈당과 혈중 콜레스테롤을 감소시키며 지질대사를 개선하여 체지방 형성과 축적을 억제한다.",
@@ -185,7 +193,7 @@ export class DataService {
                 image: "http://cfile29.uf.tistory.com/image/2365084D550F66D80F97B6",
                 link: "http://terms.naver.com/entry.nhn?docId=1256075&cid=40942&categoryId=32098"
             }, {
-                id: 5,
+                id: 6,
                 type: "news",
                 title: "신비의 꽃송이버섯 전남 첫 인공재배 성공",
                 desc: "전남도산림자원연구소가 국내 최초로 꽃송이버섯 인공재배에 성공, 농가에 재배기술을 이전한데 이어 국내 소비 촉진과 해외 수출 등 산업화 방안을 적극 모색하고 있다. 17일 전남도산림자원연구소에 따르면 꽃송이버섯은 꽃양배추모양을 띠고 씹는 감촉과 향이 독특해 애호가들 사이에선 '신비의 버섯'으로 불린다. 특히 최근 연구 결과 건조한 꽃송이버섯에서 100g당 43.6%의 베타글루칸이 함유돼 있어 인체의 면역력을 높이고 암, 고혈압, 당뇨 등에도 탁월하다고 밝혀 국내에서는 물론 일본, 중국 등 해외에서도 인기가 높다.",
@@ -193,7 +201,7 @@ export class DataService {
                 image: "./assets/images/thumb_jnilbo.jpg",
                 link: "http://www.jnilbo.com/read.php3?aid=1476716400508410002"
             }, {
-                id: 6,
+                id: 7,
                 type: "blog",
                 title: "면역인자를 생성하는 와송",
                 desc: "와송의 핵심 성분인 사이토카인은 면역, 감염병, 조혈기능, 조직회복, 세포의 발전 및 성장에 중요한 기능을 하며 항원에 대해 항체의 생성을 유도하고 외부의 침입에 대해서 인체의 방어체계를 제어하고 자극하는 효능을 가지고 있습니다. 즉 항원 분자에 대해서 중성화 작용을 하고 그들에 대항하는 면역인자를 생성하는데요.",
@@ -201,21 +209,21 @@ export class DataService {
                 image: "http://post.phinf.naver.net/MjAxNzA4MTNfMTc1/MDAxNTAyNjMxOTk1MjMx.NYVFK_w5Y6UcVKo6HXYHJYiiiP5kmcuKQypReo_8Wp4g.qGih9nXsLUFEeh6L0Qu81hF7DQH4P9zNrDDvvWzPNbwg.JPEG/%EC%82%AC%EC%A7%841.jpg?type=w1200",
                 link: "http://m.post.naver.com/viewer/postView.nhn?volumeNo=9103042&memberNo=38120456&searchKeyword=%EC%99%80%EC%86%A1&searchRank=2"
             }, {
-                id: 7,
+                id: 8,
                 type: "news",
                 title: "약용버섯 이야기: 꽃송이버섯",
                 desc: "꽃송이버섯에 대한 과학적 분류체계가 정리되어 있는데도 현존하는 미국 버섯도감들은 물론 학문적인 문헌에 조차 꽃송이버섯류(Sparassis spp.)에 대한 학명기재가 많은 혼동을 일으키고 있다. 최근 DNA 검사결과에 따라 꽃송이버섯은 대체로 7종이 분류되었고, 한 종류가 아직 설명되지 않고 있다 한다. 그 7종류 가운데 북미에는 3종류의 꽃송이버섯이 돋고 있고, 한국에서는 오직 한 종류만 기록되어 있다.",
                 srctit: "자연을 닮은 사람들",
                 image: "http://www.jadam.kr/news/photo/201605/8927_15416_336.jpg",
                 link: "http://www.jadam.kr/news/articleView.html?idxno=8927"
-            }, {
-                id: 8,
-                type: "blog",
-                title: "노력해도 쉽게 빠지지 않는 내장지방! 꽃송이버섯이면 OK?",
-                desc: "꽃송이버섯은 고산지대에 많으며 낙엽송 밑에서 주로 자생된다고 합니다. 마치 산호초를 연상시키는 물결 모양의 작은 꽃송이가 여러 개 모인 것처럼 보여 꽃송이버섯이라고 부른다고 합니다. 베타글루칸 함량을 보면 꽃송이버섯은 효능이 뛰어나다고 소문난 영지버섯을 비롯한 다른 버섯 보다 2배 이상의 베타글루칸이 들어있다고 합니다.",
-                srctit: "네이버 포스트 - MBN",
-                image: "http://post.phinf.naver.net/20160411_198/1460361258618Uzjug_JPEG/Image8.jpg?type=w1200",
-                link: "http://m.post.naver.com/viewer/postView.nhn?volumeNo=4029670&memberNo=11595512&searchKeyword=%EA%BD%83%EC%86%A1%EC%9D%B4%EB%B2%84%EC%84%AF&searchRank=4"
+            // }, {
+            //     id: 9,
+            //     type: "blog",
+            //     title: "노력해도 쉽게 빠지지 않는 내장지방! 꽃송이버섯이면 OK?",
+            //     desc: "꽃송이버섯은 고산지대에 많으며 낙엽송 밑에서 주로 자생된다고 합니다. 마치 산호초를 연상시키는 물결 모양의 작은 꽃송이가 여러 개 모인 것처럼 보여 꽃송이버섯이라고 부른다고 합니다. 베타글루칸 함량을 보면 꽃송이버섯은 효능이 뛰어나다고 소문난 영지버섯을 비롯한 다른 버섯 보다 2배 이상의 베타글루칸이 들어있다고 합니다.",
+            //     srctit: "네이버 포스트 - MBN",
+            //     image: "http://post.phinf.naver.net/20160411_198/1460361258618Uzjug_JPEG/Image8.jpg?type=w1200",
+            //     link: "http://m.post.naver.com/viewer/postView.nhn?volumeNo=4029670&memberNo=11595512&searchKeyword=%EA%BD%83%EC%86%A1%EC%9D%B4%EB%B2%84%EC%84%AF&searchRank=4"
             }
         ],
         "products": [
