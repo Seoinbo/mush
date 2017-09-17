@@ -16,6 +16,10 @@ export class MediaObj extends Record {
         return this.images["standard_resolution"];
     }
 
+    public get standardVideo(): string {
+        return this.videos["standard_resolution"];
+    }
+
     public get height(): number {
         return 530;
     }

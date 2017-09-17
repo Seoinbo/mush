@@ -48,10 +48,10 @@
                     height: 100%;
                     overflow: hidden;
                     background: #000;
-                    & youtube-player {
-                        position: absolute;
-                        top: 50%;
-                        transform: translate(0, -50%) scale(1.2, 1.2);
+                    & video {
+                        width: 100%;
+                        height: auto;
+                        // transform: scale(1.01, 1.01);
                     }
                 }
                 & .cover {

@@ -1,5 +1,5 @@
 <div class="source">
-
+    <video *ngIf="mediaObj.type == 'video'" playsinline="" autoplay="autoplay" muted poster="{{mediaObj.standardImage.url}}" src="{{mediaObj.standardVideo.url}}" type="video/mp4" loop=""></video>
 </div>
 <div class="cover over-event" (mouseenter)="mouseOver()" (mouseleave)="mouseOut()" [class.focus]="coverViewState == 'active'">
     <div class="image" [@fade]="coverImageViewState" [style.background-image]="'url('+mediaObj.standardImage.url+')'"></div>
@@ -10,4 +10,4 @@
             <p class="tags"><span *ngFor="let tag of mediaObj.tags;">{{tag}}</span><span>{{mediaObj.ctime|dateFormat}}</span></p>
         </div>
     </div>
-</div>
+</div> 

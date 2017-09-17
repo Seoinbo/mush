@@ -36,6 +36,7 @@ class Instagram extends Controller
         $data = $recnetData['data'];
 
         $fixdList = [
+            ["index" => 0, "id" => "1596282552090837073_5959045462"],
             ["index" => 2, "id" => "1597197042508548748_5959045462"]
         ];
         if (is_array($fixdList)) {
