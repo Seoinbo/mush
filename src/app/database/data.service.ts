@@ -158,7 +158,7 @@ export class DataService {
                 title: "꽃송이버섯 항암효과 진실 풀렸다",
                 desc: "꽃송이버섯(일본명 하나비라다케)에 들어있는 MH-3(베타1-3 글루칸)의 항암효과 기전이 밝혀졌다. 최근 일본 도야마에서 열린 일본약학회에서 도쿄약과대학 오노 나오히토 교수팀은 MH-3 수용체인 ‘덱틴 1’의 존재를 발견함에 따라 MH-3가 암환자의 몸에 흡수돼 면역력을 높이는 과정을 증명했다. 이 연구는 지난 1월 네이처 면역학지 표지에 실렸다.",
                 srctit: "파이낸셜뉴스",
-                image: "./assets/images/thumb_jnilbo.jpg",
+                image: "http://blogfiles14.naver.net/20160830_247/ftl758_1472553160528FAY0s_PNG/1.png",
                 link: "http://www.fnnews.com/news/200704021947587737"
             }, {
                 id: 2,
@@ -230,24 +230,37 @@ export class DataService {
             {
                 id: 1,
                 title: "건조 꽃송이버섯 50g",
+                desc: "처음 구매하시는 분을 위한 소량 포장",
                 image: "./assets/images/store_product1.jpg",
-                oprice: 48000,
-                price: 43200,
+                oprice: 50000,
+                price: 50000,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 2,
-                title: "건조 꽃송이버섯 선물세트 100g",
-                image: "./assets/images/store_product2.jpg",
+                title: "건조 꽃송이버섯 100g",
+                desc: "꾸준히 찾으시는 분을 위한 실속형 상품",
+                image: "./assets/images/store_product1.jpg",
                 oprice: 100000,
-                price: 90000,
+                price: 95000,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 3,
+                title: "건조 꽃송이버섯 선물세트 150g",
+                desc: "고마운 분들을 위한 건강 선물세트",
+                image: "./assets/images/store_product2.jpg",
+                oprice: 150000,
+                price: 150000,
+                soldout: 0,
+                readytime: 1508166000,
+                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
+            }, {
+                id: 4,
                 title: "청포도 샤인머스켓 4kg",
+                desc: "경북 상주의 특산품, 고랭지 청포도",
                 image: "./assets/images/store_product3.png",
                 oprice: 0,
                 price: 35000,
@@ -255,8 +268,9 @@ export class DataService {
                 readytime: 1502895600,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
-                id: 4,
-                title: "와송 1kg",
+                id: 5,
+                title: "와송 가루 500g",
+                desc: "말린 와송을 빻아 먹기 좋게 만든 상품",
                 image: "./assets/images/store_product3.png",
                 oprice: 0,
                 price: 20000,
