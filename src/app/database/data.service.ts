@@ -158,7 +158,7 @@ export class DataService {
                 title: "꽃송이버섯 항암효과 진실 풀렸다",
                 desc: "꽃송이버섯(일본명 하나비라다케)에 들어있는 MH-3(베타1-3 글루칸)의 항암효과 기전이 밝혀졌다. 최근 일본 도야마에서 열린 일본약학회에서 도쿄약과대학 오노 나오히토 교수팀은 MH-3 수용체인 ‘덱틴 1’의 존재를 발견함에 따라 MH-3가 암환자의 몸에 흡수돼 면역력을 높이는 과정을 증명했다. 이 연구는 지난 1월 네이처 면역학지 표지에 실렸다.",
                 srctit: "파이낸셜뉴스",
-                image: "http://blogfiles14.naver.net/20160830_247/ftl758_1472553160528FAY0s_PNG/1.png",
+                image: "http://image.fnnews.com/resource/media/image/2007/04/02/200704021947586713_l.jpg",
                 link: "http://www.fnnews.com/news/200704021947587737"
             }, {
                 id: 2,
