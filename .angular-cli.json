@@ -11,7 +11,8 @@
         "assets",
         "favicon.ico",
         "inipay",
-        "staticpages"
+        "staticpages",
+        "googleacf7f2c921f7fce6.html"
       ],
       "index": "index.html",
       "main": "main.ts",

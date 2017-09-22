@@ -7,7 +7,7 @@ footer {
         margin: 0 auto;
         padding: 35px 25px 50px 25px;
         @media screen and (max-width: 550px) {
-            padding-left: 45px;
+            // padding-left: 45px;
             & .left {
                 width: 100% !important;
             }
@@ -122,7 +122,7 @@ footer {
                     line-height: 1;
                 }
 
-                
+
             }
         }
     }
