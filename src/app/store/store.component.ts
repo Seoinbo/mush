@@ -22,12 +22,14 @@ export class StoreComponent {
     }
 
     private add(event, index, count = 1) {
-        let product = this.products[index];
-        if (product.soldout) {
-            return;
-        }
-        this.storeService.incr(product.id, count);
         event.preventDefault();
+        window.open('http://storefarm.naver.com/doorisan','_blank');
+
+        // let product = this.products[index];
+        // if (product.soldout) {
+        //     return;
+        // }
+        // this.storeService.incr(product.id, count);
     }
 
     private remove(event, index, count = 1) {

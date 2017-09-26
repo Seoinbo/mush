@@ -21,6 +21,7 @@ export class StoreService {
         this.products.push({
             id: item.id,
             title: item.title,
+            desc: item.desc,
             image: item.image,
             oprice: item.oprice <= 0 ? item.price : item.oprice,
             price: item.price,

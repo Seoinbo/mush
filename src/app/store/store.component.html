@@ -14,8 +14,11 @@
                 </div>
                 <div class="info">
                     <h3 class="title">{{product.title}}</h3>
-                    <span *ngIf="product.price != product.oprice" class="o-price">{{product.oprice|withComma}}원</span>
-                    <span class="price">{{product.price|withComma}}원</span>
+                    <p class="desc">{{product.desc}}</p>
+                    <div class="price-info">
+                        <span *ngIf="product.price != product.oprice" class="o-price">{{product.oprice|withComma}}원</span>
+                        <span class="price">{{product.price|withComma}}원</span>
+                    </div>
                     <!-- <div *ngIf="product.soldout" class="soldout-remain">{{remains(i)}}</div> -->
                 </div>
             </div>
