@@ -11,6 +11,7 @@
         height: 100%;
         top: 0;
         left: 0;
+        //z-index: -1;
     }
     & .typo {
         position: relative;
@@ -29,15 +30,81 @@
         // }
     }
     & .sparassis-crispa {
+        background: #fdfcfa url("/assets/images/bg-pattern.png") repeat;
+        height: 600px;
+        &.grape-bg{
+            background-color: #fff;
+        }
         & .bg {
-            background: transparent url("/assets/images/farm-illust-bg.png") no-repeat right bottom;
-            @media screen and (max-width: 980px) {
-                background: none;
+            &.grape-bg2{
+                background: url("/assets/images/grape-bg.png") no-repeat left 200px;
             }
+            &.wasong-bg2{
+                background: url("/assets/images/wasong-bg.png") no-repeat right 100px;
+            }
+            
+            @media screen and (max-width: 980px) {
+                //background: none;
+            }
+            
         }
         @media screen and (max-width: 980px) {
             padding: 25px 0 !important;
             height: auto;
+        }
+        .mush-content{
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            max-width: 1400px;
+            padding:90px 0 60px;
+            position: relative;
+            h2{
+                font-size: 28px;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            .image-grp{
+                text-align: center;
+                img:nth-child(1){
+                    margin-right: 40px;
+                }
+            }
+            .desc{
+                max-width: 990px;
+                margin: 50px auto 0;
+                & .source-link {
+                    display: block;
+                    margin-top: 25px;
+                    @media screen and (max-width: 500px) {
+                        display: none;
+                    }
+                    & .thumb {
+                        display: inline-block;
+                        width: 168px;
+                        height: 94px;
+                        background: url("/assets/images/thumb_mybody.jpg") no-repeat center center/cover;
+                        // background: #999;
+                    }
+                    & dl {
+                        display: inline-block;
+                        margin: 0;
+                        & dt {
+                            color: #000;
+                        }
+                        & dd {
+                            margin-top: 5px;
+                            font-size: 0.875em;
+                            .link-btn {
+                                margin-left: 10px;
+                                color: #00afff;
+                            }
+                        }
+
+                    }
+                }
+            }
+
         }
         & .inner-content {
             display: flex;
@@ -46,11 +113,18 @@
             width: 100%;
             height: 100%;
             max-width: 1400px;
+          
             & .image {
                 width: 580px;
                 margin-right: 120px;
-                height: 340px;
-                background-image: url("/assets/images/mush-01.jpg");
+                height: 350px;
+                &.grape{
+                    background-image: url("/assets/images/grape-prod-02.jpg");
+                }
+                &.wasong{
+                    background-image: url("/assets/images/wasong.jpg");
+                }
+                
                 @media screen and (max-width: 800px) {
                     display: none;
                 }
@@ -66,6 +140,11 @@
                 width: 450px;
                 margin-right: 120px;
                 margin-left: 150px;
+                small{
+                    margin-top: 20px;
+                    display: inline-block;
+                    text-indent: -10px;
+                }
                 @media screen and (max-width: 500px) {
                     width: 100%;
                     margin-top: 0;
@@ -101,40 +180,10 @@
                     font-size: 1em;
                     line-height: 1.5;
                 }
-                & .source-link {
-                    display: block;
-                    margin-top: 25px;
-                    @media screen and (max-width: 500px) {
-                        display: none;
-                    }
-                    & .thumb {
-                        display: inline-block;
-                        width: 168px;
-                        height: 94px;
-                        background: url("/assets/images/thumb_mybody.jpg") no-repeat center center/cover;
-                        // background: #999;
-                    }
-                    & dl {
-                        display: inline-block;
-                        margin: 0 0 0 15px;
-                        & dt {
-                            color: #000;
-                        }
-                        & dd {
-                            margin-top: 5px;
-                            font-size: 0.875em;
-                            &.link-btn {
-                                margin-top: 20px;
-                                padding: 0;
-                                width: 105px;
-                                color: #00afff;
-                            }
-                        }
 
-                    }
-                }
             }
         }
+
     }
 
     & .grape {
@@ -166,56 +215,7 @@
         }
     }
 
-    & .instagram-link {
-        height: 120px;
-        background: #48a12d;
-        color: #fff;
-        & .wrap {
-            width: 550px;
-            padding-top: 32px;
-            margin: 0 auto;
-            & .txt {
-                display: inline-block;
-                margin-right: 65px;
-                font-size: 22px;
-                line-height: 1.2;
-                letter-spacing: -1px;
-                & .first-line {
-                    display: block;
-                    &::before {
-                        content: '"';
-                        font-weight: bold;
-                    }
 
-                }
-                & .sec-line {
-                    display: block;
-                    text-indent: 66px;
-                    &::after {
-                        content: '"';
-                        font-weight: bold;
-                    }
-                }
-            }
-            & .go-instagram {
-                display: inline-block;
-                width: 300px;
-                height: 55px;
-                border: 1px solid #fff;
-                padding: 13px 0 0 23px;
-                & i {
-                    display: inline-block;
-                    overflow: hidden;
-                    width: 250px;
-                    height: 32px;
-                    background-position: 0 -51px !important;
-                    text-indent: 101%;
-                    white-space: nowrap;
-                    background: transparent url("/assets/images/ico-grp.png") no-repeat;
-                }
-            }
-        }
-    }
 
     & .wasong {
         height: 500px;
@@ -251,4 +251,123 @@
         }
     }
 
+}
+
+.gnb-link {
+    height: 130px;
+    color: #fff;
+    ul{
+        width: 100%;
+        height: 100%;
+        &.store-gnb{
+            li{
+                &:nth-child(1){
+                    background: url("assets/images/bg-green.jpg") repeat;
+                    span{
+                        background: url("assets/images/bg-green-illust.png") no-repeat center center;
+                    }
+                }
+                &:nth-child(2){
+                    background: url("assets/images/bg-green2.jpg") repeat;
+                }
+            }
+        }
+        li{
+            width: 50%;
+            height: 100%;
+            float: left;
+            span{
+                width: 800px;
+                height: 100%;
+                display: inline-block;
+                text-align: center;
+                padding-top: 48px;
+                font-size: 24px;
+                letter-spacing: -1px;
+                @media screen and (max-width: 1620px) {
+                    width: 100%;
+                }
+            }
+
+            &:nth-child(1){
+                background: url("assets/images/bg-gray.jpg") repeat;
+                text-align: right;
+                span{
+                    background: url("assets/images/bg-gray-illust.png") no-repeat center center;
+                }
+                
+            }
+            &:nth-child(2){
+                background: url("assets/images/bg-gray2.jpg") repeat;
+                text-align: left;
+                cursor: pointer;
+                opacity: 0.9;
+                &:hover{
+                    opacity: 1;
+                }
+            }
+            i{
+                display: inline-block;
+                background: url("assets/images/ico-grp.png") no-repeat;
+                &.insta-logo{
+                    width: 110px;
+                    height: 34px;
+                    background-position: 0 -50px;
+                    vertical-align: -10px;
+                }
+                &.arrow{
+                    width: 50px;
+                    height: 24px;
+                    background-position:-205px -50px;
+                    vertical-align: -2px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    & .wrap {
+        width: 550px;
+        padding-top: 32px;
+        margin: 0 auto;
+        & .txt {
+            display: inline-block;
+            margin-right: 65px;
+            font-size: 22px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            & .first-line {
+                display: block;
+                &::before {
+                    content: '"';
+                    font-weight: bold;
+                }
+
+            }
+            & .sec-line {
+                display: block;
+                text-indent: 66px;
+                &::after {
+                    content: '"';
+                    font-weight: bold;
+                }
+            }
+        }
+        & .go-instagram {
+            display: inline-block;
+            width: 300px;
+            height: 55px;
+            border: 1px solid #fff;
+            padding: 13px 0 0 23px;
+            & i {
+                display: inline-block;
+                overflow: hidden;
+                width: 250px;
+                height: 32px;
+                background-position: 0 -51px !important;
+                text-indent: 101%;
+                white-space: nowrap;
+                background: transparent url("/assets/images/ico-grp.png") no-repeat;
+            }
+        }
+    }
 }

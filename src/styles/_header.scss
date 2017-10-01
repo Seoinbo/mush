@@ -68,14 +68,15 @@ header {
         }
         & .logo h1 .logo-image {
             line-height: 55px;
-            width: 40px;
+            width: 67px;
             height: 40px;
-            background-position: 0 -55px;
+            background: transparent url("/assets/images/logo-pc-01.png") no-repeat;
+            //background-position: 0 -55px;
             @media screen and (max-width: 980px) {
-                width: 30px;
-                height: 32px;
-                background: transparent url("/assets/images/logo_e.png") no-repeat;
-                background-size: 100% auto;
+                width: 67x;
+                height: 40px;
+                background: transparent url("/assets/images/logo-pc-01.png") no-repeat;
+                //background-size: 100% auto;
                 background-position: 0 0;
             }
         }
@@ -93,12 +94,12 @@ header {
             & .logo-image {
                 display: block;
                 overflow: hidden;
-                width: 160px;
-                height: 45px;
+                width: 235px;
+                height: 48px;
                 background-position: 0 0;
                 text-indent: 101%;
                 white-space: nowrap;
-                background: transparent url("/assets/images/logo_doori.png") no-repeat;
+                background: transparent url("/assets/images/logo-pc.png") no-repeat;
                 @media screen and (max-width: 980px) {
                     width: 90px;
                     height: 75px;
@@ -127,7 +128,7 @@ header {
                 display: inline-block;
                 text-align: center;
                 margin-right: 50px;
-                font-size: 1.188em;
+                font-size: 1em;
                 font-weight: 300;
                 line-height: 55px;
                 @media screen and (max-width: 980px) {

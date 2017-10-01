@@ -91,9 +91,8 @@
                     }
                 }
                 & .info {
-                    padding: 15px 0;
+                    padding: 15px 24px;
                     background: #fff;
-                    text-align: center;
                     @media screen and (max-width: 500px) {
                         display: inline-block;
                         height: 80px;
@@ -115,8 +114,14 @@
                     & .desc {
                         display: inline-block;
                         width: 100%;
-                        font-size: 0.938em;
-                        margin-top: 3px;
+                        font-size: 14px;
+                        margin-top: 8px;
+                        padding-bottom: 12px;
+                        border-bottom: 1px solid #ebebeb;
+                    }
+                    .price-info{
+                        text-align: right;
+                        padding: 10px 5px 6px;
                     }
                     & .price {
                         // display: none;
