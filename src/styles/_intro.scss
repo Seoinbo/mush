@@ -34,6 +34,14 @@
         height: 600px;
         &.grape-bg{
             background-color: #fff;
+            .inner-content{
+                .image{
+                    @media screen and (min-width: 1051px) and (max-width: 1440px) {
+                        margin-right: 0;
+                        margin-left: 80px;
+                    }
+                }
+            }
         }
         & .bg {
             &.grape-bg2{
