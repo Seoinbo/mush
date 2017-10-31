@@ -229,21 +229,21 @@ export class DataService {
         "products": [
             {
                 id: 1,
-                title: "건조 꽃송이버섯 50g",
+                title: "원목, 건조 꽃송이버섯 50g",
                 desc: "처음 구매하시는 분을 위한 소량 포장",
                 image: "./assets/images/store_product1.jpg",
                 oprice: 50000,
-                price: 50000,
+                price: 42500,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 2,
-                title: "건조 꽃송이버섯 100g",
+                title: "원목, 건조 꽃송이버섯 100g",
                 desc: "꾸준히 찾으시는 분을 위한 실속형 상품",
                 image: "./assets/images/store_product1.jpg",
                 oprice: 100000,
-                price: 95000,
+                price: 85000,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
@@ -254,33 +254,33 @@ export class DataService {
                 image: "./assets/images/store_product2.jpg",
                 oprice: 150000,
                 price: 150000,
-                soldout: 0,
+                soldout: 1,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
             }, {
                 id: 4,
-                title: "청포도 샤인머스켓 4kg",
+                title: "샤인머스켓(국내산 청포도) 2kg",
                 desc: "경북 상주의 특산품, 고랭지 청포도",
-                image: "./assets/images/store_product3.png",
-                oprice: 0,
-                price: 35000,
+                image: "./assets/images/product_grapes1.jpg",
+                oprice: 28000,
+                price: 25000,
                 soldout: 1,
                 readytime: 1502895600,
-                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
+                reason: "재배기간 동안은 판매하지 않습니다."
             }, {
-                id: 5,
-                title: "와송 가루 500g",
-                desc: "말린 와송을 빻아 먹기 좋게 만든 상품",
-                image: "./assets/images/store_product3.png",
-                oprice: 0,
-                price: 20000,
+                id: 4,
+                title: "샤인머스켓(국내산 청포도) 4kg",
+                desc: "경북 상주의 특산품, 고랭지 청포도",
+                image: "./assets/images/product_grapes2.jpg",
+                oprice: 49000,
+                price: 46000,
                 soldout: 1,
                 readytime: 1502895600,
-                reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
+                reason: "재배기간 동안은 판매하지 않습니다."
             }
         ],
         "shipping": {
-            fee: 3500, // 배송비
+            fee: 3000, // 배송비
             cutline: 200000 // 총금액이 이 금액 이상이면 배송 무료
         }
     };
