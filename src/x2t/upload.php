@@ -21,6 +21,7 @@ fclose($fp);
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+<?php include "head.php"; ?>
 <span>Last update: <?php echo date("Y.m.d H:i:s", (int)$lastUpdate)?></span>
 <br>------------------------------------<br>
 <form name="frm" method="post" enctype="multipart/form-data" action="x2t/parse.php">

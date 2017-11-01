@@ -13,6 +13,21 @@ $data = fgets($fp);
 fclose($fp);
 $rows = json_decode($data, true);
 
+// custom adding
+$fp = fopen("lastupdate_custom.out", "r") or die("Unable to open file!");
+$lastUpdate2 = fgets($fp);
+$data2 = fgets($fp);
+fclose($fp);
+$rows2 = json_decode($data2, true);
+$customCnt = 0;
+if (is_array($rows2)) {
+    $customCnt = count($rows2);
+    foreach($rows2 as $val) {
+        $rows[] = $val;
+    }
+}
+$totalCnt = count($rows);
+
 $c50 = 0;
 $c100 = 0;
 $s2s = 0;
@@ -97,18 +112,22 @@ foreach ($rows as $row) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
+    body {
+        font-size: 18px
+    }
     .updatetm {
-        font-size: 15px;
+        font-size: 0.9em;
         color: #333;
     }
     .tit {
-        font-size: 17px;
+        font-size: 1.1em;
         font-weight: bold;
         margin-bottom: 23px;
     }
     </style>
 </head>
 <body>
+<?php include "head.php"; ?>
 <p class="updatetm"><?php echo date("Y.m.d H:i", (int)$lastUpdate)?></p>
 <h3 class="tit">주문개요</h3>
 <ul class="content">
@@ -129,7 +148,11 @@ foreach ($rows as $row) {
 <?php
 foreach ($list as $i => $t) {
     echo "<strong>" . ($i+1) . ") </strong> ";
-    echo $t . "<br><br>";
+    if ($totalCnt-$customCnt == $i+1) {
+        echo $t . "<br><br><br>";
+    } else {
+        echo $t . "<br><br>";
+    }
 }
 echo '<div style="width:100%; text-align:center;">... 끝 ...</div>';
 ?>
