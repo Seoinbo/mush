@@ -21,14 +21,14 @@
             width: 33%;
             padding: 0 8px;
             margin-bottom: 20px;
-            @include box-shadow(1px 1px 3px #eeeeee);
+            // @include box-shadow(1px 1px 3px #eeeeee);
             @media screen and (max-width: 500px) {
-                max-width: 100%;
+                width: 100%;
                 margin: 8px 0 0 0;
                 @include box-shadow(none);
             }
             @media screen and (min-width: 501px) and (max-width: 700px) {
-                max-width: 420px;
+                width: 49%;
             }
             &.soldout {
                 & .title {
@@ -37,13 +37,12 @@
             }
             & .top {
                 border: 1px solid #e1e1e1;
+                background: #fff;
                 // border-bottom: none;
                 cursor: pointer;
                 @include user-select(none);
                 @media screen and (max-width: 500px) {
                     text-align: left;
-                    border-left: none;
-                    border-right: none;
                     // padding: 25px 25px 0 25px;
                     padding: 20px;
                     // margin-bottom: 10px;
@@ -95,7 +94,7 @@
                     background: #fff;
                     @media screen and (max-width: 500px) {
                         display: inline-block;
-                        height: 80px;
+                        // height: 80px;
                         padding: 0;
                     }
                     & .title {
@@ -104,6 +103,7 @@
                         color: $titleColor;
                         line-height: 1.5;
                         @media screen and (max-width: 500px) {
+                            font-size: 0.938em;
                             padding: 0;
                             text-align: left;
                         }
@@ -118,10 +118,17 @@
                         margin-top: 8px;
                         padding-bottom: 12px;
                         border-bottom: 1px solid #ebebeb;
+                        @media screen and (max-width: 500px) {
+                            border-bottom: none;
+                        }
                     }
                     .price-info{
                         text-align: right;
                         padding: 10px 5px 6px;
+                        @media screen and (max-width: 500px) {
+                            text-align: left;
+                            padding: 0;
+                        }
                     }
                     & .price {
                         // display: none;
