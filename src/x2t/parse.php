@@ -29,7 +29,13 @@ foreach ($csv->data as $row) {
     $newRow = filter($row,  $keys);
     $data[] = $newRow;
 }
-$fp = fopen("lastupdate.out", "w") or die("Unable to open file!");
+
+$fp = fopen("write.time", "r") or die("Unable to open file!");
+$writeTime = fgets($fp);
+fclose($fp);
+
+$filename = "lastupdate_" . date("Ymd", $writeTime) . ".out";
+$fp = fopen($filename, "w") or die("Unable to open file!");
 $encodedData = time() . "\n";
 $encodedData .= json_encode($data);
 fwrite($fp, $encodedData);

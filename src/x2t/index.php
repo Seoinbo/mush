@@ -86,6 +86,9 @@ foreach ($rows as $row) {
                 $val = $val . "개";
             }
         }
+        if ($key == "수취인명") {
+            $val = "<a href=\"javascript:popupFrom('" . $row['구매자명'] . "')\">" . $val . "</a>";
+        }
         if ($key == "배송메세지") {
             $val = "배송메세지:" . str_replace(array("\r\n","\r","\n"), '', $val);
         }
@@ -158,5 +161,10 @@ echo '<div style="width:100%; text-align:center;">... 끝 ...</div>';
 ?>
 <br><br>
 </div>
+<script>
+    function popupFrom(from) {
+        alert("구매자명: " + from);
+    }
+</script>
 </body>
 </html>
