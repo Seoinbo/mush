@@ -263,7 +263,7 @@ export class DataService {
                 desc: "경북 상주의 특산품, 고랭지 청포도",
                 image: "./assets/images/product_grapes1.jpg",
                 oprice: 28000,
-                price: 25000,
+                price: 25900,
                 soldout: 1,
                 readytime: 1502895600,
                 reason: "재배기간 동안은 판매하지 않습니다."
@@ -273,7 +273,7 @@ export class DataService {
                 desc: "경북 상주의 특산품, 고랭지 청포도",
                 image: "./assets/images/product_grapes2.jpg",
                 oprice: 49000,
-                price: 46000,
+                price: 47000,
                 soldout: 1,
                 readytime: 1502895600,
                 reason: "재배기간 동안은 판매하지 않습니다."
