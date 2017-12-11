@@ -233,7 +233,7 @@ export class DataService {
                 desc: "처음 구매하시는 분을 위한 소량 포장",
                 image: "./assets/images/store_product1.jpg",
                 oprice: 50000,
-                price: 42500,
+                price: 45000,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
@@ -243,7 +243,7 @@ export class DataService {
                 desc: "꾸준히 찾으시는 분을 위한 실속형 상품",
                 image: "./assets/images/store_product1.jpg",
                 oprice: 100000,
-                price: 85000,
+                price: 90000,
                 soldout: 0,
                 readytime: 1508166000,
                 reason: "재배기간 6개월 동안은 버섯을 판매하지 않습니다."
