@@ -33,12 +33,14 @@ $c100 = 0;
 $c100b = 0; // 선물용
 $c150b = 0;
 $c200b = 0;
-$s2s = 0;
+$s2s = 0; // 샤인머스켓
 $s2a = 0;
 $s2b = 0;
 $s4s = 0;
 $s4a = 0;
 $s4b = 0;
+$cham1ka = 0;
+$cham1kb = 0;
 $income = 0;
 $incomeBefore = 0;
 $taxes = 0;
@@ -55,7 +57,7 @@ foreach ($rows as $row) {
             continue;
         }
         if ($key == "옵션정보") {
-            $val = str_replace(["등급: ", "중량: "], '', $val);
+            $val = str_replace(["등급: ", "중량: ", "상품선택: "], '', $val);
 
 
             // deprecated
@@ -100,6 +102,12 @@ foreach ($rows as $row) {
             }
             if ($val == "샤인머스켓 4kg (보통)") {
                 $s4b += $row['수량'];
+            }
+            if ($val == "참송이버섯 1kg (상)") {
+                $cham1ka += $row['수량'];
+            }
+            if ($val == "참송이버섯 1kg (못난이)") {
+                $cham1kb += $row['수량'];
             }
         }
         if ($key == "수량") {
@@ -159,8 +167,9 @@ foreach ($rows as $row) {
 <ul class="content">
     <li>꽃송이 실속형 <?=$c50+$c100?>개 (50g <?=$c50?>개, 100g <?=$c100?>개)</li>
     <li>꽃송이 선물용 <?=$c100b+$c150b+$c200b?>개 (100g <?=$c100b?>개, 150g <?=$c150b?>개, 200g <?=$c200b?>개)</li>
-    <li>샤인2kg <?=$s2s+$s2a+$s2b?>개 (특<?=$s2s?>, 상<?=$s2a?>, 보통<?=$s2b?>)</li>
-    <li>샤인4kg <?=$s4s+$s4a+$s4b?>개 (특<?=$s4s?>, 상<?=$s4a?>, 보통<?=$s4b?>)</li>
+    <li>샤인2kg <?=$s2s+$s2a+$s2b?>개 (특 <?=$s2s?>개, 상 <?=$s2a?>개, 보통 <?=$s2b?>개)</li>
+    <li>샤인4kg <?=$s4s+$s4a+$s4b?>개 (특 <?=$s4s?>개, 상 <?=$s4a?>개, 보통 <?=$s4b?>개)</li>
+    <li>참송이1kg <?=$cham1ka+$cham1kb?>개 (상 <?=$cham1ka?>개, 못난이 <?=$cham1kb?>개)</li>
 <?php
     if (!empty($incomeBefore)) { ?>
         <li>총매출: <?=number_format($incomeBefore)?>원</li>
