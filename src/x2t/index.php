@@ -40,6 +40,7 @@ $s4s = 0;
 $s4a = 0;
 $s4b = 0;
 $cham1ka = 0;
+$cham500a = 0;
 $cham1kb = 0;
 $income = 0;
 $incomeBefore = 0;
@@ -106,6 +107,9 @@ foreach ($rows as $row) {
             if ($val == "참송이버섯 1kg (상)") {
                 $cham1ka += $row['수량'];
             }
+            if ($val == "참송이버섯 500g (상)") {
+                $cham500a += $row['수량'];
+            }
             if ($val == "참송이버섯 1kg (못난이)") {
                 $cham1kb += $row['수량'];
             }
@@ -170,6 +174,7 @@ foreach ($rows as $row) {
     <li>샤인2kg <?=$s2s+$s2a+$s2b?>개 (특 <?=$s2s?>개, 상 <?=$s2a?>개, 보통 <?=$s2b?>개)</li>
     <li>샤인4kg <?=$s4s+$s4a+$s4b?>개 (특 <?=$s4s?>개, 상 <?=$s4a?>개, 보통 <?=$s4b?>개)</li>
     <li>참송이1kg <?=$cham1ka+$cham1kb?>개 (상 <?=$cham1ka?>개, 못난이 <?=$cham1kb?>개)</li>
+    <li>참송이500g <?=$cham500a?>개 (상 <?=$cham500a?>개)</li>
 <?php
     if (!empty($incomeBefore)) { ?>
         <li>총매출: <?=number_format($incomeBefore)?>원</li>
