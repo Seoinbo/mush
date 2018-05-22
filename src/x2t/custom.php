@@ -48,8 +48,14 @@ if($_SESSION['islogin'] != "y") {
         <option value="샤인머스켓 4kg (특)">샤인머스켓 4kg (특)</option>
         <option value="샤인머스켓 4kg (상)">샤인머스켓 4kg (상)</option>
         <option value="샤인머스켓 4kg (보통)">샤인머스켓 4kg (보통)</option>
-        <option value="건조 꽃송이버섯 (100g)">건조 꽃송이버섯 (100g)</option>
-        <option value="건조 꽃송이버섯 (50g)">건조 꽃송이버섯 (50g)</option>
+        <option value="건조 꽃송이버섯 (선물용 200g)">건조 꽃송이버섯 (선물용 200g)</option>
+        <option value="건조 꽃송이버섯 (선물용 150g)">건조 꽃송이버섯 (선물용 150g)</option>
+        <option value="건조 꽃송이버섯 (선물용 100g)">건조 꽃송이버섯 (선물용 100g)</option>
+        <option value="건조 꽃송이버섯 (실속형 50g)">건조 꽃송이버섯 (실속형 50g)</option>
+        <option value="건조 꽃송이버섯 (실속형 100g)">건조 꽃송이버섯 (실속형 100g)</option>
+        <option value="참송이버섯 500g (상)">참송이버섯 500g (상)</option>
+        <option value="참송이버섯 1kg (상)">참송이버섯 1kg (상)</option>
+        <option value="참송이버섯 1kg (못난이)">참송이버섯 1kg (못난이)</option>
     </select>
     <label>수량</label>
     <select name="f4">
