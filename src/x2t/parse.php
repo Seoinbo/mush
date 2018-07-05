@@ -15,6 +15,9 @@ $xlsname = $_FILES['attach']['tmp_name'];
 $objReader = PHPExcel_IOFactory::createReader("Excel5");
 $objReader->setReadDataOnly(true);
 $objPHPExcel = $objReader->load($xlsname);
+
+$objPHPExcel->getActiveSheet()->removeRow(1);
+
 $fileType=PHPExcel_IOFactory::identify($xlsname);
 $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'CSV');
 $objWriter->save("output.csv");
@@ -34,7 +37,8 @@ $fp = fopen("write.time", "r") or die("Unable to open file!");
 $writeTime = fgets($fp);
 fclose($fp);
 
-$filename = "lastupdate_" . date("Ymd", $writeTime) . ".out";
+// $filename = "lastupdate_" . date("Ymd", $writeTime) . ".out";
+$filename = "lastupdate.out";
 $fp = fopen($filename, "w") or die("Unable to open file!");
 $encodedData = time() . "\n";
 $encodedData .= json_encode($data);
