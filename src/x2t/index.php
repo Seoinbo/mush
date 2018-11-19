@@ -46,20 +46,26 @@ $income = 0;
 $incomeBefore = 0;
 $taxes = 0;
 $list = [];
-$fields = ["수취인명", "옵션정보", "수량", "수취인연락처1", "배송지", "배송메세지"];
+$fields = ["수취인명", "옵션정보", "수량", "수취인연락처1", "배송지", "배송메세지", "상품명"];
 foreach ($rows as $row) {
     $i = 0;
     $text = "";
     foreach ($row as $key => $val) {
-        if ($val == "") {
+        if ($val == "" && $key != "옵션정보" ) {
+            continue;
+        }
+        if ($key == '상품명') {
             continue;
         }
         if (!in_array($key, $fields)) {
             continue;
         }
         if ($key == "옵션정보") {
-            $val = str_replace(["등급: ", "중량: ", "상품선택: "], '', $val);
-
+            if($val == "") {
+                $val = $row['상품명'];
+            } else {
+                $val = str_replace(["등급: ", "중량: ", "상품선택: "], '', $val);
+            }
 
             // deprecated
             if ($val == "건조 꽃송이버섯 (50g)") {
@@ -70,7 +76,12 @@ foreach ($rows as $row) {
             }
             // --deprecated
 
-
+            if ($val == "원목 건조 꽃송이버섯 50g") {
+                $c50 += $row['수량'];
+            }
+            if ($val == "원목 건조 꽃송이버섯 200g 선물세트") {
+                $c200b += $row['수량'];
+            }
             if ($val == "건조 꽃송이버섯 (실속형 50g)") {
                 $c50 += $row['수량'];
             }
