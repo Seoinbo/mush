@@ -47,109 +47,120 @@ $incomeBefore = 0;
 $taxes = 0;
 $list = [];
 $fields = ["수취인명", "옵션정보", "수량", "수취인연락처1", "배송지", "배송메세지", "상품명"];
-foreach ($rows as $row) {
-    $i = 0;
-    $text = "";
-    foreach ($row as $key => $val) {
-        if ($val == "" && $key != "옵션정보" ) {
-            continue;
-        }
-        if ($key == '상품명') {
-            continue;
-        }
-        if (!in_array($key, $fields)) {
-            continue;
-        }
-        if ($key == "옵션정보") {
-            if($val == "") {
-                $val = $row['상품명'];
-            } else {
-                $val = str_replace(["등급: ", "중량: ", "상품선택: "], '', $val);
+if(is_array($rows)) {
+    foreach ($rows as $row) {
+        $i = 0;
+        $text = "";
+        foreach ($row as $key => $val) {
+            if ($val == "" && $key != "옵션정보" ) {
+                continue;
             }
+            if ($key == '상품명') {
+                continue;
+            }
+            if (!in_array($key, $fields)) {
+                continue;
+            }
+            if ($key == "옵션정보") {
+                if($val == "") {
+                    $val = $row['상품명'];
+                } else {
+                    $val = str_replace(["등급: ", "중량: ", "상품선택: "], '', $val);
+                }
 
-            // deprecated
-            if ($val == "건조 꽃송이버섯 (50g)") {
-                $c50 += $row['수량'];
-            }
-            if ($val == "건조 꽃송이버섯 (100g)") {
-                $c100 += $row['수량'];
-            }
-            // --deprecated
+                // deprecated
+                if ($val == "건조 꽃송이버섯 (50g)") {
+                    $c50 += $row['수량'];
+                }
+                if ($val == "건조 꽃송이버섯 (100g)") {
+                    $c100 += $row['수량'];
+                }
+                // --deprecated
 
-            if ($val == "원목 건조 꽃송이버섯 50g") {
-                $c50 += $row['수량'];
+                // G마켓 상품
+                if ($val == "[G마켓] 건조 꽃송이버섯 (실속형 100g)") {
+                    $c100 += $row['수량'];
+                }
+                if ($val == "[G마켓] 건조 꽃송이버섯 (선물용 100g)") {
+                    $c100b += $row['수량'];
+                }
+
+                // 네이버 상품
+                if ($val == "원목 건조 꽃송이버섯 50g") {
+                    $c50 += $row['수량'];
+                }
+                if ($val == "원목 건조 꽃송이버섯 200g 선물세트") {
+                    $c200b += $row['수량'];
+                }
+                if ($val == "건조 꽃송이버섯 (실속형 50g)") {
+                    $c50 += $row['수량'];
+                }
+                if ($val == "건조 꽃송이버섯 (실속형 100g)") {
+                    $c100 += $row['수량'];
+                }
+                if ($val == "건조 꽃송이버섯 (선물용 100g)") {
+                    $c100b += $row['수량'];
+                }
+                if ($val == "건조 꽃송이버섯 (선물용 150g)") {
+                    $c150b += $row['수량'];
+                }
+                if ($val == "건조 꽃송이버섯 (선물용 200g)") {
+                    $c200b += $row['수량'];
+                }
+                if ($val == "샤인머스켓 2kg (특)") {
+                    $s2s += $row['수량'];
+                }
+                if ($val == "샤인머스켓 2kg (상)") {
+                    $s2a += $row['수량'];
+                }
+                if ($val == "샤인머스켓 2kg (보통)") {
+                    $s2b += $row['수량'];
+                }
+                if ($val == "샤인머스켓 4kg (특)") {
+                    $s4s += $row['수량'];
+                }
+                if ($val == "샤인머스켓 4kg (상)") {
+                    $s4a += $row['수량'];
+                }
+                if ($val == "샤인머스켓 4kg (보통)") {
+                    $s4b += $row['수량'];
+                }
+                if ($val == "참송이버섯 1kg (상)") {
+                    $cham1ka += $row['수량'];
+                }
+                if ($val == "참송이버섯 500g (상)") {
+                    $cham500a += $row['수량'];
+                }
+                if ($val == "참송이버섯 1kg (못난이)") {
+                    $cham1kb += $row['수량'];
+                }
             }
-            if ($val == "원목 건조 꽃송이버섯 200g 선물세트") {
-                $c200b += $row['수량'];
+            if ($key == "수량") {
+                if ($val > 1) {
+                    $val = "<strong>" . $val . "개</strong>";
+                } else {
+                    $val = $val . "개";
+                }
             }
-            if ($val == "건조 꽃송이버섯 (실속형 50g)") {
-                $c50 += $row['수량'];
+            if ($key == "수취인명") {
+                $val = "<a href=\"javascript:popupFrom('" . $row['구매자명'] . "')\">" . $val . "</a>";
             }
-            if ($val == "건조 꽃송이버섯 (실속형 100g)") {
-                $c100 += $row['수량'];
+            if ($key == "배송메세지") {
+                $val = "배송메세지:" . str_replace(array("\r\n","\r","\n"), '', $val);
             }
-            if ($val == "건조 꽃송이버섯 (선물용 100g)") {
-                $c100b += $row['수량'];
+            if ($i > 0) {
+                $text .= ", ";
             }
-            if ($val == "건조 꽃송이버섯 (선물용 150g)") {
-                $c150b += $row['수량'];
-            }
-            if ($val == "건조 꽃송이버섯 (선물용 200g)") {
-                $c200b += $row['수량'];
-            }
-            if ($val == "샤인머스켓 2kg (특)") {
-                $s2s += $row['수량'];
-            }
-            if ($val == "샤인머스켓 2kg (상)") {
-                $s2a += $row['수량'];
-            }
-            if ($val == "샤인머스켓 2kg (보통)") {
-                $s2b += $row['수량'];
-            }
-            if ($val == "샤인머스켓 4kg (특)") {
-                $s4s += $row['수량'];
-            }
-            if ($val == "샤인머스켓 4kg (상)") {
-                $s4a += $row['수량'];
-            }
-            if ($val == "샤인머스켓 4kg (보통)") {
-                $s4b += $row['수량'];
-            }
-            if ($val == "참송이버섯 1kg (상)") {
-                $cham1ka += $row['수량'];
-            }
-            if ($val == "참송이버섯 500g (상)") {
-                $cham500a += $row['수량'];
-            }
-            if ($val == "참송이버섯 1kg (못난이)") {
-                $cham1kb += $row['수량'];
-            }
+            $text .= $val;
+            $i++;
         }
-        if ($key == "수량") {
-            if ($val > 1) {
-                $val = "<strong>" . $val . "개</strong>";
-            } else {
-                $val = $val . "개";
-            }
-        }
-        if ($key == "수취인명") {
-            $val = "<a href=\"javascript:popupFrom('" . $row['구매자명'] . "')\">" . $val . "</a>";
-        }
-        if ($key == "배송메세지") {
-            $val = "배송메세지:" . str_replace(array("\r\n","\r","\n"), '', $val);
-        }
-        if ($i > 0) {
-            $text .= ", ";
-        }
-        $text .= $val;
-        $i++;
+        $tmp1 = str_replace(["\\", ","], "", $row['상품별 총 주문금액']);
+        $tmp2 = str_replace(["\\", ","], "", $row['결제수수료']);
+        $tmp3 = str_replace(["\\", ","], "", $row['네이버 쇼핑 매출연동 수수료']);
+        $incomeBefore += $tmp1;
+        $taxes += $tmp2 + $tmp3;
+        $list[] = $text;
     }
-    $tmp1 = str_replace(["\\", ","], "", $row['상품별 총 주문금액']);
-    $tmp2 = str_replace(["\\", ","], "", $row['결제수수료']);
-    $tmp3 = str_replace(["\\", ","], "", $row['네이버 쇼핑 매출연동 수수료']);
-    $incomeBefore += $tmp1;
-    $taxes += $tmp2 + $tmp3;
-    $list[] = $text;
 }
 ?>
 

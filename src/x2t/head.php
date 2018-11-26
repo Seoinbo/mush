@@ -14,5 +14,5 @@ a {
 }
 </style>
 <div class="topnav">
-    <a href="/x2t">홈</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/x2t/upload.php">올리기</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/x2t/custom.php">추가하기</a>
+    <a href="/x2t">홈</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/x2t/upload.php">파일로추가</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="/x2t/custom.php">직접추가</a>/&nbsp;&nbsp;<a href="/x2t/option.php">설정</a>
 </div>
