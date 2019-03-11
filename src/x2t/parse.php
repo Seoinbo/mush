@@ -20,7 +20,7 @@ if(strpos($xlsname, "GeneralDelivery") !== false) {
 $type = $_REQUEST['type'] ? $_REQUEST['type'] : "overwrite";
 
 $xlstmpname = $_FILES['attach']['tmp_name'];
-$objReader = PHPExcel_IOFactory::createReader("Excel5");
+$objReader = PHPExcel_IOFactory::createReader("Excel2007");
 $objReader->setReadDataOnly(true);
 $objPHPExcel = $objReader->load($xlstmpname);
 
