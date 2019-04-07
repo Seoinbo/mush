@@ -3,6 +3,9 @@
     display: block;
     padding: 0 !important;
     margin: 0;
+    @media screen and (max-width: 980px) {
+        display: none;
+    }
     & .picstream {
         position: relative;
         width: 100%;

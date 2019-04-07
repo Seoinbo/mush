@@ -23,9 +23,9 @@ export class StoreComponent {
 
     private add(event, index, count = 1) {
         event.preventDefault();
-        window.open('http://storefarm.naver.com/doorisan/products/2205718542','_blank');
 
-        // let product = this.products[index];
+        let product = this.products[index];
+        window.open('http://storefarm.naver.com/doorisan/products/' + product.id, '_blank');
         // if (product.soldout) {
         //     return;
         // }
