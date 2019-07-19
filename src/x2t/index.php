@@ -156,7 +156,7 @@ if(is_array($rows)) {
         }
         $tmp1 = str_replace(["\\", ","], "", $row['상품별 총 주문금액']);
         $tmp2 = str_replace(["\\", ","], "", $row['결제수수료']);
-        $tmp3 = str_replace(["\\", ","], "", $row['네이버 쇼핑 매출연동 수수료']);
+        $tmp3 = str_replace(["\\", ","], "", $row['매출연동 수수료']);
         $incomeBefore += $tmp1;
         $taxes += $tmp2 + $tmp3;
         $list[] = $text;
